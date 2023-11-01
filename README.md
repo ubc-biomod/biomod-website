@@ -1,18 +1,38 @@
 # UBC BIOMOD Website
 Repository for the UBC BIOMOD Club's official landing page
 
-## Getting Started
+Built with Next.js, Typescript, and Tailwind CSS + Preline
 
-First, run the development server:
+# Tooling
+
+## Storybook
+Storybook allows you to prototype components in isolation and create a component library with documentation. The Storybook server needs to be started separately:
+
+```bash
+npm run storybook
+```
+
+## Formatting/Linting
+We are using [ESLint](https://eslint.org/) with [Prettier](https://prettier.io/) for code linting and formatting:
+
+```bash
+npm run lint
+
+npm run format
+```
+
+We are also using `lint-staged` and `husky` to automatically format and lint code upon commit, to ensure code quality.
+
+# Getting Started
+First, install the dependencies:
+```bash
+npm i
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -21,7 +41,7 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+# Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
