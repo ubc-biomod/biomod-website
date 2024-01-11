@@ -19,8 +19,11 @@ const SponsorTier: React.FC<Sponsor> = ({ name, tier }) => {
            */}
         </div>
         <div className="p-4 md:p-5">
+          <h1 className="text-lg font-bold text-gray-800 dark:text-white">
+            {name}
+          </h1>
           <h3 className="text-lg font-bold text-gray-800 dark:text-white">
-            Card title
+            {tier}
           </h3>
           <p className="mt-1 text-gray-500 dark:text-gray-400">
             Some quick example text to build on the card title and make up the

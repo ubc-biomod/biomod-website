@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import SponsorTier from "@/components/sponsors/PastSponsors";
+import SponsorTier from "@/components/sponsors/SponsorTier";
 
 const meta = {
   title: "Sponsor tier",
