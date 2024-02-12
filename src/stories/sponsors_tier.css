@@ -1,0 +1,156 @@
+.black {
+    color:black;
+}
+.green {
+  color: green
+}
+
+.mobile-response {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+.mobile-response {
+    flex-direction: row;
+    margin: 10px;
+    padding: 50px;
+}
+}
+
+.contentDataPlaceholder {
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+.link {
+    color: #2876bf;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    transition: all 0.15s ease;
+}
+
+.fade-transition {
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Adjust the duration as needed */
+  }
+  
+  .fade-transition:not(.fade-transition) {
+    opacity: 1;
+  }
+
+  .dna-pic {
+    width: 80%;
+    height: 50%;
+    object-fit: cover;
+    background-color: #2876bf;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 15px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .dna-pic {
+        flex-direction: column;
+        height: 80%;
+        width: 30%;
+        align-items: center;
+    }
+    }
+
+  .logo-temp {
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
+    background-color: orangered;
+    margin-right: 0.5rem;
+  }
+
+  .subheader {
+    color: rgba(107, 114, 128, 1);
+  }
+
+  .cardTransitionLeft {
+    animation-name: cardTransitionLeft;
+    animation-duration: 1s;
+  }
+
+  @keyframes cardTransitionLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .newTransition {
+    animation-name: newTransition;
+    animation-duration: 2s;
+  }
+
+  @keyframes newTransition {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .cardTransitionRight {
+    animation-name: cardTransitionRight;
+    animation-duration: 1s;
+  }
+
+  @keyframes cardTransitionRight {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+  }
+
+  .newCardTransition {
+    animation-name: newCardTransition;
+    animation-duration: 1s;
+  }
+
+  @keyframes newCardTransition {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .explore-more {
+    font-size: 16px;
+  }
+
+
+  .nav-button {
+    background-color: rgb(225,225,225, 1);
+    border-radius: 1.25rem;
+    width: 25px;
+    height: 25px;
+    color: black;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
