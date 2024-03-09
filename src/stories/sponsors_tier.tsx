@@ -149,19 +149,19 @@ export const Sponsors_Tier: React.FC = () => {
         <div className="dna-pic">
           {/* Navigation buttons for different sponsor types */}
           <button
-            className="content-button"
+            className="content-button text-white"
             onClick={() => handleContentChange("gold")}
           >
             Gold Sponsors
           </button>
           <button
-            className="content-button"
+            className="content-button text-white"
             onClick={() => handleContentChange("silver")}
           >
             Silver Sponsors
           </button>
           <button
-            className="content-button"
+            className="content-button text-white"
             onClick={() => handleContentChange("bronze")}
           >
             Bronze Sponsors
@@ -181,10 +181,10 @@ export const Sponsors_Tier: React.FC = () => {
         >
           <div className="flex flex-row items-center">
             <div className="logo-temp"></div>
-            <h2 className="text-2xl font-bold black">{header}</h2>
+            <h2 className="text-2xl font-bold">{header}</h2>
           </div>
           <h3 className="text-lg subheader">{subheader}</h3>
-          <p className="black">{text}</p>
+          <p>{text}</p>
           <a
             className="link explore-more"
             href={link}
