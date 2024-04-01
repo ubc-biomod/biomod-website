@@ -142,26 +142,26 @@ export const SponsorsTier: React.FC = () => {
 
   return (
     <div
-      className={`flex sm: flex-col sm:flex-row bg-white border rounded-xl shadow-sm dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]`}
+      className={`flex sm: flex-col sm:flex-row bg-white border rounded-xl shadow-sm dark:bg-gray-300 dark:border-gray-700 dark:grey/[.7]`}
     >
       {/* DNA Pic */}
       <div className="flex flex-row flex-shrink-0 w-full rounded-t-xl overflow-hidden sm:rounded-s-xl sm:w-1/4 md:rounded-se-none md:max-w-2/5 h-20 md:h-auto bg-emerald-500 content-center">
         <div className="flex md:flex-col flex-row m-auto md:w-2/5 md:h-4/5 w-4/5 h-4/5 bg-red-500 content-center justify-around">
           {/* Navigation buttons for different sponsor types */}
           <button
-            className="content-button"
+            className="content-button text-white"
             onClick={() => handleContentChange("gold")}
           >
             Gold Sponsors
           </button>
           <button
-            className="content-button"
+            className="content-button text-white"
             onClick={() => handleContentChange("silver")}
           >
             Silver Sponsors
           </button>
           <button
-            className="content-button"
+            className="content-button text-white"
             onClick={() => handleContentChange("bronze")}
           >
             Bronze Sponsors
