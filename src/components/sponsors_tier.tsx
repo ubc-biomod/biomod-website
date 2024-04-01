@@ -12,7 +12,7 @@ type ContentItem = {
   link: string;
 };
 
-export const Sponsors_Tier: React.FC = () => {
+export const SponsorsTier: React.FC = () => {
   const [currentContent, setCurrentContent] = useState<number>(0);
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
 
@@ -142,11 +142,11 @@ export const Sponsors_Tier: React.FC = () => {
 
   return (
     <div
-      className={`flex mobile-response flex-col bg-white border rounded-xl shadow-sm dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]`}
+      className={`flex sm: flex-col sm:flex-row bg-white border rounded-xl shadow-sm dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]`}
     >
       {/* DNA Pic */}
-      <div className="flex-shrink-0 relative w-full rounded-t-xl overflow-hidden pt-[40%] sm:rounded-s-xl sm:max-w-[15rem] md:rounded-se-none md:max-w-xs">
-        <div className="dna-pic">
+      <div className="flex flex-row flex-shrink-0 w-full rounded-t-xl overflow-hidden sm:rounded-s-xl sm:w-1/4 md:rounded-se-none md:max-w-2/5 h-20 md:h-auto bg-emerald-500 content-center">
+        <div className="flex md:flex-col flex-row m-auto md:w-2/5 md:h-4/5 w-4/5 h-4/5 bg-red-500 content-center justify-around">
           {/* Navigation buttons for different sponsor types */}
           <button
             className="content-button"
@@ -170,7 +170,7 @@ export const Sponsors_Tier: React.FC = () => {
       </div>
 
       {/* Right Content */}
-      <div className={`flex flex-wrap w-full px-10`}>
+      <div className={`flex flex-wrap w-full sm:px-5`}>
         <div
           className={`p-4 flex flex-col h-full w-full sm:p-7  ${
             transitionDirection === "left" ? "cardTransitionLeft" : ""
@@ -179,50 +179,50 @@ export const Sponsors_Tier: React.FC = () => {
     ${transitionDirection === "newCard" ? "newCardTransition" : ""}`}
           onAnimationEnd={handleTransitionEnd}
         >
-          <div className="flex flex-row items-center">
-            <div className="logo-temp"></div>
-            <h2 className="text-2xl font-bold black">{header}</h2>
-          </div>
-          <h3 className="text-lg subheader">{subheader}</h3>
-          <p className="black">{text}</p>
-          <a
-            className="link explore-more"
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Explore More
-          </a>
-
-          {/* Navigation Bar */}
-          <div className="mt-5 sm:mt-auto flex justify-center">
+          <div className="flex flex-row items-center justify-between">
             <button
-              className="p-2 nav-button"
+              className="nav-button sm:mx-10 mr-3"
               onClick={() => handleNavigation("prev")}
             >
               &lt;
             </button>
-            {/* Map through contentData to create image icons */}
-            {currentContentData.map((content, index) => (
-              <button
-                key={index}
-                className={`w-8 h-8 rounded-full contentDataPlaceholder ${
-                  currentContent === index
-                    ? "border-2 border-blue-500 green"
-                    : ""
-                }`}
-                onClick={() => setCurrentContent(index)}
-                style={{
-                  transform: `scale(${currentContent === index ? 1.2 : 1})`,
-                }}
-              />
-            ))}
+            <div className="flex flex-col">
+              <div className="flex flex-row items-center">
+                <div className="logo-temp"></div>
+                <h2 className="text-2xl font-bold black">{header}</h2>
+              </div>
+              <h3 className="text-lg subheader">{subheader}</h3>
+              <p className="black">{text}</p>
+              <a
+                className="link explore-more"
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore More
+              </a>
+            </div>
             <button
-              className="p-2 nav-button"
+              className="nav-button sm:mx-10 ml-3"
               onClick={() => handleNavigation("next")}
             >
               &gt;
             </button>
+          </div>
+
+          {/* Navigation Bar */}
+          <div className="my-5 flex justify-center">
+            {/* Map through contentData to create image icons */}
+            {currentContentData.map((content, index) => (
+              <button
+                key={index}
+                className={`w-8 h-8 rounded-full contentDataPlaceholder`}
+                onClick={() => setCurrentContent(index)}
+                style={{
+                  transform: `scale(${currentContent === index ? 1.5 : 1})`,
+                }}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -230,4 +230,4 @@ export const Sponsors_Tier: React.FC = () => {
   );
 };
 
-export default Sponsors_Tier;
+export default SponsorsTier;
