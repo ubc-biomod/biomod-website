@@ -20,6 +20,8 @@ const config: Config = {
         accent: "#3988A9",
       },
       fontSize: {
+        headingReg: "3rem",
+        headingRegMob: "2.25rem",
         subHeadingReg: "2rem",
         subHeadingRegMob: "1.75rem",
         bronze: "#D0855B",
