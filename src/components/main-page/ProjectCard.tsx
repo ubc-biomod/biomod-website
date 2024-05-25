@@ -6,6 +6,7 @@ type ProjectCardProps = {
   children: React.ReactNode | React.ReactNode[];
   yearElement: React.ReactNode | React.ReactNode[];
   startOverlayActivated?: boolean;
+  href: string;
 };
 
 const ProjectCard = ({
@@ -13,12 +14,13 @@ const ProjectCard = ({
   children,
   yearElement,
   startOverlayActivated = false,
+  href,
 }: ProjectCardProps) => {
   const [yearOverlayActive, setYearOverlayActive] = useState(
     startOverlayActivated
   );
 
-  const handleKeyPress: React.KeyboardEventHandler<HTMLDivElement> = (e) => {
+  const handleKeyPress: React.KeyboardEventHandler<HTMLAnchorElement> = (e) => {
     if (e.key === " ") {
       e.preventDefault();
       setYearOverlayActive((prev) => !prev);
@@ -26,8 +28,10 @@ const ProjectCard = ({
   };
 
   return (
-    <div
-      className={`bg-primary relative h-full flex justify-center items-center rounded-lg lg:rounded-xl ${className}`}
+    <a
+      href={href}
+      target="_blank"
+      className={`bg-primary relative h-full w-full flex justify-center items-center rounded-xl ${className}`}
       onMouseEnter={() => setYearOverlayActive(true)}
       onMouseLeave={() => setYearOverlayActive(false)}
       onKeyDown={handleKeyPress}
@@ -36,7 +40,7 @@ const ProjectCard = ({
       <AnimatePresence>
         {yearOverlayActive && (
           <motion.div
-            className="absolute flex justify-center items-center w-full h-full rounded-lg lg:rounded-xl bg-secondary text-3xl lg:text-6xl font-semibold text-primary"
+            className="absolute flex justify-center items-center w-full h-full rounded-xl bg-secondary text-3xl lg:text-6xl font-semibold text-primary"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -46,14 +50,10 @@ const ProjectCard = ({
           </motion.div>
         )}
       </AnimatePresence>
-      <div className="">{children}</div>
-      {/* {!yearOverlayActive && 
-        children
-      }
-      {yearOverlayActive && (
-        
-      )} */}
-    </div>
+      <div className="flex justify-center items-center w-full h-full">
+        {children}
+      </div>
+    </a>
   );
 };
 
