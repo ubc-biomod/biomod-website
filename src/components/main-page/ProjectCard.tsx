@@ -31,7 +31,7 @@ const ProjectCard = ({
     <a
       href={href}
       target="_blank"
-      className={`bg-primary relative h-full w-full flex justify-center items-center rounded-xl ${className}`}
+      className={`relative h-full w-full flex justify-center items-center rounded-xl ${className}`}
       onMouseEnter={() => setYearOverlayActive(true)}
       onMouseLeave={() => setYearOverlayActive(false)}
       onKeyDown={handleKeyPress}
@@ -40,7 +40,7 @@ const ProjectCard = ({
       <AnimatePresence>
         {yearOverlayActive && (
           <motion.div
-            className="absolute flex justify-center items-center w-full h-full rounded-xl bg-secondary text-3xl lg:text-6xl font-semibold text-primary"
+            className="absolute z-20 flex justify-center items-center w-full h-full rounded-xl bg-secondary text-3xl md:text-5xl lg:text-6xl font-semibold text-primary"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -50,7 +50,7 @@ const ProjectCard = ({
           </motion.div>
         )}
       </AnimatePresence>
-      <div className="flex justify-center items-center w-full h-full">
+      <div className="flex justify-center items-center w-full h-full rounded-xl">
         {children}
       </div>
     </a>

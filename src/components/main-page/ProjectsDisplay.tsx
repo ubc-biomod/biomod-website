@@ -1,6 +1,11 @@
 import Image from "next/image";
 import ProjectCard from "./ProjectCard";
-import project_2024 from "@/assets/project_2024.gif";
+import project2024 from "@/assets/project_2024.gif";
+import project2022 from "@/assets/project_2022.gif";
+import project2019 from "@/assets/project_2019.jpg";
+import project2018 from "@/assets/project_2018.png";
+import project2017 from "@/assets/project_2017.png";
+import project2016 from "@/assets/project_2016.png";
 
 const ProjectsDisplay = () => {
   return (
@@ -16,7 +21,7 @@ const ProjectsDisplay = () => {
         >
           <div className="flex w-full h-full items-center bg-black text-white text-center rounded-xl p-4">
             <Image
-              src={project_2024}
+              src={project2024}
               alt="2024 Project animation"
               className="w-1/2"
             />
@@ -36,33 +41,67 @@ const ProjectsDisplay = () => {
           className="col-span-2 lg:row-start-2"
           yearElement="2022"
         >
-          display
+          <div className="h-full w-full bg-black rounded-xl">
+            <Image
+              src={project2022}
+              alt="2022 Project animation"
+              className="h-full rounded-xl"
+            />
+          </div>
         </ProjectCard>
-        <ProjectCard href="#" className="" yearElement="2021">
-          display
+        <ProjectCard href="#" className="" yearElement="2019">
+          <Image
+            src={project2019}
+            alt="2019 Project"
+            className="w-full rounded-xl"
+          />
         </ProjectCard>
-        <ProjectCard href="#" className="row-span-2" yearElement="2020">
-          display
+        <ProjectCard href="#" className="row-span-2" yearElement="2018">
+          <div className="relative w-full h-full rounded-xl">
+            <Image
+              src={project2018}
+              alt="2018 Project"
+              className="w-full h-full rounded-xl"
+            />
+            <div className="absolute z-10 left-0 top-0 h-full w-full flex justify-center items-center">
+              <span className="p-4 md:p-8 lg:p-12 text-center text-white text-base md:text-2xl lg:text-3xl">
+                Targeted Therapy for Acute Myeloid Leukemia with a DNA
+                Tetrahedron
+              </span>
+            </div>
+          </div>
         </ProjectCard>
-        <ProjectCard href="#" className="row-span-2" yearElement="2019">
-          display
+        <ProjectCard href="#" className="row-span-2" yearElement="2017">
+          <div className="relative w-full h-full rounded-xl border-2 border-primary">
+            <Image
+              src={project2017}
+              alt="2017 Project"
+              className="w-full h-full rounded-xl"
+            />
+            <div className="absolute z-10 left-0 top-0 h-full w-full flex justify-center items-center">
+              <span className="p-4 md:p-8 lg:p-12 text-center text-base md:text-2xl lg:text-3xl">
+                Find out how UBerCoolercular is making cancer more detectable
+              </span>
+            </div>
+          </div>
         </ProjectCard>
-        <ProjectCard href="#" className="lg:col-start-4" yearElement="2018">
-          display
+        <ProjectCard href="#" className="lg:col-start-4" yearElement="2016">
+          <Image
+            src={project2016}
+            alt="2016 Project"
+            className="w-full rounded-xl"
+          />
         </ProjectCard>
         <ProjectCard
           href="#"
-          className="col-span-2 lg:row-start-3"
+          className="bg-primary col-span-2 lg:row-start-3"
           yearElement={
-            <div className="bg-primary flex flex-col w-full h-full rounded-lg lg:rounded-xl justify-center items-center gap-4">
-              <span className="text-white">2024</span>
-              <span className="text-white text-base lg:text-xl">
-                coming soon
-              </span>
-            </div>
+            <span className="text-2xl lg:text-5xl">coming soon!</span>
           }
         >
-          display
+          <div className="font-semibold text-white text-3xl md:text-5xl lg:text-6xl">
+            2024
+          </div>
         </ProjectCard>
       </div>
     </div>
