@@ -1,6 +1,7 @@
 import CellImage from "@/assets/cell.png";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useRef, useState } from "react";
 
 export default function Hero() {
   return (
@@ -61,17 +62,34 @@ function Statistics() {
 }
 
 function Number(props: { num: number; description: string }) {
+  const [currNum, setCurrNum] = useState(0);
+  const currNumRef = useRef(0);
+  const increaseCount = async () => {
+    await new Promise((r) => setTimeout(r, 4));
+    if (currNumRef.current == props.num) return;
+
+    currNumRef.current += 1;
+    setCurrNum(currNumRef.current);
+  };
   return (
     <div className="flex flex-col text-center">
+      <div className="relative flex flex-row justify-center">
+        <AnimatePresence>
+          <motion.span
+            key={"description" + currNumRef.current}
+            className="text-primary text-[6rem] absolute z-0"
+            initial={{ opacity: 0, position: "absolute", top: "-100px" }}
+            animate={{ opacity: 1, position: "relative", top: "0px" }}
+            exit={{ opacity: 0, position: "absolute", top: "100px" }}
+            transition={{ ease: "circInOut", duration: 0.4 }}
+            onAnimationComplete={increaseCount}
+          >
+            {currNum}
+          </motion.span>
+        </AnimatePresence>
+      </div>
       <span
-        className="text-primary 
-                text-[6rem]"
-      >
-        {" "}
-        {props.num}{" "}
-      </span>
-      <span
-        className="text-subHeadingRegMob 
+        className="text-subHeadingRegMob z-10
                 md:text-subHeadingReg"
       >
         {props.description}
