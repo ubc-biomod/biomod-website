@@ -37,7 +37,7 @@ const ProjectsDisplay = () => {
           </div>
         </ProjectCard>
         <ProjectCard
-          href="#"
+          href="https://www.ubcbiomod.com/2022/"
           className="col-span-2 lg:row-start-2"
           yearElement="2022"
         >
@@ -49,14 +49,22 @@ const ProjectsDisplay = () => {
             />
           </div>
         </ProjectCard>
-        <ProjectCard href="#" className="" yearElement="2019">
+        <ProjectCard
+          href="https://ubcbiomod.com/2019/"
+          className=""
+          yearElement="2019"
+        >
           <Image
             src={project2019}
             alt="2019 Project"
             className="w-full rounded-xl"
           />
         </ProjectCard>
-        <ProjectCard href="#" className="row-span-2" yearElement="2018">
+        <ProjectCard
+          href="https://ubcbiomod.com/2018/"
+          className="row-span-2"
+          yearElement="2018"
+        >
           <div className="relative w-full h-full rounded-xl">
             <Image
               src={project2018}
@@ -71,7 +79,11 @@ const ProjectsDisplay = () => {
             </div>
           </div>
         </ProjectCard>
-        <ProjectCard href="#" className="row-span-2" yearElement="2017">
+        <ProjectCard
+          href="https://ubcbiomod.com/2017"
+          className="row-span-2"
+          yearElement="2017"
+        >
           <div className="relative w-full h-full rounded-xl border-2 border-primary">
             <Image
               src={project2017}
@@ -85,7 +97,11 @@ const ProjectsDisplay = () => {
             </div>
           </div>
         </ProjectCard>
-        <ProjectCard href="#" className="lg:col-start-4" yearElement="2016">
+        <ProjectCard
+          href="https://biomod2016.gitlab.io/ubc/"
+          className="lg:col-start-4"
+          yearElement="2016"
+        >
           <Image
             src={project2016}
             alt="2016 Project"
@@ -93,7 +109,6 @@ const ProjectsDisplay = () => {
           />
         </ProjectCard>
         <ProjectCard
-          href="#"
           className="bg-primary col-span-2 lg:row-start-3"
           yearElement={
             <span className="text-2xl lg:text-5xl">coming soon!</span>

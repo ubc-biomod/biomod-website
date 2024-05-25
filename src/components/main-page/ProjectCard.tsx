@@ -6,7 +6,7 @@ type ProjectCardProps = {
   children: React.ReactNode | React.ReactNode[];
   yearElement: React.ReactNode | React.ReactNode[];
   startOverlayActivated?: boolean;
-  href: string;
+  href?: string;
 };
 
 const ProjectCard = ({
@@ -29,8 +29,8 @@ const ProjectCard = ({
 
   return (
     <a
-      href={href}
-      target="_blank"
+      href={href ?? "#"}
+      target={href ? "_blank" : undefined}
       className={`relative h-full w-full flex justify-center items-center rounded-xl ${className}`}
       onMouseEnter={() => setYearOverlayActive(true)}
       onMouseLeave={() => setYearOverlayActive(false)}
