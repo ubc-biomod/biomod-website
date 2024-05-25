@@ -3,22 +3,28 @@ import React from "react";
 type ProjectCardProps = {
   className?: string;
   children: React.ReactNode | React.ReactNode[];
-  year: string;
+  yearElement: React.ReactNode | React.ReactNode[];
   startActivated?: boolean;
 };
 
 const ProjectCard = ({
   className = "",
   children,
-  year,
-  startActivated = false,
+  yearElement: year,
+  startActivated = true,
 }: ProjectCardProps) => {
   return (
     <div
-      className={`bg-primary h-full flex justify-center items-center rounded-lg lg:rounded-xl ${className}`}
+      className={`bg-secondary h-full flex justify-center items-center rounded-lg lg:rounded-xl ${className}`}
     >
-      {children}
-      {year}
+      {!startActivated && children}
+      {startActivated && (
+        <div>
+          <div className="text-3xl lg:text-6xl font-semibold text-primary">
+            {year}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
