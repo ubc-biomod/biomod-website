@@ -14,13 +14,14 @@
     "prepare": "husky install"
   },
   "husky": {
-   "hooks": {
+    "hooks": {
       "pre-commit": "lint-staged",
       "pre-push": "npm run type-check"
     }
- },
+  },
   "dependencies": {
     "eslint-config-prettier": "^9.0.0",
+    "framer-motion": "^11.2.6",
     "next": "14.0.1",
     "preline": "^1.9.0",
     "prettier": "^3.0.3",
