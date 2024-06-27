@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import BecomeASponsor from "@/components/sponsors/BecomeASponsor";
 
+// export default meta;
 const meta = {
   title: "Sponsors/Become a Sponsor",
   component: BecomeASponsor,
@@ -8,7 +9,10 @@ const meta = {
   tags: ["autodocs"],
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
-    layout: "centered",
+    layout: "fullscreen",
+    viewport: {
+      defaultViewport: "responsive",
+    },
   },
 } satisfies Meta<typeof BecomeASponsor>;
 
