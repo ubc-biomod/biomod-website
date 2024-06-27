@@ -19,6 +19,15 @@ const config: Config = {
         secondary: "#FFFFFF",
         accent: "#6B21A8",
       },
+      animation: {
+        "loop-scroll": "loop-scroll 12s linear infinite",
+      },
+      keyframes: {
+        "loop-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+      },
     },
   },
   plugins: [require("preline/plugin")],
