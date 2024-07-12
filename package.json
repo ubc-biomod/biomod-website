@@ -20,11 +20,13 @@
     }
   },
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "eslint-config-prettier": "^9.0.0",
     "next": "^14.2.4",
     "preline": "^1.9.0",
     "prettier": "^3.0.3",
     "react": "^18",
+    "react-bootstrap": "^2.10.4",
     "react-dom": "^18",
     "react-multi-carousel": "^2.8.5",
     "react-slick": "^0.30.2",
