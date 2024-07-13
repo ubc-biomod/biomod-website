@@ -20,7 +20,7 @@ const BecomeASponsor: React.FC = () => {
     </div>
  
     <div className="w-4696 h-2116 bg-slate-200 rounded-2xl pt-14 pb-96">
-       {/* Carousel goes here */}
+       {/* Carousel goes here   */}
      
     </div>
 
