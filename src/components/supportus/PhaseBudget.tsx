@@ -66,6 +66,14 @@ const PhaseBudget: React.FC = () => {
     }
   };
 
+  const handleNavClick = (index: number) => {
+    setFadeIn(false);
+    setTimeout(() => {
+      setCurrentContent(index);
+      setFadeIn(true);
+    }, 300);
+  };
+
   useEffect(() => {
     setFadeIn(true);
     return () => {
@@ -76,21 +84,45 @@ const PhaseBudget: React.FC = () => {
   const { image, header, text } = phaseData[currentContent];
 
   return (
-    <div className="flex flex-col p-2">
-      <h2 className="text-3xl text-primary font-bold mb-6 mx-auto">
+    <div className="flex flex-col p-2 md:p-0">
+      <h2 className="text-3xl text-primary font-bold mb-6 mx-auto md:mx-0 md:mb-16 md:ml-8 md:text-5xl">
         The budget of each phase
       </h2>
-      <div
-        className={`transition-opacity duration-300 ${
-          fadeIn ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <Image src={image} alt={header} className="rounded-2xl" />
-        <h3 className="text-xl text-primary font-bold my-6">{header}</h3>
-        <p className="mb-4 text-primary">{text}</p>
+      {/* Need to make it so transition doesnt happen for nav buttons*/}
+      <div className="transition-opacity duration-300 md:flex md:flex-row md:justify-between">
+        <div className="flex-col items-center hidden md:text-sm md:flex md:my-auto md:space-y-8 lg:space-y-10 w-1/4">
+          {phaseData.map((phase, index) => (
+            <button
+              key={index}
+              className={`bg-none mx-auto text-primary px-2 underline ${
+                currentContent === index ? "border-l-4 border-primary" : ""
+              }`}
+              onClick={() => handleNavClick(index)}
+            >
+              {phase.header}
+            </button>
+          ))}
+        </div>
+        <Image
+          src={image}
+          alt={header}
+          className={`transition-opacity fade-300 rounded-2xl md:w-2/5 ${
+            fadeIn ? "opacity-100" : "opacity-0"
+          }`}
+        />
+        <div
+          className={`transition-opacity fade-300 flex flex-col my-auto md:mx-12 md:w-1/4 ${
+            fadeIn ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <h3 className="text-2xl md:text-3xl text-primary font-bold my-6">
+            {header}
+          </h3>
+          <p className="mb-4 text-primary md:text-sm">{text}</p>
+        </div>
       </div>
-      <hr className="my-4 border-0 h-[1px] bg-primary" />
-      <div className="flex items-center justify-between">
+      <hr className="my-4 border-0 h-[1px] bg-primary md:hidden" />
+      <div className="flex items-center justify-between md:hidden">
         <div className="flex">
           <button
             className="bg-primary text-gray-200 font-bold py-2 px-2 rounded-md"
@@ -105,9 +137,9 @@ const PhaseBudget: React.FC = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <rect x="6" y="4" width="4" height="16"></rect>
                 <rect x="14" y="4" width="4" height="16"></rect>
@@ -121,9 +153,9 @@ const PhaseBudget: React.FC = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <polygon points="5 3 19 12 5 21 5 3"></polygon>
               </svg>
@@ -141,9 +173,9 @@ const PhaseBudget: React.FC = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <path d="m15 18-6-6 6-6"></path>
             </svg>
@@ -160,9 +192,9 @@ const PhaseBudget: React.FC = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <path d="m9 18 6-6-6-6"></path>
             </svg>
