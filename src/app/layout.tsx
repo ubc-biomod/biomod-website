@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + " px-[2rem]"}>{children}</body>
+      <body className={inter.className + " px-[5rem]"}>{children}</body>
     </html>
   );
 }

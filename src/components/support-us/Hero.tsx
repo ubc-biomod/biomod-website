@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <div
       className="flex flex-col items-center w-full justify-center
-            xl:flex-row xl:gap-x-[8rem]"
+            xl:flex-row xl:gap-x-[10rem]"
     >
       <div className="flex flex-col justify-center items-center">
         <h1
