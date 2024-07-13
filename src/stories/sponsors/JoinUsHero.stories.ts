@@ -4,7 +4,7 @@ import { JoinUsHero } from "../../components/joinus/JoinUsHero";
 
 // export default meta;
 const meta = {
-  title: "Example/JoinUsHero",
+  title: "Sponsors/JoinUsHero",
   component: JoinUsHero,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],

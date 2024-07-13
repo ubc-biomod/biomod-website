@@ -1,5 +1,6 @@
 import React from "react";
 import HeroPlaceholder from "@/assets/joinus/hero_placeholder.jpg";
+import Image from "next/image";
 
 type StaticImageData = {
   src: string;
@@ -19,13 +20,13 @@ export const JoinUsHero: React.FC = () => {
           Get involved with UBC BIOMOD →
         </a>
       </div>
-      <div className="flex items-center justify-center w-full md:w-[515px] md:h-[322px] h-64">
-        <img
-          src={(HeroPlaceholder as StaticImageData).src}
-          alt="UBC BIOMOD"
-          className="w-[515px] h-[322px] object-cover rounded-3xl"
-        />
-      </div>
+      <Image
+        src={(HeroPlaceholder as StaticImageData).src}
+        alt="UBC BIOMOD"
+        width="0"
+        height="0"
+        className="h-auto w-full md:w-1/3 object-cover rounded-3xl"
+      />
     </div>
   );
 };
