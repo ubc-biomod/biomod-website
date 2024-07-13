@@ -90,18 +90,22 @@ const PhaseBudget: React.FC = () => {
       </h2>
       {/* Need to make it so transition doesnt happen for nav buttons*/}
       <div className="transition-opacity duration-300 md:flex md:flex-row md:justify-between">
-        <div className="flex-col items-center hidden md:text-sm md:flex md:my-auto md:space-y-8 lg:space-y-10 w-1/4">
-          {phaseData.map((phase, index) => (
-            <button
-              key={index}
-              className={`bg-none mx-auto text-primary px-2 underline ${
-                currentContent === index ? "border-l-4 border-primary" : ""
-              }`}
-              onClick={() => handleNavClick(index)}
-            >
-              {phase.header}
-            </button>
-          ))}
+        <div className=" hidden w-1/4 md:flex">
+          <div className="flex-col md:flex mx-auto md:my-auto md:space-y-8 lg:space-y-10">
+            {phaseData.map((phase, index) => (
+              <button
+                key={index}
+                className={`bg-none text-primary px-[16px] underline text-left ${
+                  currentContent === index
+                    ? "border-l-4 border-primary pl-[12px]"
+                    : ""
+                }`}
+                onClick={() => handleNavClick(index)}
+              >
+                {phase.header}
+              </button>
+            ))}
+          </div>
         </div>
         <Image
           src={image}
