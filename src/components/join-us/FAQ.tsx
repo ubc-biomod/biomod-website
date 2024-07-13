@@ -1,4 +1,5 @@
 "use client";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
 
@@ -53,24 +54,37 @@ function QAPair(props: qaPairProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="cursor-pointer" onClick={() => setIsExpanded(!isExpanded)}>
-      <span className="flex flex-row items-center gap-x-3">
+    <div
+      className="cursor-pointer text-center md:text-left"
+      onClick={() => setIsExpanded(!isExpanded)}
+    >
+      <div className="flex flex-row items-start gap-x-3">
         {isExpanded ? (
-          <FiMinus className="w-[1rem] h-[1rem]" />
+          <FiMinus className="w-[1rem] h-[1rem] my-[0.75rem] hidden md:inline shrink-0" />
         ) : (
-          <FiPlus className="w-[1rem] h-[1rem]" />
+          <FiPlus className="w-[1rem] h-[1rem] my-[0.75rem] hidden md:inline shrink-0" />
         )}
-        <h3 className="text-black font-bold text-[1rem] md:text-[1.5rem]">
-          {" "}
-          {props.question}{" "}
-        </h3>
-      </span>
-      {isExpanded && (
-        <p className="px-[1.75rem] text-[0.8rem] md:text-[1rem]">
-          {" "}
-          {props.answer}{" "}
-        </p>
-      )}
+
+        <div className="flex flex-col w-full">
+          <h3 className="text-black w-full font-bold text-[1.5rem]">
+            {props.question}
+          </h3>
+
+          <AnimatePresence>
+            {isExpanded && (
+              <motion.p
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "max-content" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ ease: "easeIn", duration: 0.1 }}
+                className="text-[0.8rem] md:text-[1rem]"
+              >
+                {props.answer}
+              </motion.p>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
     </div>
   );
 }
