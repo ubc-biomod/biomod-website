@@ -4,10 +4,10 @@ import blankImg from "@/assets/blankImage.png";
 export default function Hero() {
   return (
     <div
-      className="flex flex-col items-center
-            xl:flex-row xl:gap-x-[3.5rem]"
+      className="flex flex-col items-center w-full justify-center
+            xl:flex-row xl:gap-x-[8rem]"
     >
-      <div className="flex flex-col justify-center items-center grow">
+      <div className="flex flex-col justify-center items-center">
         <h1
           className="text-center text-titleMob text-primary
                     md:text-titleReg"
@@ -23,7 +23,11 @@ export default function Hero() {
         </h2>
       </div>
 
-      <Image src={blankImg} alt="Image of our team!!" />
+      <Image
+        src={blankImg}
+        alt="Image of our team!!"
+        className="w-[32.2rem] h-[20.1rem]"
+      />
     </div>
   );
 }
