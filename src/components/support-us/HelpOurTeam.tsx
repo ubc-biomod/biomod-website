@@ -7,7 +7,7 @@ function HelpOurTeam() {
       <h2 className="text-3xl md:text-5xl text-center font-bold text-primary">
         Ways you could help our team
       </h2>
-      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 grid-rows-3 md:grid-rows-2 w-full">
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 md:grid-rows-2 w-full">
         <Card
           className="md:row-span-2"
           title="Join our team and make an impact with us"
