@@ -1,4 +1,3 @@
-import Image from "next/image";
 import bg from "./about-us-bg.png";
 import bgMobile from "./about-us-bg-mobile.png";
 
