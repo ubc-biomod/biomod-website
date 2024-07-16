@@ -1,12 +1,8 @@
 import React from "react";
-import HeroPlaceholder from "@/assets/joinus/hero_placeholder.jpg";
+import heroPlaceholder from "@/assets/joinus/hero_placeholder.jpg";
 import Image from "next/image";
 
-type StaticImageData = {
-  src: string;
-};
-
-export const JoinUsHero: React.FC = () => {
+function JoinUsHero() {
   return (
     <div className="flex flex-col md:flex-row items-center justify-between p-8 md:p-12 space-y-8 md:space-y-0 md:space-x-8">
       <div className="flex flex-col items-center py-8 md:px-4 text-center md:w-6/12">
@@ -21,7 +17,7 @@ export const JoinUsHero: React.FC = () => {
         </a>
       </div>
       <Image
-        src={(HeroPlaceholder as StaticImageData).src}
+        src={heroPlaceholder}
         alt="UBC BIOMOD"
         width="0"
         height="0"
@@ -29,6 +25,6 @@ export const JoinUsHero: React.FC = () => {
       />
     </div>
   );
-};
+}
 
 export default JoinUsHero;
