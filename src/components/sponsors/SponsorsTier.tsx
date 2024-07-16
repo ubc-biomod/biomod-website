@@ -6,9 +6,9 @@ import microsoftIcon from "@/assets/sponsors/microsoft-logo.png";
 import teslaIcon from "@/assets/sponsors/tesla-logo.png";
 import "./SponsorsTier.css";
 
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 
-type ContentItem = {
+type contentItem = {
   image: StaticImageData;
   header: string;
   subheader: string;
@@ -16,7 +16,7 @@ type ContentItem = {
   link: string;
 };
 
-const goldContentData: ContentItem[] = [
+const goldContentData: contentItem[] = [
   {
     image: googleIcon,
     header: "Gold Sponsor 1",
@@ -40,7 +40,7 @@ const goldContentData: ContentItem[] = [
   },
 ];
 
-const silverContentData: ContentItem[] = [
+const silverContentData: contentItem[] = [
   {
     image: microsoftIcon,
     header: "Silver Sponsor 1",
@@ -64,7 +64,7 @@ const silverContentData: ContentItem[] = [
   },
 ];
 
-const bronzeContentData: ContentItem[] = [
+const bronzeContentData: contentItem[] = [
   {
     image: drracketIcon,
     header: "Bronze Sponsor 1",
@@ -95,12 +95,12 @@ const bronzeContentData: ContentItem[] = [
   },
 ];
 
-export const SponsorsTier: React.FC = () => {
+function SponsorsTier() {
   const [currentContent, setCurrentContent] = useState<number>(0);
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
 
   const [currentContentData, setCurrentContentData] =
-    useState<ContentItem[]>(goldContentData);
+    useState<contentItem[]>(goldContentData);
   const [transitionDirection, setTransitionDirection] = useState<
     "left" | "right" | "newCard" | ""
   >("");
@@ -205,17 +205,20 @@ export const SponsorsTier: React.FC = () => {
               </span>
               <span className="sr-only">Previous</span>
             </button>
-
             <div
               className={`flex flex-col ${
                 transitionDirection === "left" ? "cardTransitionLeft" : ""
-              }
+              } 
               ${transitionDirection === "right" ? "cardTransitionRight" : ""}
               ${transitionDirection === "newCard" ? "newCardTransition" : ""}`}
               onAnimationEnd={handleTransitionEnd}
             >
               <div className="flex flex-row items-center">
-                <img src={image.src} alt={header} className="w-16 h-16 mr-4" />
+                <Image
+                  src={image.src}
+                  alt={header}
+                  className="w-16 h-16 mr-4"
+                />
                 <h2 className="text-2xl font-bold black">{header}</h2>
               </div>
               <h3 className="text-lg subheader">{subheader}</h3>
@@ -266,7 +269,7 @@ export const SponsorsTier: React.FC = () => {
                   transform: `scale(${currentContent === index ? 1.5 : 1})`,
                 }}
               >
-                <img
+                <Image
                   src={content.image.src}
                   alt={content.header}
                   className="w-8 h-8"
@@ -278,6 +281,6 @@ export const SponsorsTier: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default SponsorsTier;
