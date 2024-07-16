@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import PhaseBudget from "@/components/supportus/PhaseBudget";
 
 const meta = {
-  title: "Support Us / Phase Budget",
+  title: "Support Us/Phase Budget",
   component: PhaseBudget,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
