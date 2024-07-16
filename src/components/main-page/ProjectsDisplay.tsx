@@ -53,7 +53,6 @@ const ProjectsDisplay = () => {
           href="https://ubcbiomod.com/2019/"
           className=""
           yearElement="2019"
-          startOverlayActivated={true}
         >
           <Image
             src={project2019}
