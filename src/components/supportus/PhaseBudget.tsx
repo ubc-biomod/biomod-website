@@ -31,7 +31,7 @@ const phaseData: Phase[] = [
   },
 ];
 
-const PhaseBudget: React.FC = () => {
+function PhaseBudget() {
   const [currentContent, setCurrentContent] = useState<number>(0);
   const [fadeIn, setFadeIn] = useState<boolean>(false);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
@@ -42,7 +42,7 @@ const PhaseBudget: React.FC = () => {
     setTimeout(() => {
       setCurrentContent((prevContent) => (prevContent + 1) % phaseData.length);
       setFadeIn(true);
-    }, 300);
+    }, 150);
   };
 
   const handlePrev = () => {
@@ -52,7 +52,7 @@ const PhaseBudget: React.FC = () => {
         prevContent === 0 ? phaseData.length - 1 : prevContent - 1
       );
       setFadeIn(true);
-    }, 300);
+    }, 150);
   };
 
   const handlePlayPause = () => {
@@ -71,7 +71,7 @@ const PhaseBudget: React.FC = () => {
     setTimeout(() => {
       setCurrentContent(index);
       setFadeIn(true);
-    }, 300);
+    }, 150);
   };
 
   useEffect(() => {
@@ -210,6 +210,6 @@ const PhaseBudget: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default PhaseBudget;
