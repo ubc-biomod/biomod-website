@@ -63,7 +63,7 @@ function TeamsGallery() {
     <div className="bg-white border rounded-xl shadow-sm flex flex-col md:flex-row-reverse gap-4 w-full">
       <div className="relative w-full">
         <motion.div
-          className="w-full h-60 md:h-80"
+          className="relative w-full h-full"
           initial={index.prev < index.curr ? "right" : "left"}
           animate="visible"
           exit={index.prev < index.curr ? "left" : "right"}
@@ -73,8 +73,9 @@ function TeamsGallery() {
           <Image
             src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80"
             alt="Image"
-            fill={true}
-            className="h-60 rounded-t-xl md:rounded-tl-none md:rounded-r-xl md:h-80"
+            width={1051}
+            height={591}
+            className="w-full rounded-t-xl md:rounded-tl-none md:rounded-r-xl"
           />
         </motion.div>
         <button
@@ -117,7 +118,7 @@ function TeamsGallery() {
         </button>
       </div>
       <motion.div
-        className="flex flex-col justify-between gap-4 p-4 md:basis-1/3"
+        className="flex flex-col justify-between gap-4 p-4 md:basis-1/3 shrink-0"
         initial={index.prev < index.curr ? "right" : "left"}
         animate="visible"
         exit={index.prev < index.curr ? "left" : "right"}

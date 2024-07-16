@@ -8,8 +8,15 @@ const meta = {
   tags: ["autodocs"],
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
-    layout: "centered",
+    layout: "fullscreen",
   },
+  decorators: [
+    (Story) => (
+      <div style={{ padding: "40px", width: "100%" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof TeamsGallery>;
 
 export default meta;
