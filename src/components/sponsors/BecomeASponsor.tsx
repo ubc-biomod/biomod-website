@@ -1,26 +1,21 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 import Link from "next/link";
-import Image from "next/image"
-
 
 
 const BecomeASponsor: React.FC = () => {
   return (
     <>
 
-    <div className="w-4236 h-1496 shrink-0 border-3">
-      <div className="mt-23 w-3188 h-288">
+    <div className="w-full shrink-0 border-3">
+  
         <h1 className="text-center text-[72px] font-bold font-sans shrink-0 not-italic">Thank you to our Sponsors</h1>
-      </div>
+      
+        <p className=" text-[32px] text-center" >The success of our previous years was only made possible due to generous sponsors like you.</p>
 
-      <div className="pt-8 pb-10 w-3328 h-312 text-[32px] font-sans font-normal">
-        <p className="text-center" >The success of our previous years was only made possible due to generous sponsors like you.</p>
-      </div> 
     </div>
  
     <div className="w-4696 h-2116 bg-slate-200 rounded-2xl pt-14 pb-96">
-       {/* Carousel goes here   */}
+       {/* Carousel goes here*/}
      
     </div>
 
