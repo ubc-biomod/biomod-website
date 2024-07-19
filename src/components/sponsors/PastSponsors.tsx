@@ -1,32 +1,57 @@
 import { motion } from "framer-motion";
-import amazonIcon from "@/assets/sponsors/amazon-text.png";
-import googleIcon from "@/assets/sponsors/google-text.png";
-import drracketIcon from "@/assets/sponsors/drracket-text.png";
-import microsoftIcon from "@/assets/sponsors/microsoft-text.png";
+import abcellera from "./abcellera.jpg";
+import chbe from "./cbe.jpg";
+import fom from "./fom.png";
+import sbme from "./sbme.jpg";
+import walterGage from "./walter_gage.png";
+import ecoscope from "./ecoscope.png";
+import juno from "./junotherapeutics.png";
+import starfish from "./starfish.jpg";
+
 import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
 
 export const PastSponsors: React.FC = () => {
   const slides = [
     {
-      href: "https://www.amazon.com",
-      src: amazonIcon,
-      alt: "Amazon Logo Wide",
+      href: "https://abcellera.com/",
+      src: abcellera,
+      alt: "AbCellera Logo",
     },
     {
-      href: "https://www.google.com",
-      src: googleIcon,
-      alt: "Google Logo Wide",
+      href: "https://chbe.ubc.ca/",
+      src: chbe,
+      alt: "UBC CHBE Logo",
     },
     {
-      href: "https://racket-lang.org/",
-      src: drracketIcon,
-      alt: "DrRacket Logo Wide",
+      href: "https://biochem.ubc.ca/",
+      src: fom,
+      alt: "UBC Department of Biochemistry and Molecular Biology Logo",
     },
     {
-      href: "https://www.microsoft.com",
-      src: microsoftIcon,
-      alt: "Microsoft Logo Wide",
+      href: "https://bme.ubc.ca/",
+      src: sbme,
+      alt: "UBC School of Biomedical Engineering Logo",
+    },
+    {
+      href: "https://vpstudents.ubc.ca/walter-gage/",
+      src: walterGage,
+      alt: "UBC Walter H. Gage Memorial Fund Logo",
+    },
+    {
+      href: "https://lsi.ubc.ca/news-events/events/ecoscope/",
+      src: ecoscope,
+      alt: "Ecoscope Logo",
+    },
+    {
+      href: "https://www.bms.com/",
+      src: juno,
+      alt: "Juno Therapeutics Logo",
+    },
+    {
+      href: "https://starfishmedical.com/",
+      src: starfish,
+      alt: "Starfish Medical Logo",
     },
   ];
   const duplicatedSlides = [...slides, ...slides];
@@ -35,12 +60,12 @@ export const PastSponsors: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full h-full">
-      <div className="text-5xl md:text-7xl mx-auto text-center text-primary z-10 mb-6 md:mb-8">
+      <div className="text-5xl md:text-7xl mx-auto text-center text-primary font-bold z-10 mb-6 md:mb-8">
         Past Sponsors
       </div>
       <div
         className="relative h-full overflow-hidden pb-6 bg-white mx-auto z-0"
-        style={{ width: "80%" }}
+        style={{ width: "90%" }}
       >
         <div className="absolute inset-0 z-10 pointer-events-none before:absolute before:left-0 before:top-0 before:w-1/4 before:h-full before:bg-gradient-to-r before:from-white before:to-transparent before:pointer-events-none after:absolute after:right-0 after:top-0 after:w-1/4 after:h-full after:bg-gradient-to-l after:from-white after:to-transparent after:pointer-events-none"></div>
         <motion.div
@@ -49,7 +74,7 @@ export const PastSponsors: React.FC = () => {
             x: ["0%", isDesktop ? "-100%" : "-200%"], // if logos need to be different size, must be proportional to this I think
             transition: {
               ease: "linear",
-              duration: 15,
+              duration: 14,
               repeat: Infinity,
             },
           }}
