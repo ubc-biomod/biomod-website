@@ -7,14 +7,9 @@ function JoinUsHero() {
     <div className="flex flex-col md:flex-row items-center justify-between p-8 md:p-12 space-y-2 md:space-y-0 md:space-x-8">
       <div className="flex flex-col items-center py-8 md:px-4 text-center md:w-6/12">
         <h2 className="text-5xl font-bold text-primary">Join Our Team!</h2>
-        <a
-          href="https://www.amazon.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-8 mb-8 md:mb-0 text-2xl"
-        >
+        <h3 className="mt-8 mb-8 md:mb-0 text-2xl">
           Get involved with UBC BIOMOD →
-        </a>
+        </h3>
       </div>
       <Image
         src={joinUs}
