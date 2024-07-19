@@ -1,25 +1,54 @@
 import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import wetlab from "./wetlab_subteam.jpg";
+import cadnano from "./cadnano_subteam.png";
+import finance from "./finance_subteam.jpeg";
+import video from "./video_subteam.png";
+import website from "./website_subteam.jpg";
 
 const fakeTeams = [
-  {
-    name: "Website",
-    description:
-      "Impressed by our website? Join the website team and help create the next one!",
-    aside: "Last updated 5 mins ago",
-  },
   {
     name: "Wetlab",
     description:
       "Lorem ipsum dolor amet blah blah blah blah sadfjsldfjls adkdflkj safjsadf",
     aside: "Last updated 5 mins ago",
+    src: wetlab,
   },
   {
     name: "CaDNAno",
     description:
-      "Lorem ipsum dolor amet blah blah blah blah sadfjsldf jlsadkdflkj safjsadf",
+      "Lorem ipsum dolor amet blah blah blah blah sadfjsldfjls adkdflkj safjsadf",
     aside: "Last updated 5 mins ago",
+    src: cadnano,
+  },
+  {
+    name: "Finance",
+    description:
+      "Molecular biology isn't cheap - that's where the finance team comes in! We manage the club's funds and ensure we have the money we need by reaching out to and maintaining contact with sponsors.",
+    aside: "Last updated 5 mins ago",
+    src: finance,
+  },
+  {
+    name: "Video",
+    description:
+      "Let your creative side shine with the video team! We create cool videos using tools like Blender to showcase the project that UBC BIOMOD has been working on for the year.",
+    aside: "Last updated 5 mins ago",
+    src: video,
+  },
+  {
+    name: "Social Media",
+    description:
+      "If you're passionate about outreach, the social media team might be for you! We work on initiatives to help grow the club and reach a wider audience. We also plan fun internal events!",
+    aside: "Last updated 5 mins ago",
+    src: "https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80",
+  },
+  {
+    name: "Website",
+    description:
+      "Hate this website? Join the website team to improve it! We're responsible for developing the main club website, as well as developing yearly websites to showcase UBC BIOMOD's project submissions to the BIOMOD competition!",
+    aside: "Your 2023 website team!",
+    src: website,
   },
 ];
 
@@ -71,7 +100,7 @@ function TeamsGallery() {
           variants={animatedDiv}
         >
           <Image
-            src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80"
+            src={team.src}
             alt="Image"
             width={1051}
             height={591}
@@ -129,7 +158,7 @@ function TeamsGallery() {
           <span className="text-2xl font-semibold">{team.name}</span>
           <p>{team.description}</p>
         </div>
-        <span className="font-bold text-sm">{team.aside}</span>
+        {/* <span className="font-bold text-sm">{team.aside}</span> */}
       </motion.div>
     </div>
   );
