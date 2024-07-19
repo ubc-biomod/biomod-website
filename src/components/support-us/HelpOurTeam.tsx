@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import helpOurTeam from "./help_our_team.jpg";
 
 function HelpOurTeam() {
   return (
@@ -10,22 +11,22 @@ function HelpOurTeam() {
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2 md:grid-rows-2 w-full">
         <Card
           className="md:row-span-2"
-          title="Join our team and make an impact with us"
-          subtitle="Subtitle"
-          body="Some quick example text to build on the card title and make up the bulk of the card's content."
-          img="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80"
-          href="#"
+          title="Join our team"
+          subtitle="Make an impact with us!"
+          body="If you're excited by our projects, why don't you help contribute to the next one? We're always looking for people who are passionate about biology!"
+          img={helpOurTeam.src}
+          href="/join-us"
         />
         <Card
           title="Donate as an industry"
-          subtitle="Something something that identifies as an industry"
-          body="Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content."
+          subtitle="Support exciting research!"
+          body="Do you represent a company looking to support the student research community? UBC BIOMOD relies on funding from companies like yours to create our projects!"
           href="#"
         />
         <Card
           title="Donate as an individual"
-          subtitle="Something something that identifies as an industry"
-          body="Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content."
+          subtitle="Every dollar makes a difference!"
+          body="If you're an individual excited by our work and want to make a contribution, we would always appreciate the support, no matter the amount!"
           href="#"
         />
       </div>
