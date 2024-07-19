@@ -51,7 +51,7 @@ const Sponsors = () => {
                 <Image
                   src={sponsor.src}
                   alt={sponsor.alt}
-                  className="h-32 w-auto"
+                  className="h-8 sm:h-12 md:h-28 lg:h-32 w-auto"
                 />
               </a>
             ))}
