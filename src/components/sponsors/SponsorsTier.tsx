@@ -8,6 +8,7 @@ import tilibit from "./tilibit.jpg";
 
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
+import DNAButton from "./DNAButton";
 
 enum Tier {
   PLAT = 0,
@@ -141,25 +142,40 @@ function SponsorsTier() {
   };
 
   return (
-    <div className="flex flex-col sm:flex-row rounded-xl bg-white border shadow-sm w-full md:p-8">
+    <div className="flex flex-col sm:flex-row items-center rounded-xl bg-white border shadow-sm w-full py-4 md:p-8 gap-4">
       {/* DNA Pic */}
-      <div className="flex items-center">
-        <div className="flex md:flex-col flex-row m-auto md:w-28 md:h-80 w-56 h-16 my-3 bg-red-500 content-center justify-around">
-          {/* Navigation buttons for different sponsor types */}
-          <button
-            className="text-white"
-            onClick={() => handleContentChange(Tier.PLAT)}
-          >
-            Platinum Sponsors
-          </button>
-          <button
-            className="text-white"
-            onClick={() => handleContentChange(Tier.BRONZE)}
-          >
-            Bronze Sponsors
-          </button>
-        </div>
+      <div className="hidden md:flex items-center">
+        <DNAButton
+          onPlatHandler={() => handleContentChange(Tier.PLAT)}
+          onBronzeHandler={() => handleContentChange(Tier.BRONZE)}
+        />
       </div>
+      <nav
+        className="flex md:hidden space-x-1"
+        aria-label="Tabs"
+        role="tablist"
+      >
+        <button
+          type="button"
+          className={`${
+            tierIndex.curr === Tier.PLAT ? "bg-primary text-white" : ""
+          } py-3 px-4 inline-flex items-center gap-x-2 bg-transparent text-sm font-medium text-center text-gray-500 hover:text-primary rounded-lg disabled:opacity-50 disabled:pointer-events-none`}
+          role="tab"
+          onClick={() => handleContentChange(Tier.PLAT)}
+        >
+          Platinum
+        </button>
+        <button
+          type="button"
+          className={`${
+            tierIndex.curr === Tier.BRONZE ? "bg-primary text-white" : ""
+          } py-3 px-4 inline-flex items-center gap-x-2 bg-transparent text-sm font-medium text-center text-gray-500 hover:text-primary rounded-lg disabled:opacity-50 disabled:pointer-events-none`}
+          role="tab"
+          onClick={() => handleContentChange(Tier.BRONZE)}
+        >
+          Bronze
+        </button>
+      </nav>
 
       {/* Right Content */}
       <motion.div
@@ -170,7 +186,7 @@ function SponsorsTier() {
         key={tierIndex.curr}
         variants={animatedDiv}
       >
-        <div className="flex flex-row items-center justify-between h-[600px] sm:h-[500px] md:h-[350px]">
+        <div className="flex flex-row items-center justify-between sm:h-[500px] md:h-[350px]">
           <button
             type="button"
             className="sm:mx-10 mr-3 p-2 disabled:pointer-events-none rounded-lg text-slate-700 hover:bg-black/10"
@@ -195,7 +211,7 @@ function SponsorsTier() {
             <span className="sr-only">Previous</span>
           </button>
           <motion.div
-            className="grow flex flex-col gap-4"
+            className="h-full grow flex flex-col justify-center gap-4"
             initial={
               sponsorIndex.prev < sponsorIndex.curr
                 ? "right"
@@ -218,13 +234,13 @@ function SponsorsTier() {
               <Image
                 src={image.src}
                 alt={header}
-                className="w-16 h-16 mr-4 shadow-md"
+                className="w-12 h-12 md:w-16 md:h-16 mr-4 shadow-md"
                 width={16}
                 height={16}
               />
-              <h2 className="text-2xl font-bold black">{header}</h2>
+              <h2 className="text-xl md:text-2xl font-bold black">{header}</h2>
             </header>
-            <p>{text}</p>
+            <p className="overflow-y-scroll">{text}</p>
             <a
               className="link text-blue-500 hover:text-blue-700"
               href={link}
