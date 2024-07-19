@@ -5,30 +5,31 @@ import sbme from "./ubc_sbme.png";
 import msl from "./ubc_msl.png";
 import neBiolabs from "./new_england_biolabs.svg";
 import tilibit from "./tilibit_nanosystems.jpg";
+import Link from "next/link";
 
 const sponsorsList = [
   {
-    href: "#",
+    href: "https://apsc.ubc.ca/",
     src: apsc,
     alt: "UBC APSC Logo",
   },
   {
-    href: "#",
+    href: "https://bme.ubc.ca/",
     src: sbme,
     alt: "UBC SBME Logo",
   },
   {
-    href: "#",
+    href: "https://www.msl.ubc.ca/",
     src: msl,
     alt: "UBC Michael Smith Laboratories Logo",
   },
   {
-    href: "#",
+    href: "https://www.neb.ca/",
     src: neBiolabs,
     alt: "New England Biolabs Logo",
   },
   {
-    href: "#",
+    href: "https://www.tilibit.com/",
     src: tilibit,
     alt: "Tilibit Nanosystems Logo",
   },
@@ -58,6 +59,12 @@ const Sponsors = () => {
           </div>
         );
       })}
+      <Link
+        href="/sponsors"
+        className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-primary text-white hover:opacity-80 disabled:opacity-50 disabled:pointer-events-none"
+      >
+        Learn More
+      </Link>
     </div>
   );
 };
