@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { JoinUsHero } from "../../components/joinus/JoinUsHero";
+import JoinUsHero from "../../components/joinus/JoinUsHero";
 
 // export default meta;
 const meta = {
-  title: "Sponsors/JoinUsHero",
+  title: "Sponsors/Join Us Hero",
   component: JoinUsHero,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
@@ -19,4 +19,4 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const JoinUsH: Story = {};
+export const Default: Story = {};
