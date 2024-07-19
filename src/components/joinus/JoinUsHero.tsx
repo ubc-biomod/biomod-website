@@ -1,10 +1,10 @@
 import React from "react";
-import heroPlaceholder from "@/assets/joinus/hero_placeholder.jpg";
+import joinUs from "./join_us.jpeg";
 import Image from "next/image";
 
 function JoinUsHero() {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between p-8 md:p-12 space-y-8 md:space-y-0 md:space-x-8">
+    <div className="flex flex-col md:flex-row items-center justify-between p-8 md:p-12 space-y-2 md:space-y-0 md:space-x-8">
       <div className="flex flex-col items-center py-8 md:px-4 text-center md:w-6/12">
         <h2 className="text-5xl font-bold text-primary">Join Our Team!</h2>
         <a
@@ -17,7 +17,7 @@ function JoinUsHero() {
         </a>
       </div>
       <Image
-        src={heroPlaceholder}
+        src={joinUs}
         alt="UBC BIOMOD"
         width="0"
         height="0"
