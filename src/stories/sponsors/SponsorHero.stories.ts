@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import BecomeASponsor from "@/components/sponsors/BecomeASponsor";
+import SponsorHero from "@/components/sponsors/SponsorHero";
 
 const meta = {
-  title: "Sponsors/Become a Sponsor",
-  component: BecomeASponsor,
+  title: "Sponsors/Sponsor Hero",
+  component: SponsorHero,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
     layout: "centered",
   },
-} satisfies Meta<typeof BecomeASponsor>;
+} satisfies Meta<typeof SponsorHero>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
