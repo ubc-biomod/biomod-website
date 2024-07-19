@@ -4,11 +4,17 @@ import googleIcon from "@/assets/sponsors/google-logo.png";
 import drracketIcon from "@/assets/sponsors/drracket-logo.png";
 import microsoftIcon from "@/assets/sponsors/microsoft-logo.png";
 import teslaIcon from "@/assets/sponsors/tesla-logo.png";
-import "./SponsorsTier.css";
-
+import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 
-type contentItem = {
+enum Tier {
+  PLAT = 0,
+  GOLD = 1,
+  SILVER = 2,
+  BRONZE = 3,
+}
+
+type ContentItem = {
   image: StaticImageData;
   header: string;
   subheader: string;
@@ -16,7 +22,7 @@ type contentItem = {
   link: string;
 };
 
-const goldContentData: contentItem[] = [
+const goldContentData: ContentItem[] = [
   {
     image: googleIcon,
     header: "Gold Sponsor 1",
@@ -40,7 +46,7 @@ const goldContentData: contentItem[] = [
   },
 ];
 
-const silverContentData: contentItem[] = [
+const silverContentData: ContentItem[] = [
   {
     image: microsoftIcon,
     header: "Silver Sponsor 1",
@@ -64,7 +70,7 @@ const silverContentData: contentItem[] = [
   },
 ];
 
-const bronzeContentData: contentItem[] = [
+const bronzeContentData: ContentItem[] = [
   {
     image: drracketIcon,
     header: "Bronze Sponsor 1",
@@ -95,83 +101,102 @@ const bronzeContentData: contentItem[] = [
   },
 ];
 
+const contentData: Record<Tier, ContentItem[]> = {
+  [Tier.PLAT]: [],
+  [Tier.GOLD]: goldContentData,
+  [Tier.SILVER]: silverContentData,
+  [Tier.BRONZE]: bronzeContentData,
+};
+
 function SponsorsTier() {
-  const [currentContent, setCurrentContent] = useState<number>(0);
-  const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
+  const [sponsorIndex, setSponsorIndex] = useState({ curr: 0, prev: 0 });
+  const [tierIndex, setTierIndex] = useState({ curr: Tier.GOLD, prev: -1 });
 
-  const [currentContentData, setCurrentContentData] =
-    useState<contentItem[]>(goldContentData);
-  const [transitionDirection, setTransitionDirection] = useState<
-    "left" | "right" | "newCard" | ""
-  >("");
+  function onNavLeft() {
+    setSponsorIndex((prev) => ({
+      curr: prev.curr - 1,
+      prev: prev.curr,
+    }));
+  }
 
-  const handleTransitionEnd = () => {
-    setIsTransitioning(false);
-    setTransitionDirection("");
-  };
+  function onNavRight() {
+    setSponsorIndex((prev) => ({
+      curr: prev.curr + 1,
+      prev: prev.curr,
+    }));
+  }
 
-  const handleNavigation = (direction: "prev" | "next") => {
-    setIsTransitioning(true);
+  function onNav(newIndex: number) {
+    setSponsorIndex((prev) => ({
+      curr: newIndex,
+      prev: prev.curr,
+    }));
+  }
 
-    if (direction === "prev") {
-      setCurrentContent((prev) =>
-        prev > 0 ? prev - 1 : currentContentData.length - 1
-      );
-      setTransitionDirection("left");
-    } else {
-      setCurrentContent((prev) =>
-        prev < currentContentData.length - 1 ? prev + 1 : 0
-      );
-      setTransitionDirection("right");
-    }
-  };
-
-  const handleContentChange = (contentType: "gold" | "silver" | "bronze") => {
-    setIsTransitioning(true);
-
-    switch (contentType) {
-      case "gold":
-        setCurrentContentData(goldContentData);
-        break;
-      case "silver":
-        setCurrentContentData(silverContentData);
-        break;
-      case "bronze":
-        setCurrentContentData(bronzeContentData);
-        break;
-      default:
-        setCurrentContentData(goldContentData);
-    }
+  const handleContentChange = (contentType: Tier) => {
+    setTierIndex((prev) => ({
+      curr: contentType,
+      prev: prev.curr,
+    }));
 
     // Reset currentContent to the first item in the new content data
-    setCurrentContent(0);
-    setTransitionDirection("newCard");
+    setSponsorIndex({ curr: 0, prev: 0 });
   };
 
-  const { image, header, subheader, text, link } =
-    currentContentData[currentContent];
+  const currentContentData = contentData[tierIndex.curr];
+
+  const modIndex =
+    ((sponsorIndex.curr % currentContentData.length) +
+      currentContentData.length) %
+    currentContentData.length;
+
+  const { image, header, subheader, text, link } = currentContentData[modIndex];
+
+  const animatedDiv = {
+    left: {
+      x: -100,
+      opacity: 0,
+    },
+    right: {
+      x: 100,
+      opacity: 0,
+    },
+    up: {
+      y: -100,
+      opacity: 0,
+    },
+    down: {
+      y: 100,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      y: 0,
+      opacity: 1,
+    },
+  };
 
   return (
-    <div className="flex flex-col sm:flex-row rounded-xl shadow-sm bg-gray-300 border-gray-700 h-[800px] md:h-[500px]">
+    <div className="flex flex-col sm:flex-row rounded-xl bg-white border shadow-sm w-full md:p-8">
       {/* DNA Pic */}
-      <div className="flex flex-row flex-shrink-0 w-full rounded-t-xl sm:rounded-s-xl sm:w-1/4 md:rounded-se-none h-auto bg-emerald-500 items-center">
+      <div className="flex items-center">
         <div className="flex md:flex-col flex-row m-auto md:w-28 md:h-80 w-56 h-16 my-3 bg-red-500 content-center justify-around">
           {/* Navigation buttons for different sponsor types */}
           <button
             className="text-white"
-            onClick={() => handleContentChange("gold")}
+            onClick={() => handleContentChange(Tier.GOLD)}
           >
             Gold Sponsors
           </button>
           <button
             className="text-white"
-            onClick={() => handleContentChange("silver")}
+            onClick={() => handleContentChange(Tier.SILVER)}
           >
             Silver Sponsors
           </button>
           <button
             className="text-white"
-            onClick={() => handleContentChange("bronze")}
+            onClick={() => handleContentChange(Tier.BRONZE)}
           >
             Bronze Sponsors
           </button>
@@ -179,106 +204,124 @@ function SponsorsTier() {
       </div>
 
       {/* Right Content */}
-      <div className="flex w-full sm:px-5 items-center my-auto">
-        <div className="p-4 flex flex-col h-full w-full sm:p-7">
-          <div className="flex flex-row items-center justify-between h-[600px] sm:h-[500px] md:h-[350px]">
-            <button
-              type="button"
-              className="sm:mx-10 mr-3 disabled:pointer-events-none rounded-l-lg text-slate-700 hover:bg-black/10"
-              onClick={() => handleNavigation("prev")}
-            >
-              <span className="text-2xl" aria-hidden="true">
-                <svg
-                  className="flex-shrink-0 size-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="m15 18-6-6 6-6"></path>
-                </svg>
-              </span>
-              <span className="sr-only">Previous</span>
-            </button>
-            <div
-              className={`flex flex-col ${
-                transitionDirection === "left" ? "cardTransitionLeft" : ""
-              } 
-              ${transitionDirection === "right" ? "cardTransitionRight" : ""}
-              ${transitionDirection === "newCard" ? "newCardTransition" : ""}`}
-              onAnimationEnd={handleTransitionEnd}
-            >
-              <div className="flex flex-row items-center">
-                <Image
-                  src={image.src}
-                  alt={header}
-                  className="w-16 h-16 mr-4"
-                />
-                <h2 className="text-2xl font-bold black">{header}</h2>
-              </div>
-              <h3 className="text-lg subheader">{subheader}</h3>
-              <p className="black">{text}</p>
-              <a
-                className="link text-blue-500 hover:text-blue-700"
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
+      <motion.div
+        className="grow p-4 flex flex-col gap-4"
+        initial={tierIndex.prev < tierIndex.curr ? "down" : "up"}
+        animate="visible"
+        exit={tierIndex.prev < tierIndex.curr ? "up" : "down"}
+        key={tierIndex.curr}
+        variants={animatedDiv}
+      >
+        <div className="flex flex-row items-center justify-between h-[600px] sm:h-[500px] md:h-[350px]">
+          <button
+            type="button"
+            className="sm:mx-10 mr-3 p-2 disabled:pointer-events-none rounded-lg text-slate-700 hover:bg-black/10"
+            onClick={onNavLeft}
+          >
+            <span className="text-2xl" aria-hidden="true">
+              <svg
+                className="flex-shrink-0 size-5"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
               >
-                Explore More
-              </a>
-            </div>
-            <button
-              type="button"
-              className="sm:mx-10 disabled:pointer-events-none rounded-r-lg text-slate-700 hover:bg-black/10"
-              onClick={() => handleNavigation("next")}
+                <path d="m15 18-6-6 6-6"></path>
+              </svg>
+            </span>
+            <span className="sr-only">Previous</span>
+          </button>
+          <motion.div
+            className="grow flex flex-col gap-4"
+            initial={
+              sponsorIndex.prev < sponsorIndex.curr
+                ? "right"
+                : sponsorIndex.prev > sponsorIndex.curr
+                ? "left"
+                : "visible"
+            }
+            animate="visible"
+            exit={
+              sponsorIndex.prev < sponsorIndex.curr
+                ? "left"
+                : sponsorIndex.prev > sponsorIndex.curr
+                ? "right"
+                : "visible"
+            }
+            key={sponsorIndex.curr}
+            variants={animatedDiv}
+          >
+            <header className="flex items-center">
+              <Image
+                src={image.src}
+                alt={header}
+                className="w-16 h-16 mr-4"
+                width={16}
+                height={16}
+              />
+              <h2 className="text-2xl font-bold black">{header}</h2>
+            </header>
+            <p>{text}</p>
+            <a
+              className="link text-blue-500 hover:text-blue-700"
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <span className="text-2xl" aria-hidden="true">
-                <svg
-                  className="flex-shrink-0 size-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="m9 18 6-6-6-6"></path>
-                </svg>
-              </span>
-              <span className="sr-only">Next</span>
-            </button>
-          </div>
-
-          {/* Navigation Bar */}
-          <div className="my-5 flex justify-center">
-            {/* Map through contentData to create image icons */}
-            {currentContentData.map((content, index) => (
-              <button
-                key={index}
-                className={`w-8 h-8 rounded-full mx-2`}
-                onClick={() => setCurrentContent(index)}
-                style={{
-                  transform: `scale(${currentContent === index ? 1.5 : 1})`,
-                }}
+              Explore More
+            </a>
+          </motion.div>
+          <button
+            type="button"
+            className="sm:mx-10 p-2 disabled:pointer-events-none rounded-lg text-slate-700 hover:bg-black/10"
+            onClick={onNavRight}
+          >
+            <span className="text-2xl" aria-hidden="true">
+              <svg
+                className="flex-shrink-0 size-5"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
               >
-                <Image
-                  src={content.image.src}
-                  alt={content.header}
-                  className="w-8 h-8"
-                />
-              </button>
-            ))}
-          </div>
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </span>
+            <span className="sr-only">Next</span>
+          </button>
         </div>
-      </div>
+
+        {/* Navigation Bar */}
+        <div className="my-5 flex justify-center">
+          {currentContentData.map((content, i) => (
+            <button
+              key={i}
+              className="w-8 h-8 rounded-full mx-2 transition-all duration-150"
+              onClick={() => onNav(i)}
+              style={{
+                transform: `scale(${modIndex === i ? 1.5 : 1})`,
+              }}
+            >
+              <Image
+                src={content.image.src}
+                alt={content.header}
+                className="w-8 h-8"
+                layout="fill"
+              />
+            </button>
+          ))}
+        </div>
+      </motion.div>
     </div>
   );
 }
