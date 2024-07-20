@@ -12,7 +12,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-y-[3rem] lg:gap-y-[4rem] bg-bg bg-repeat-x bg-[center_top_40%] px-4 lg:px-10">
+    <div className="flex flex-col gap-y-defaultMob lg:gap-y-default bg-bg bg-repeat-x bg-[center_top_40%] px-4 lg:px-10">
       <Hero />
       <ProjectsDisplay />
       <GetInvolved />

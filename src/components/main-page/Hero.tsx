@@ -3,6 +3,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRef, useState } from "react";
 import Link from "next/link";
+import dots from "@/assets/dots.png";
 
 export default function Hero() {
   return (
@@ -14,9 +15,14 @@ export default function Hero() {
           alt="Hand-drawn Image of Cell"
         />
         <div
-          className="flex flex-col items-center lg:basis-1/2 gap-8
+          className="relative flex flex-col items-center lg:basis-1/2 gap-8
                     lg:items-start lg:gap-8"
         >
+          <Image
+            className="absolute -z-10 xl:-top-4"
+            src={dots}
+            alt="Background Dots"
+          />
           <h1
             className="text-primary text-7xl text-center font-bold
                         lg:text-8xl xl:text-9xl lg:text-left"

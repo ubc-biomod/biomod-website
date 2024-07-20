@@ -14,6 +14,8 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         bg: "url('/bg.png')",
+        bg2: "url('/bg_2.png')",
+        dots: "url('/dots.png')",
       },
       colors: {
         primary: "#1B4C90",
@@ -21,8 +23,8 @@ const config: Config = {
         accent: "#3988A9",
       },
       gap: {
-        defaultMob: "8",
-        default: "16",
+        defaultMob: "3rem",
+        default: "5rem",
       },
       fontSize: {
         titleReg: "4.5rem",
