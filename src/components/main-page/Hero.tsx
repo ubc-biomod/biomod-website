@@ -35,11 +35,7 @@ export default function Hero() {
           >
             UBC&apos;s Premiere Biomolecular Design Club
           </h2>
-          <Link
-            href="/about"
-            className="mt-4 bg-accent grow-0 px-[2.5rem] py-[1rem] rounded-[0.75rem]
-                        text-white cursor-pointer hover:opacity-80"
-          >
+          <Link href="/about" className="btn btn--accent">
             Discover
           </Link>
         </div>

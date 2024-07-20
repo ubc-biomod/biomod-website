@@ -22,10 +22,7 @@ function BecomeASponsor() {
             in previous BIOMOD competitions wouldn&apos;t be possible without
             sponsors like you.
           </p>
-          <Link
-            href="#"
-            className="text-center text-white bg-primary hover:opacity-80 py-4 px-8 rounded-2xl"
-          >
+          <Link href="#" className="btn btn--primary">
             Become a sponsor today!
           </Link>
         </div>
