@@ -6,7 +6,7 @@ import TeamsGallery from "@/components/join-us/TeamsGallery";
 
 export default function JoinUs() {
   return (
-    <div className="flex flex-col gap-defaultMob lg:gap-default">
+    <div className="flex flex-col gap-defaultMob lg:gap-default px-4 lg:px-12 bg-bg2 bg-no-repeat">
       <JoinUsHero />
       <TeamsGallery />
       <ReadyToApply />

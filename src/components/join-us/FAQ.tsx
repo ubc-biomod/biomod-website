@@ -32,7 +32,7 @@ export default function FAQ() {
     },
   ];
   return (
-    <div className="flex flex-col items-center gap-y-2">
+    <div className="flex flex-col items-center gap-y-2 lg:gap-y-4">
       <h2 className="text-primary text-headingRegMob lg:text-headingReg font-semibold text-center">
         Frequently Asked Questions
       </h2>

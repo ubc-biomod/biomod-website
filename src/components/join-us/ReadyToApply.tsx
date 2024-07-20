@@ -2,18 +2,24 @@ import Image from "next/image";
 import Link from "next/link";
 import applyImg from "./apply_photo.jpg";
 import { useState } from "react";
+import dots from "@/assets/dots.png";
 
 export default function ReadyToApply() {
   const [isApplicationOpen, setIsApplicationOpen] = useState(false);
   return (
     <div className="flex flex-col lg:flex-row gap-x-[7rem] items-center gap-y-4">
       <Image
+        src={dots}
+        alt="Background"
+        className="absolute right-4 w-1/2 -z-10"
+      />
+      <Image
         src={applyImg}
         alt="Image of our team!!"
         className="lg:w-[60%] rounded-xl"
       />
       {!isApplicationOpen ? (
-        <div className="flex flex-col items-center basis-1/2 gap-y-4 lg:gap-y-10 text-center">
+        <div className="relative flex flex-col items-center basis-1/2 gap-y-4 lg:gap-y-10 text-center">
           <h1
             className="text-headingRegMob text-primary font-semibold
                     lg:text-headingReg"
