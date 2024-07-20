@@ -25,6 +25,9 @@ const config: Config = {
         defaultMob: "3rem",
         default: "5rem",
       },
+      fontFamily: {
+        title: "var(--font-title)",
+      },
       fontSize: {
         titleReg: "4.5rem",
         titleMob: "3rem",

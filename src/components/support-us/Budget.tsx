@@ -38,7 +38,7 @@ export default function Budget() {
   ];
   return (
     <div className="w-full">
-      <h2 className="text-headingReg text-primary text-center font-semibold lg:text-left">
+      <h2 className="text-headingReg text-primary text-center font-semibold lg:text-left font-title">
         The division of budget
       </h2>
       <div

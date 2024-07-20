@@ -60,7 +60,7 @@ function PastSponsors() {
 
   return (
     <div className="flex flex-col w-full h-full">
-      <div className="text-5xl md:text-7xl mx-auto text-center text-primary font-bold z-10 mb-6 md:mb-8">
+      <div className="text-5xl md:text-7xl mx-auto text-center text-primary font-bold z-10 mb-6 md:mb-8 font-title">
         Past Sponsors
       </div>
       <div className="relative w-full lg:w-[90%] h-full overflow-hidden pb-10 bg-white mx-auto z-0">

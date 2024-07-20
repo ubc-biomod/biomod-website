@@ -7,7 +7,7 @@ function HelpOurTeam() {
     <div className="relative flex flex-col items-center gap-8 lg:px-20 ">
       <h2
         className="text-headingRegMob text-center font-semibold text-primary
-        lg:text-headingReg "
+        lg:text-headingReg font-title"
       >
         Ways you could help our team
       </h2>

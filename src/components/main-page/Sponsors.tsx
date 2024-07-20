@@ -40,7 +40,7 @@ const Sponsors = () => {
 
   return (
     <div className="flex flex-col items-center gap-4 lg:gap-8">
-      <h2 className="text-titleMob lg:text-titleReg text-primary font-bold text-center">
+      <h2 className="text-titleMob lg:text-titleReg font-title text-primary font-bold text-center">
         Thanks to our Sponsors
       </h2>
       <div className="flex flex-col items-center gap-8 overflow-hidden">

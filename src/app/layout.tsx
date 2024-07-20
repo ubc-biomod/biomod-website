@@ -4,6 +4,11 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"], fallback: ["sans-serif"] });
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  fallback: ["sans-serif"],
+  variable: "--font-title",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={jakarta.variable}>
       <body className={inter.className + " pb-8 lg:pb-10"}>
         <Navbar />
         {children}

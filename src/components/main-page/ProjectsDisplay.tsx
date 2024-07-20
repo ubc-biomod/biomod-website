@@ -10,7 +10,7 @@ import project2016 from "@/assets/project_2016.png";
 const ProjectsDisplay = () => {
   return (
     <div className="flex flex-col items-center w-full py-8 gap-6 lg:gap-16 px-6 lg:px-20">
-      <h2 className="text-titleMob lg:text-titleReg font-bold text-primary text-center">
+      <h2 className="text-titleMob lg:text-titleReg font-bold font-title text-primary text-center">
         Check out our past projects
       </h2>
       <div className="grid grid-cols-2 lg:grid-cols-4 grid-rows-6 lg:grid-rows-3 w-full h-[calc((100dvw-3rem)*6/2)] lg:h-[calc((100dvw-6rem)*3/4)] gap-2 lg:gap-8">
