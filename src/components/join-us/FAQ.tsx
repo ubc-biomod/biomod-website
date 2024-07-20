@@ -39,8 +39,8 @@ export default function FAQ() {
 
       <div
         className="grid grid-cols-1 w-full gap-y-[1rem]
-                md:grid-cols-2 md:gap-x-[3.94rem] md:gap-y-[1.25rem]
-                lg:w-9/12"
+                md:grid-cols-2 md:gap-x-[20rem] md:gap-y-[1.25rem]
+                lg:w-11/12"
       >
         {pairs.map((pair: qaPairProps, idx: number) => {
           return <QAPair {...pair} key={idx + pair.question} />;
