@@ -1,6 +1,9 @@
 "use client";
 
+import { Tier } from "./SponsorsTier";
+
 type DNAButtonProps = {
+  currentTier: Tier;
   onPlatHandler?: () => void;
   onGoldHandler?: () => void;
   onSilverHandler?: () => void;
@@ -8,6 +11,7 @@ type DNAButtonProps = {
 };
 
 function DNAButton({
+  currentTier,
   onPlatHandler,
   onGoldHandler,
   onSilverHandler,
@@ -77,7 +81,11 @@ function DNAButton({
       <g
         className={
           onBronzeHandler
-            ? "cursor-pointer hover:opacity-60 transition-all duration-150 hover:scale-105 hover:-translate-y-3"
+            ? `cursor-pointer hover:opacity-60 transition-all duration-150 ${
+                currentTier === Tier.BRONZE
+                  ? "scale-105 -translate-y-3"
+                  : "hover:scale-105 hover:-translate-y-3"
+              }`
             : ""
         }
         onClick={onBronze}
@@ -98,7 +106,11 @@ function DNAButton({
       <g
         className={
           onSilverHandler
-            ? "cursor-pointer hover:opacity-60 transition-all duration-150 hover:scale-105 hover:-translate-y-2"
+            ? `cursor-pointer hover:opacity-60 transition-all duration-150 ${
+                currentTier === Tier.SILVER
+                  ? "scale-105 -translate-y-2"
+                  : "hover:scale-105 hover:-translate-y-2"
+              }`
             : ""
         }
         onClick={onSilver}
@@ -118,7 +130,11 @@ function DNAButton({
       <g
         className={
           onGoldHandler
-            ? "cursor-pointer hover:opacity-60 transition-all duration-150 hover:scale-105 hover:-translate-y-2"
+            ? `cursor-pointer hover:opacity-60 transition-all duration-150 ${
+                currentTier === Tier.GOLD
+                  ? "scale-105 -translate-y-2"
+                  : "hover:scale-105 hover:-translate-y-2"
+              }`
             : ""
         }
         onClick={onGold}
@@ -138,7 +154,11 @@ function DNAButton({
       <g
         className={
           onPlatHandler
-            ? "cursor-pointer hover:opacity-60 transition-all duration-150 hover:scale-105 hover:-translate-y-2"
+            ? `cursor-pointer hover:opacity-60 transition-all duration-150 ${
+                currentTier === Tier.PLAT
+                  ? "scale-105 -translate-y-2"
+                  : "hover:scale-105 hover:-translate-y-2"
+              }`
             : ""
         }
         onClick={onPlat}

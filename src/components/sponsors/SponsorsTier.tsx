@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import DNAButton from "./DNAButton";
 
-enum Tier {
+export enum Tier {
   PLAT = 0,
   GOLD = 1,
   SILVER = 2,
@@ -146,6 +146,7 @@ function SponsorsTier() {
       {/* DNA Pic */}
       <div className="hidden lg:flex items-center">
         <DNAButton
+          currentTier={tierIndex.curr}
           onPlatHandler={() => handleContentChange(Tier.PLAT)}
           onBronzeHandler={() => handleContentChange(Tier.BRONZE)}
         />
