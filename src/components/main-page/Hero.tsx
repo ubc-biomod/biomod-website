@@ -13,12 +13,12 @@ export default function Hero() {
                 xl:flex-nowrap "
       >
         <Image
-          className="xl:w-[50rem] xl:h-[50rem]"
+          className="xl:w-[80%] xl:h-[80%]"
           src={CellImage}
           alt="Hand-drawn Image of Cell"
         />
         <div
-          className="flex flex-col w-fit items-center gap-y-[1.0rem]
+          className="flex flex-col items-center gap-y-[1.0rem]
                     xl:items-start xl:gap-y-[2.25rem]"
         >
           <h1
