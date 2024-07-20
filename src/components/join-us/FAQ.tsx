@@ -32,15 +32,15 @@ export default function FAQ() {
     },
   ];
   return (
-    <div className="flex flex-col items-center gap-y-[3.5rem]">
-      <h2 className="text-primary text-headingReg text-center">
+    <div className="flex flex-col items-center gap-y-2 lg:gap-y-4">
+      <h2 className="text-primary text-headingRegMob lg:text-headingReg font-semibold text-center">
         Frequently Asked Questions
       </h2>
 
       <div
         className="grid grid-cols-1 w-full gap-y-[1rem]
-                md:grid-cols-2 md:gap-x-[3.94rem] md:gap-y-[1.25rem]
-                lg:w-9/12"
+                md:grid-cols-2 md:gap-x-[20rem] md:gap-y-[1.25rem]
+                lg:w-11/12"
       >
         {pairs.map((pair: qaPairProps, idx: number) => {
           return <QAPair {...pair} key={idx + pair.question} />;
@@ -66,7 +66,7 @@ function QAPair(props: qaPairProps) {
         )}
 
         <div className="flex flex-col w-full">
-          <h3 className="text-black w-full font-bold text-[1.5rem]">
+          <h3 className="text-primary w-full font-light text-xl lg:text-3xl">
             {props.question}
           </h3>
 

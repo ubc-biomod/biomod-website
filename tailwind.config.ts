@@ -15,7 +15,6 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         bg: "url('/bg.png')",
         bg2: "url('/bg_2.png')",
-        dots: "url('/dots.png')",
       },
       colors: {
         primary: "#1B4C90",

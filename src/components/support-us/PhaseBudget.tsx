@@ -84,8 +84,11 @@ function PhaseBudget() {
   const { image, header, text } = phaseData[currentContent];
 
   return (
-    <div className="flex flex-col p-2 md:p-0">
-      <h2 className="text-3xl text-primary font-bold mb-6 mx-auto md:mx-0 md:mb-16 md:ml-8 md:text-5xl">
+    <div className="flex flex-col gap-y-[1rem]">
+      <h2
+        className=" text-primary text-headingRegMob font-semibold
+        lg:text-headingReg"
+      >
         The budget of each phase
       </h2>
       {/* Need to make it so transition doesnt happen for nav buttons*/}
