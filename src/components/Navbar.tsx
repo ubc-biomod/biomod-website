@@ -34,7 +34,11 @@ function Navbar() {
         aria-label="Global"
       >
         <div className="flex items-center justify-between">
-          <Link className="flex-none text-xl font-semibold" href="/">
+          <Link
+            className="flex-none text-xl font-semibold"
+            href="/"
+            onClick={() => setCurrentPath("/")}
+          >
             <Image
               src={fullLogo}
               alt="UBC BIOMOD Logo"
@@ -90,7 +94,7 @@ function Navbar() {
           <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
             {links.map((link) => (
               <Link
-                className={`font-semibold transition-colors duration-150 text-xl ${
+                className={`font-semibold transition-colors duration-150 text-lg ${
                   currentPath === link.href
                     ? "text-primary"
                     : "text-gray-600 hover:text-gray-400"

@@ -5,7 +5,7 @@ import prototypeImg from "./prototype.png";
 import validImg from "./validation.png";
 import experimentImg from "./experiment.jpg";
 import Image, { StaticImageData } from "next/image";
-
+import dots from "@/assets/dots.png";
 type Phase = {
   image: StaticImageData;
   header: string;
@@ -88,13 +88,18 @@ function PhaseBudget() {
   const { image, header, text } = phaseData[currentContent];
 
   return (
-    <div className="flex flex-col gap-y-[1rem]">
+    <div className="relative flex flex-col gap-y-[1rem]">
       <h2
-        className=" text-primary text-headingRegMob font-semibold
+        className="text-primary text-headingRegMob font-semibold
         lg:text-headingReg"
       >
         The budget of each phase
       </h2>
+      <Image
+        src={dots}
+        alt="Background"
+        className="absolute right-0 top-36 -z-10 hidden md:block"
+      />
       {/* Need to make it so transition doesnt happen for nav buttons*/}
       <div className="transition-opacity duration-300 md:flex md:flex-row md:justify-between h-full">
         <div className=" hidden w-1/4 md:flex">
