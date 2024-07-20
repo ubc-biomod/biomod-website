@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import blankImg from "@/assets/blankImage.png";
+import applyImg from "./apply_photo.jpg";
 import { useState } from "react";
 
 export default function ReadyToApply() {
   const [isApplicationOpen, setIsApplicationOpen] = useState(false);
   return (
-    <div className="flex flex-col lg:flex-row gap-x-[7rem] items-center">
+    <div className="flex flex-col lg:flex-row gap-x-[7rem] items-center gap-y-4">
       <Image
-        src={blankImg}
+        src={applyImg}
         alt="Image of our team!!"
-        className="lg:w-[60%] h-[20rem] lg:h-[30rem]"
+        className="lg:w-[60%] rounded-xl"
       />
       {!isApplicationOpen ? (
         <div className="flex flex-col items-center basis-1/2 gap-y-4 lg:gap-y-10 text-center">

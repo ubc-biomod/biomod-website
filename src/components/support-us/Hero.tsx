@@ -1,5 +1,5 @@
 import Image from "next/image";
-import blankImg from "@/assets/blankImage.png";
+import heroImg from "@/components/support-us/hero_photo.jpg";
 
 export default function Hero() {
   return (
@@ -24,9 +24,9 @@ export default function Hero() {
       </div>
 
       <Image
-        src={blankImg}
+        src={heroImg}
         alt="Image of our team!!"
-        className="w-[32.2rem] h-[20.1rem]"
+        className="w-[90%] xl:w-[40%] rounded-xl"
       />
     </div>
   );

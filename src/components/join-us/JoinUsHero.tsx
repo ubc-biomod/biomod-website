@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function JoinUsHero() {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-between">
+    <div className="flex flex-col lg:flex-row items-center justify-between gap-y-4">
       <div className="flex flex-col items-center text-center basis-1/2">
         <h2 className="text-titleMob lg:text-titleReg font-semibold text-primary">
           Join Our Team!
