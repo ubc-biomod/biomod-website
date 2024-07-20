@@ -6,7 +6,7 @@ import becomeASponsor from "./become_a_sponsor.jpg";
 function BecomeASponsor() {
   return (
     <div className="flex flex-col gap-8">
-      <h1 className="text-center text-titleMob lg:text-titleReg font-bold text-primary">
+      <h1 className="text-center text-titleMob lg:text-titleReg font-bold text-primary font-title">
         Become a sponsor
       </h1>
 

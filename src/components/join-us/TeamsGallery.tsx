@@ -90,7 +90,7 @@ function TeamsGallery() {
 
   return (
     <div className="flex flex-col items-center gap-y-4">
-      <h1 className="text-primary text-headingRegMob font-semibold lg:text-headingReg text-center">
+      <h1 className="text-primary text-headingRegMob font-semibold lg:text-headingReg text-center font-title">
         See our amazing subteams
       </h1>
       <div className="bg-white border rounded-xl shadow-sm flex flex-col md:flex-row-reverse gap-4 w-full">

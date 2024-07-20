@@ -24,7 +24,7 @@ export default function Hero() {
             alt="Background Dots"
           />
           <h1
-            className="text-primary text-7xl text-center font-bold
+            className="text-primary text-7xl text-center font-bold font-title
                         lg:text-8xl xl:text-9xl lg:text-left"
           >
             UBC BIOMOD
