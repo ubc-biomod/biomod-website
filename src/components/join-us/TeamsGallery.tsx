@@ -41,7 +41,7 @@ const fakeTeams = [
     description:
       "If you're passionate about outreach, the social media team might be for you! We work on initiatives to help grow the club and reach a wider audience. We also plan fun internal events!",
     aside: "Last updated 5 mins ago",
-    src: "https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80",
+    src: website,
   },
   {
     name: "Website",
@@ -155,7 +155,9 @@ function TeamsGallery() {
         variants={animatedDiv}
       >
         <div className="flex flex-col gap-4">
-          <span className="text-2xl font-semibold">{team.name}</span>
+          <span className="text-headingRegMob text-primary lg:text-headingReg font-semibold">
+            {team.name}
+          </span>
           <p>{team.description}</p>
         </div>
         {/* <span className="font-bold text-sm">{team.aside}</span> */}
