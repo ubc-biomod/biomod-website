@@ -34,7 +34,11 @@ function Navbar() {
         aria-label="Global"
       >
         <div className="flex items-center justify-between">
-          <Link className="flex-none text-xl font-semibold" href="/">
+          <Link
+            className="flex-none text-xl font-semibold"
+            href="/"
+            onClick={() => setCurrentPath("/")}
+          >
             <Image
               src={fullLogo}
               alt="UBC BIOMOD Logo"
@@ -57,9 +61,9 @@ function Navbar() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <line x1="3" x2="21" y1="6" y2="6" />
                 <line x1="3" x2="21" y1="12" y2="12" />
@@ -73,9 +77,9 @@ function Navbar() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <path d="M18 6 6 18" />
                 <path d="m6 6 12 12" />
@@ -90,7 +94,7 @@ function Navbar() {
           <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
             {links.map((link) => (
               <Link
-                className={`font-semibold transition-colors duration-150 ${
+                className={`font-semibold transition-colors duration-150 text-lg ${
                   currentPath === link.href
                     ? "text-primary"
                     : "text-gray-600 hover:text-gray-400"
@@ -98,6 +102,7 @@ function Navbar() {
                 href={link.href}
                 aria-current={currentPath === link.href ? "page" : undefined}
                 key={link.name}
+                onClick={() => setCurrentPath(link.href)}
               >
                 {link.name}
               </Link>

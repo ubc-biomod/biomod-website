@@ -4,7 +4,7 @@ import helpOurTeam from "./help_our_team.jpg";
 
 function HelpOurTeam() {
   return (
-    <div className="flex flex-col items-center gap-8 md:px-20">
+    <div className="relative flex flex-col items-center gap-8 lg:px-20 ">
       <h2
         className="text-headingRegMob text-center font-semibold text-primary
         lg:text-headingReg "

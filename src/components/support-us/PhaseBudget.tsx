@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import ideaImg from "@/assets/supportus/ideablue.jpg";
+import ideationImg from "./ideation.jpg";
+import prototypeImg from "./prototype.png";
+import validImg from "./validation.png";
+import experimentImg from "./experiment.jpg";
 import Image, { StaticImageData } from "next/image";
-
+import dots from "@/assets/dots.png";
 type Phase = {
   image: StaticImageData;
   header: string;
@@ -10,22 +14,22 @@ type Phase = {
 
 const phaseData: Phase[] = [
   {
-    image: ideaImg,
+    image: ideationImg,
     header: "Phase 1: Ideation",
     text: "Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard  dummy text ever since the 1500s, when an unknown printer took a galley  of type and scrambled it to make a type specimen book. ",
   },
   {
-    image: ideaImg,
+    image: prototypeImg,
     header: "Phase 2: Prototype",
     text: "Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard  dummy text ever since the 1500s, when an unknown printer took a galley  of type and scrambled it to make a type specimen book.",
   },
   {
-    image: ideaImg,
+    image: experimentImg,
     header: "Phase 3: Experiment",
     text: "Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard  dummy text ever since the 1500s, when an unknown printer took a galley  of type and scrambled it to make a type specimen book.",
   },
   {
-    image: ideaImg,
+    image: validImg,
     header: "Phase 4: Validation",
     text: "Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard  dummy text ever since the 1500s, when an unknown printer took a galley  of type and scrambled it to make a type specimen book.",
   },
@@ -84,15 +88,20 @@ function PhaseBudget() {
   const { image, header, text } = phaseData[currentContent];
 
   return (
-    <div className="flex flex-col gap-y-[1rem]">
+    <div className="relative flex flex-col gap-y-[1rem]">
       <h2
-        className=" text-primary text-headingRegMob font-semibold
+        className="text-primary text-headingRegMob font-semibold
         lg:text-headingReg"
       >
         The budget of each phase
       </h2>
+      <Image
+        src={dots}
+        alt="Background"
+        className="absolute right-0 top-36 -z-10 hidden md:block"
+      />
       {/* Need to make it so transition doesnt happen for nav buttons*/}
-      <div className="transition-opacity duration-300 md:flex md:flex-row md:justify-between">
+      <div className="transition-opacity duration-300 md:flex md:flex-row md:justify-between h-full">
         <div className=" hidden w-1/4 md:flex">
           <div className="flex-col md:flex mx-auto md:my-auto md:space-y-8 lg:space-y-10">
             {phaseData.map((phase, index) => (
@@ -110,13 +119,11 @@ function PhaseBudget() {
             ))}
           </div>
         </div>
-        <Image
-          src={image}
-          alt={header}
-          className={`transition-opacity fade-300 rounded-2xl md:w-2/5 ${
-            fadeIn ? "opacity-100" : "opacity-0"
-          }`}
-        />
+        <div
+          className={`transition-opacity fade-300 h-[25rem] md:w-2/5 md:h-[40rem] bg-contain bg-no-repeat bg-center 
+          ${fadeIn ? "opacity-100" : "opacity-0"}`}
+          style={{ backgroundImage: `url(${image.src})` }}
+        ></div>
         <div
           className={`transition-opacity fade-300 flex flex-col my-auto md:mx-12 md:w-1/4 ${
             fadeIn ? "opacity-100" : "opacity-0"

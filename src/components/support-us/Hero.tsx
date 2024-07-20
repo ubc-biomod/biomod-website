@@ -19,7 +19,7 @@ export default function Hero() {
           className="text-center 
                     md:text-subHeadingReg"
         >
-          We appreciate any help for innovations
+          We appreciate any contributions for our work!
         </h2>
       </div>
 

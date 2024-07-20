@@ -6,7 +6,7 @@ import HelpOurTeam from "@/components/support-us/HelpOurTeam";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-defaultMob lg:gap-default px-4 lg:px-12">
+    <div className="flex flex-col gap-defaultMob lg:gap-default px-4 lg:px-12 bg-bg2 bg-no-repeat">
       <Hero />
       <Budget />
       <PhaseBudget />
