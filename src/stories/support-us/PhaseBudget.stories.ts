@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import PhaseBudget from "@/components/supportus/PhaseBudget";
+import PhaseBudget from "@/components/support-us/PhaseBudget";
 
 const meta = {
   title: "Support Us/Phase Budget",

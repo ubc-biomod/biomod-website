@@ -96,7 +96,7 @@ function Navbar() {
                     : "text-gray-600 hover:text-gray-400"
                 }`}
                 href={link.href}
-                aria-current="page"
+                aria-current={currentPath === link.href ? "page" : undefined}
                 key={link.name}
               >
                 {link.name}

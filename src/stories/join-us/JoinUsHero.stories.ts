@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import JoinUsHero from "../../components/joinus/JoinUsHero";
+import JoinUsHero from "@/components/join-us/JoinUsHero";
 
 // export default meta;
 const meta = {
