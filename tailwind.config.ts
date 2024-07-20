@@ -19,6 +19,10 @@ const config: Config = {
         secondary: "#FFFFFF",
         accent: "#3988A9",
       },
+      gap: {
+        defaultMob: "8",
+        default: "16",
+      },
       fontSize: {
         titleReg: "4.5rem",
         titleMob: "3rem",
