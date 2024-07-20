@@ -20,15 +20,23 @@
     }
   },
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "eslint-config-prettier": "^9.0.0",
-    "framer-motion": "^11.2.6",
-    "next": "14.0.1",
+    "framer-motion": "^11.3.2",
+    "next": "^14.2.4",
     "preline": "^1.9.0",
     "prettier": "^3.0.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-bootstrap": "^2.10.4",
+    "react-dom": "^18",
+    "react-icons": "^5.2.1",
+    "react-responsive": "^10.0.0",
+    "react-multi-carousel": "^2.8.5",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.6.1",
     "@storybook/addon-essentials": "^7.5.2",
     "@storybook/addon-interactions": "^7.5.2",
     "@storybook/addon-links": "^7.5.2",
@@ -36,6 +44,7 @@
     "@storybook/blocks": "^7.5.2",
     "@storybook/nextjs": "^7.5.2",
     "@storybook/react": "^7.5.2",
+    "@storybook/test": "^8.1.11",
     "@storybook/testing-library": "^0.2.2",
     "@types/node": "^20",
     "@types/react": "^18",
@@ -50,5 +59,6 @@
     "storybook": "^7.5.2",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
-  }
+  },
+  "packageManager": "pnpm@8.15.5+sha1.a58c038faac410c947dbdb93eb30994037d0fce2"
 }

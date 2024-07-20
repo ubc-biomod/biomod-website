@@ -20,10 +20,25 @@ const config: Config = {
         accent: "#3988A9",
       },
       fontSize: {
+        titleReg: "4.5rem",
+        titleMob: "3rem",
         headingReg: "3rem",
         headingRegMob: "2.25rem",
         subHeadingReg: "2rem",
         subHeadingRegMob: "1.75rem",
+        bronze: "#D0855B",
+        silver: "#989898",
+        gold: "#DDD167",
+        platinum: "#E5E4E2",
+      },
+      animation: {
+        "loop-scroll": "loop-scroll 12s linear infinite",
+      },
+      keyframes: {
+        "loop-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
       },
     },
   },
