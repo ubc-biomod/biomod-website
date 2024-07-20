@@ -9,7 +9,7 @@ export default function Hero() {
     >
       <div className="flex flex-col justify-center items-center">
         <h1
-          className="text-center text-titleMob text-primary
+          className="text-center text-titleMob text-primary font-semibold
                     md:text-titleReg"
         >
           Support our Cause

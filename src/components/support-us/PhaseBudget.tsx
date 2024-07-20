@@ -86,7 +86,7 @@ function PhaseBudget() {
   return (
     <div className="flex flex-col gap-y-[1rem]">
       <h2
-        className=" text-primary text-headingRegMob
+        className=" text-primary text-headingRegMob font-semibold
         lg:text-headingReg"
       >
         The budget of each phase
