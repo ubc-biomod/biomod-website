@@ -2,7 +2,8 @@
 
 import GetInvolved from "@/components/main-page/GetInvolved";
 import Hero from "@/components/main-page/Hero";
-import Image from "next/image";
+import ProjectsDisplay from "@/components/main-page/ProjectsDisplay";
+import Sponsors from "@/components/main-page/Sponsors";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -11,9 +12,11 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-y-[3rem]">
+    <div className="flex flex-col gap-y-defaultMob lg:gap-y-default bg-bg bg-repeat-x bg-[center_top_40%] px-4 lg:px-10">
       <Hero />
+      <ProjectsDisplay />
       <GetInvolved />
+      <Sponsors />
     </div>
   );
 }

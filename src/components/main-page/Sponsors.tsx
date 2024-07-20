@@ -39,32 +39,37 @@ const Sponsors = () => {
   const steps = [0.2, 0.6, 1, 0.6, 0.2];
 
   return (
-    <div className="flex flex-col items-center gap-8 overflow-hidden">
-      {steps.map((opacity, i) => {
-        return (
-          <div
-            className="flex gap-4 items-center justify-between"
-            key={opacity + i + ""}
-            style={{ opacity: opacity }}
-          >
-            {sponsorsList.map((sponsor, k) => (
-              <a href={sponsor.href} target="_blank" key={sponsor.href + k}>
-                <Image
-                  src={sponsor.src}
-                  alt={sponsor.alt}
-                  className="h-8 sm:h-12 md:h-28 lg:h-32 w-auto"
-                />
-              </a>
-            ))}
-          </div>
-        );
-      })}
-      <Link
-        href="/sponsors"
-        className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-primary text-white hover:opacity-80 disabled:opacity-50 disabled:pointer-events-none"
-      >
-        Learn More
-      </Link>
+    <div className="flex flex-col items-center gap-4 lg:gap-8">
+      <h2 className="text-titleMob lg:text-titleReg text-primary font-bold text-center">
+        Thanks to our Sponsors
+      </h2>
+      <div className="flex flex-col items-center gap-8 overflow-hidden">
+        {steps.map((opacity, i) => {
+          return (
+            <div
+              className="flex gap-4 items-center justify-between"
+              key={opacity + i + ""}
+              style={{ opacity: opacity }}
+            >
+              {sponsorsList.map((sponsor, k) => (
+                <a href={sponsor.href} target="_blank" key={sponsor.href + k}>
+                  <Image
+                    src={sponsor.src}
+                    alt={sponsor.alt}
+                    className="h-8 sm:h-12 md:h-28 lg:h-32 w-auto"
+                  />
+                </a>
+              ))}
+            </div>
+          );
+        })}
+        <Link
+          href="/sponsors"
+          className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-primary text-white hover:opacity-80 disabled:opacity-50 disabled:pointer-events-none"
+        >
+          Learn More
+        </Link>
+      </div>
     </div>
   );
 };
