@@ -23,6 +23,15 @@ const config: Config = {
         gold: "#DDD167",
         platinum: "#E5E4E2",
       },
+      animation: {
+        "loop-scroll": "loop-scroll 12s linear infinite",
+      },
+      keyframes: {
+        "loop-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+      },
     },
   },
   plugins: [require("preline/plugin")],
