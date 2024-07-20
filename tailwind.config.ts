@@ -18,6 +18,10 @@ const config: Config = {
         primary: "#0079FF",
         secondary: "#FFFFFF",
         accent: "#6B21A8",
+        bronze: "#D0855B",
+        silver: "#989898",
+        gold: "#DDD167",
+        platinum: "#E5E4E2",
       },
       animation: {
         "loop-scroll": "loop-scroll 12s linear infinite",
