@@ -4,7 +4,7 @@ import blankImg from "@/assets/blankImage.png";
 export default function Hero() {
   return (
     <div
-      className="flex flex-col items-center w-full justify-center
+      className="flex flex-col items-center w-full justify-center gap-y-[2rem]
             xl:flex-row xl:gap-x-[10rem]"
     >
       <div className="flex flex-col justify-center items-center">
