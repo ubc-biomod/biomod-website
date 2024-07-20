@@ -14,25 +14,25 @@ export default function Budget() {
     {
       header: "50% Travel",
       description:
-        "Flights, accommodations, and other expenses at competitions",
+        "Flights, accommodations, and other expenses at competitions.",
       icon: FaPlaneDeparture,
     },
     {
-      header: "35% Operations",
+      header: "45% Operations",
       description:
-        "Flights, accommodations, and other expenses at competitions",
+        "Equipment, reagents, incubators, culture media, hosting services fees, etc.",
       icon: FaGear,
     },
     {
-      header: "15% Snacks",
+      header: "4% Snacks",
       description:
-        "Flights, accommodations, and other expenses at competitions",
+        "Primarily will be used for team bonding and internal competitions.",
       icon: IoFastFood,
     },
     {
-      header: "5% Others",
+      header: "1% Others",
       description:
-        "Flights, accommodations, and other expenses at competitions",
+        "Other fees include emergency fund, more snacks and team bonding activities, etc.",
       icon: TbGridDots,
     },
   ];
