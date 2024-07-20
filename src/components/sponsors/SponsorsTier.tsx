@@ -157,9 +157,9 @@ function SponsorsTier() {
       >
         <button
           type="button"
-          className={`${
-            tierIndex.curr === Tier.PLAT ? "bg-primary text-white" : ""
-          } py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium text-center text-gray-500 hover:text-primary rounded-lg disabled:opacity-50 disabled:pointer-events-none`}
+          className={`btn ${
+            tierIndex.curr === Tier.PLAT ? "btn--primary" : ""
+          }`}
           role="tab"
           onClick={() => handleContentChange(Tier.PLAT)}
         >
@@ -167,9 +167,9 @@ function SponsorsTier() {
         </button>
         <button
           type="button"
-          className={`${
-            tierIndex.curr === Tier.BRONZE ? "bg-primary text-white" : ""
-          } py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium text-center text-gray-500 hover:text-primary rounded-lg disabled:opacity-50 disabled:pointer-events-none`}
+          className={`btn ${
+            tierIndex.curr === Tier.BRONZE ? "btn--primary" : ""
+          }`}
           role="tab"
           onClick={() => handleContentChange(Tier.BRONZE)}
         >

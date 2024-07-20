@@ -63,10 +63,7 @@ const Sponsors = () => {
             </div>
           );
         })}
-        <Link
-          href="/sponsors"
-          className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-primary text-white hover:opacity-80 disabled:opacity-50 disabled:pointer-events-none"
-        >
+        <Link href="/sponsors" className="btn btn--primary">
           Learn More
         </Link>
       </div>

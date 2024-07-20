@@ -41,11 +41,7 @@ export default function ReadyToApply() {
             Apply now!!!
           </h1>
           <p>Applications are currently open until June 19th, 2024.</p>
-          <Link
-            href={"/about"}
-            className="bg-accent grow-0 px-[2.5rem] py-[1rem] rounded-[0.75rem]
-                        mt-[1.4rem] text-white cursor-pointer hover:opacity-80"
-          >
+          <Link href="/about" className="btn btn--primary">
             Apply
           </Link>
         </div>

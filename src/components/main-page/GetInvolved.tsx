@@ -18,12 +18,7 @@ export default function GetInvolved() {
             upcoming events!
           </p>
           <Link href="https://www.instagram.com/ubcbiomod/" target="_blank">
-            <div
-              className="text-white bg-primary px-[2.5rem] py-[1rem] rounded-[0.75rem]
-                          mt-[1.5rem]"
-            >
-              Learn More
-            </div>
+            <div className="btn btn--primary">Learn More</div>
           </Link>
         </div>
       </div>
