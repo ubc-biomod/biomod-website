@@ -6,38 +6,33 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    // Landing hero
-    <div>
-      <div
-        className="flex flex-row flex-wrap items-center justify-center
-                xl:flex-nowrap "
-      >
+    <div className="flex flex-col gap-4 lg:gap-10 px-4 lg:px-20">
+      <div className="flex flex-col lg:flex-row-reverse items-center justify-center">
         <Image
-          className="xl:w-[80%] xl:h-[80%]"
+          className="lg:w-1/2"
           src={CellImage}
           alt="Hand-drawn Image of Cell"
         />
         <div
-          className="flex flex-col items-center gap-y-[1.0rem]
-                    xl:items-start xl:gap-y-[2.25rem]"
+          className="flex flex-col items-center lg:basis-1/2 gap-8
+                    lg:items-start lg:gap-8"
         >
           <h1
-            className="text-primary text-[3.5rem] text-center
-                        md:text-[6rem] xl:text-left"
+            className="text-primary text-7xl text-center font-bold
+                        lg:text-8xl xl:text-9xl lg:text-left"
           >
             UBC BIOMOD
           </h1>
           <h2
             className="text-center text-subHeadingRegMob
-                        md:text-subHeadingReg xl:text-left"
+                        lg:text-subHeadingReg lg:text-left"
           >
-            This is gonna say something so super duper cool about biomod that
-            everyone will freak and scroll through the entire website!
+            UBC&apos;s Premiere Biomolecular Design Club
           </h2>
           <Link
-            href={"/about"}
-            className="bg-accent grow-0 px-[2.5rem] py-[1rem] rounded-[0.75rem]
-                        mt-[1.4rem] text-white cursor-pointer hover:opacity-80"
+            href="/about"
+            className="mt-4 bg-accent grow-0 px-[2.5rem] py-[1rem] rounded-[0.75rem]
+                        text-white cursor-pointer hover:opacity-80"
           >
             Discover
           </Link>

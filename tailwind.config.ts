@@ -13,10 +13,11 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        bg: "url('/bg.png')",
       },
       colors: {
         primary: "#1B4C90",
-        secondary: "#FFFFFF",
+        secondary: "#999EC8",
         accent: "#3988A9",
       },
       gap: {
