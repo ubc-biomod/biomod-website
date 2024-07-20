@@ -1,3 +1,5 @@
+"use client";
+
 type DNAButtonProps = {
   onPlatHandler?: () => void;
   onGoldHandler?: () => void;
@@ -39,38 +41,38 @@ function DNAButton({
       <path
         d="M18.1312 30.8185H122.5"
         stroke="currentColor"
-        stroke-width="4"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeLinecap="round"
       />
       <path
         d="M21.5 58.7272H116.5"
         stroke="currentColor"
-        stroke-width="4"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeLinecap="round"
       />
       <path
         d="M33 84H104.5"
         stroke="currentColor"
-        stroke-width="4"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeLinecap="round"
       />
       <path
         d="M16.694 342.433H74.097H131.5"
         stroke="currentColor"
-        stroke-width="4"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeLinecap="round"
       />
       <path
         d="M23.4694 314.978H115"
         stroke="currentColor"
-        stroke-width="4"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeLinecap="round"
       />
       <path
         d="M33.3895 291.515H105"
         stroke="currentColor"
-        stroke-width="4"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeLinecap="round"
       />
       <g
         className={
@@ -82,13 +84,13 @@ function DNAButton({
       >
         <title>Bronze Tier</title>
         <path
-          className={onBronzeHandler ? "stroke-bronze" : "stroke-current"}
+          stroke={onBronzeHandler ? "#D0855B" : "currentColor"}
           d="M40 231.62H116.5"
-          stroke-width="4"
-          stroke-linecap="round"
+          strokeWidth="4"
+          strokeLinecap="round"
         />
         <path
-          className={onBronzeHandler ? "fill-bronze" : "fill-current"}
+          fill={onBronzeHandler ? "#D0855B" : "currentColor"}
           height={2}
           d="M114 238C116.761 238 119 235.761 119 233C119 230.239 116.761 228 114 228C111.239 228 109 230.239 109 233C109 235.761 111.239 238 114 238Z"
         />
@@ -103,13 +105,13 @@ function DNAButton({
       >
         <title>Silver Tier</title>
         <path
-          className={onSilverHandler ? "stroke-silver" : "stroke-current"}
+          stroke={onSilverHandler ? "#989898" : "currentColor"}
           d="M20 206.816L132.712 206.816"
-          stroke-width="4"
-          stroke-linecap="round"
+          strokeWidth="4"
+          strokeLinecap="round"
         />
         <path
-          className={onSilverHandler ? "fill-silver" : "fill-current"}
+          fill={onSilverHandler ? "#989898" : "currentColor"}
           d="M136.5 216C140.642 216 144 212.642 144 208.5C144 204.358 140.642 201 136.5 201C132.358 201 129 204.358 129 208.5C129 212.642 132.358 216 136.5 216Z"
         />
       </g>
@@ -123,13 +125,13 @@ function DNAButton({
       >
         <title>Gold Tier</title>
         <path
-          className={onGoldHandler ? "stroke-gold" : "stroke-current"}
+          stroke={onGoldHandler ? "#DDD167" : "currentColor"}
           d="M15 182.255H142.04"
-          stroke-width="4"
-          stroke-linecap="round"
+          strokeWidth="4"
+          strokeLinecap="round"
         />
         <path
-          className={onGoldHandler ? "fill-gold" : "fill-current"}
+          fill={onGoldHandler ? "#DDD167" : "currentColor"}
           d="M144.5 194C149.194 194 153 190.194 153 185.5C153 180.806 149.194 177 144.5 177C139.806 177 136 180.806 136 185.5C136 190.194 139.806 194 144.5 194Z"
         />
       </g>
@@ -143,21 +145,21 @@ function DNAButton({
       >
         <title>Platinum Tier</title>
         <path
-          className={onPlatHandler ? "stroke-platinum" : "stroke-current"}
+          stroke={onPlatHandler ? "#E5E4E2" : "currentColor"}
           d="M22.5 156.896H135.812"
-          stroke-width="4"
-          stroke-linecap="round"
+          strokeWidth="4"
+          strokeLinecap="round"
         />
         <path
-          className={onPlatHandler ? "fill-platinum" : "fill-current"}
+          fill={onPlatHandler ? "#E5E4E2" : "currentColor"}
           d="M136.13 166.49C140.272 166.49 143.63 163.133 143.63 158.99C143.63 154.848 140.272 151.49 136.13 151.49C131.988 151.49 128.63 154.848 128.63 158.99C128.63 163.133 131.988 166.49 136.13 166.49Z"
         />
       </g>
       <path
         d="M48.5 131.313L115 131.312"
         stroke="currentColor"
-        stroke-width="4"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeLinecap="round"
       />
       <path
         d="M10 12C13.3137 12 16 9.31371 16 6C16 2.68629 13.3137 0 10 0C6.68629 0 4 2.68629 4 6C4 9.31371 6.68629 12 10 12Z"

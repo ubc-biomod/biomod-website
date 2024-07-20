@@ -142,16 +142,16 @@ function SponsorsTier() {
   };
 
   return (
-    <div className="flex flex-col sm:flex-row items-center rounded-xl bg-white border shadow-sm w-full py-4 md:p-8 gap-4">
+    <div className="flex flex-col sm:flex-row items-center rounded-xl bg-white border shadow-sm w-full lg:w-11/12 py-4 lg:p-8 gap-4">
       {/* DNA Pic */}
-      <div className="hidden md:flex items-center">
+      <div className="hidden lg:flex items-center">
         <DNAButton
           onPlatHandler={() => handleContentChange(Tier.PLAT)}
           onBronzeHandler={() => handleContentChange(Tier.BRONZE)}
         />
       </div>
       <nav
-        className="flex md:hidden space-x-1"
+        className="flex lg:hidden space-x-1"
         aria-label="Tabs"
         role="tablist"
       >
@@ -159,7 +159,7 @@ function SponsorsTier() {
           type="button"
           className={`${
             tierIndex.curr === Tier.PLAT ? "bg-primary text-white" : ""
-          } py-3 px-4 inline-flex items-center gap-x-2 bg-transparent text-sm font-medium text-center text-gray-500 hover:text-primary rounded-lg disabled:opacity-50 disabled:pointer-events-none`}
+          } py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium text-center text-gray-500 hover:text-primary rounded-lg disabled:opacity-50 disabled:pointer-events-none`}
           role="tab"
           onClick={() => handleContentChange(Tier.PLAT)}
         >
@@ -169,7 +169,7 @@ function SponsorsTier() {
           type="button"
           className={`${
             tierIndex.curr === Tier.BRONZE ? "bg-primary text-white" : ""
-          } py-3 px-4 inline-flex items-center gap-x-2 bg-transparent text-sm font-medium text-center text-gray-500 hover:text-primary rounded-lg disabled:opacity-50 disabled:pointer-events-none`}
+          } py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium text-center text-gray-500 hover:text-primary rounded-lg disabled:opacity-50 disabled:pointer-events-none`}
           role="tab"
           onClick={() => handleContentChange(Tier.BRONZE)}
         >
@@ -186,7 +186,7 @@ function SponsorsTier() {
         key={tierIndex.curr}
         variants={animatedDiv}
       >
-        <div className="flex flex-row items-center justify-between sm:h-[500px] md:h-[350px]">
+        <div className="flex flex-row items-center justify-between sm:h-[500px] lg:h-[350px]">
           <button
             type="button"
             className="sm:mx-10 mr-3 p-2 disabled:pointer-events-none rounded-lg text-slate-700 hover:bg-black/10"
@@ -234,15 +234,15 @@ function SponsorsTier() {
               <Image
                 src={image.src}
                 alt={header}
-                className="w-12 h-12 md:w-16 md:h-16 mr-4 shadow-md"
-                width={16}
-                height={16}
+                className="w-12 h-12 lg:w-16 lg:h-16 mr-4 shadow-md"
+                width={48}
+                height={48}
               />
-              <h2 className="text-xl md:text-2xl font-bold black">{header}</h2>
+              <h2 className="text-xl lg:text-2xl font-bold black">{header}</h2>
             </header>
             <p className="overflow-y-scroll">{text}</p>
             <a
-              className="link text-blue-500 hover:text-blue-700"
+              className="link text-primary hover:opacity-80"
               href={link}
               target="_blank"
               rel="noopener noreferrer"

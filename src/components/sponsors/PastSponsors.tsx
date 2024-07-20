@@ -11,7 +11,7 @@ import starfish from "./starfish.jpg";
 import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
 
-export const PastSponsors: React.FC = () => {
+function PastSponsors() {
   const slides = [
     {
       href: "https://abcellera.com/",
@@ -63,18 +63,15 @@ export const PastSponsors: React.FC = () => {
       <div className="text-5xl md:text-7xl mx-auto text-center text-primary font-bold z-10 mb-6 md:mb-8">
         Past Sponsors
       </div>
-      <div
-        className="relative h-full overflow-hidden pb-6 bg-white mx-auto z-0"
-        style={{ width: "90%" }}
-      >
+      <div className="relative w-full lg:w-[90%] h-full overflow-hidden pb-10 bg-white mx-auto z-0">
         <div className="absolute inset-0 z-10 pointer-events-none before:absolute before:left-0 before:top-0 before:w-1/4 before:h-full before:bg-gradient-to-r before:from-white before:to-transparent before:pointer-events-none after:absolute after:right-0 after:top-0 after:w-1/4 after:h-full after:bg-gradient-to-l after:from-white after:to-transparent after:pointer-events-none"></div>
         <motion.div
           className="flex"
           animate={{
-            x: ["0%", isDesktop ? "-100%" : "-200%"], // if logos need to be different size, must be proportional to this I think
+            x: ["0%", isDesktop ? "-200%" : "-200%"], // if logos need to be different size, must be proportional to this I think
             transition: {
               ease: "linear",
-              duration: 14,
+              duration: 30,
               repeat: Infinity,
             },
           }}
@@ -92,7 +89,7 @@ export const PastSponsors: React.FC = () => {
             >
               <div
                 className={`flex items-center justify-center h-full ml-8 ${
-                  index % 2 !== 0 ? "mt-6 md:mt-12" : ""
+                  index % 2 !== 0 ? "mt-6 md:mt-12 lg:mt-20" : ""
                 }`}
               >
                 <a
@@ -110,6 +107,6 @@ export const PastSponsors: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default PastSponsors;
