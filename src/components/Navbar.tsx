@@ -90,7 +90,7 @@ function Navbar() {
           <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
             {links.map((link) => (
               <Link
-                className={`font-semibold transition-colors duration-150 ${
+                className={`font-semibold transition-colors duration-150 text-xl ${
                   currentPath === link.href
                     ? "text-primary"
                     : "text-gray-600 hover:text-gray-400"
@@ -98,6 +98,7 @@ function Navbar() {
                 href={link.href}
                 aria-current={currentPath === link.href ? "page" : undefined}
                 key={link.name}
+                onClick={() => setCurrentPath(link.href)}
               >
                 {link.name}
               </Link>
