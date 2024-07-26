@@ -36,7 +36,7 @@ const sponsorsList = [
 ];
 
 const Sponsors = () => {
-  const steps = [0.2, 0.6, 1, 0.6, 0.2];
+  const steps = [1];
 
   return (
     <div className="flex flex-col items-center gap-4 lg:gap-8">
@@ -47,7 +47,7 @@ const Sponsors = () => {
         {steps.map((opacity, i) => {
           return (
             <div
-              className="flex gap-4 items-center justify-between"
+              className="flex gap-12 items-center justify-between"
               key={opacity + i + ""}
               style={{ opacity: opacity }}
             >
