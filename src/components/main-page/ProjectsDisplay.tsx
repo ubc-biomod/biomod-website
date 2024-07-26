@@ -15,6 +15,16 @@ const ProjectsDisplay = () => {
       </h2>
       <div className="grid grid-cols-2 lg:grid-cols-4 grid-rows-6 lg:grid-rows-3 w-full h-[calc((100dvw-3rem)*6/2)] lg:h-[calc((100dvw-6rem)*3/4)] gap-2 lg:gap-8">
         <ProjectCard
+          className="bg-primary col-span-2"
+          yearElement={
+            <span className="text-2xl lg:text-5xl">coming soon!</span>
+          }
+        >
+          <div className="font-semibold text-white text-3xl md:text-5xl lg:text-6xl">
+            2024
+          </div>
+        </ProjectCard>
+        <ProjectCard
           href="https://ubcbiomod2023.netlify.app/"
           className="col-span-2"
           yearElement="2023"
@@ -81,7 +91,7 @@ const ProjectsDisplay = () => {
         </ProjectCard>
         <ProjectCard
           href="https://ubcbiomod.com/2017"
-          className="row-span-2"
+          className="col-span-2"
           yearElement="2017"
         >
           <div className="relative w-full h-full rounded-xl border-2 border-primary">
@@ -99,7 +109,7 @@ const ProjectsDisplay = () => {
         </ProjectCard>
         <ProjectCard
           href="https://biomod2016.gitlab.io/ubc/"
-          className="lg:col-start-4"
+          className="row-start-5 lg:row-start-auto"
           yearElement="2016"
         >
           <Image
@@ -107,16 +117,6 @@ const ProjectsDisplay = () => {
             alt="2016 Project"
             className="w-full rounded-xl"
           />
-        </ProjectCard>
-        <ProjectCard
-          className="bg-primary col-span-2 lg:row-start-3"
-          yearElement={
-            <span className="text-2xl lg:text-5xl">coming soon!</span>
-          }
-        >
-          <div className="font-semibold text-white text-3xl md:text-5xl lg:text-6xl">
-            2024
-          </div>
         </ProjectCard>
       </div>
     </div>
