@@ -1,13 +1,13 @@
 import Image from "next/image";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { DragHandlers, motion } from "framer-motion";
 import wetlab from "./wetlab_subteam.jpg";
 import cadnano from "./cadnano_subteam.png";
 import finance from "./finance_subteam.jpeg";
 import video from "./video_subteam.png";
 import website from "./website_subteam.jpg";
 
-const fakeTeams = [
+const teamsList = [
   {
     name: "Wetlab",
     description:
@@ -52,26 +52,67 @@ const fakeTeams = [
   },
 ];
 
+function getModIndex(index: number) {
+  return ((index % teamsList.length) + teamsList.length) % teamsList.length;
+}
+
 function TeamsGallery() {
   const [index, setIndex] = useState({ curr: 0, prev: -1 });
+  const buttons = useRef<(HTMLButtonElement | null)[]>([]);
 
-  function onNavLeft() {
+  function onNav(newIndex: number) {
     setIndex((prev) => ({
-      curr: prev.curr - 1,
+      curr: newIndex,
       prev: prev.curr,
     }));
+  }
+
+  function onNavLeft() {
+    setIndex((prev) => {
+      buttons.current[getModIndex(prev.curr - 1)]?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "nearest",
+      });
+      return {
+        curr: prev.curr - 1,
+        prev: prev.curr,
+      };
+    });
   }
 
   function onNavRight() {
-    setIndex((prev) => ({
-      curr: prev.curr + 1,
-      prev: prev.curr,
-    }));
+    setIndex((prev) => {
+      buttons.current[getModIndex(prev.curr + 1)]?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "nearest",
+      });
+      return {
+        curr: prev.curr + 1,
+        prev: prev.curr,
+      };
+    });
   }
 
-  const modIndex =
-    ((index.curr % fakeTeams.length) + fakeTeams.length) % fakeTeams.length;
-  const team = fakeTeams[modIndex];
+  const swipeConfidenceThreshold = 10000;
+  const swipePower = (offset: number, velocity: number) =>
+    Math.abs(offset) * velocity;
+
+  const onDragEnd: DragHandlers["onDragEnd"] = (
+    event,
+    { offset, velocity }
+  ) => {
+    const swipe = swipePower(offset.x, velocity.x);
+    if (swipe < -swipeConfidenceThreshold) {
+      onNavRight();
+    } else if (swipe > swipeConfidenceThreshold) {
+      onNavLeft();
+    }
+  };
+
+  const modIndex = getModIndex(index.curr);
+  const team = teamsList[modIndex];
 
   const animatedDiv = {
     left: {
@@ -93,79 +134,90 @@ function TeamsGallery() {
       <h1 className="text-primary text-headingRegMob font-semibold lg:text-headingReg text-center font-title">
         See our amazing subteams
       </h1>
-      <div className="bg-white border rounded-xl shadow-sm flex flex-col md:flex-row-reverse gap-4 w-full">
-        <div className="relative w-full">
-          <motion.div
-            className="relative w-full h-full"
-            initial={index.prev < index.curr ? "right" : "left"}
-            animate="visible"
-            exit={index.prev < index.curr ? "left" : "right"}
-            key={index.curr}
-            variants={animatedDiv}
+      <div className="flex gap-2 bg-white border rounded-3xl p-1 overflow-x-scroll w-full lg:w-auto">
+        {teamsList.map((team, i) => (
+          <button
+            className={`px-3 py-2 rounded-full shrink-0 ${
+              modIndex === i
+                ? "bg-primary text-white"
+                : "bg-white hover:bg-primary hover:text-white"
+            } transition-colors duration-150`}
+            key={team.name}
+            onClick={() => onNav(i)}
+            ref={(el) => (buttons.current[i] = el)}
           >
-            <Image
-              src={team.src}
-              alt="Image"
-              width={1051}
-              height={591}
-              className="w-full rounded-t-xl md:rounded-tl-none md:rounded-r-xl"
+            {team.name}
+          </button>
+        ))}
+      </div>
+      <div className="flex gap-4 lg:gap-8 items-center w-full">
+        <button
+          className="p-2 lg:p-3 rounded-full bg-black/30 hover:opacity-80 active:opacity-60 transition-opacity duration-150"
+          onClick={onNavLeft}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-4 text-white"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.75 19.5 8.25 12l7.5-7.5"
             />
-          </motion.div>
-          <button
-            className="absolute top-1/2 left-2 -mt-3 p-2 rounded-full bg-black/30 hover:opacity-80 active:opacity-60 transition-opacity duration-150"
-            onClick={onNavLeft}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-4 text-white"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 19.5 8.25 12l7.5-7.5"
-              />
-            </svg>
-          </button>
-          <button
-            className="absolute top-1/2 right-2 -mt-3 p-2 rounded-full bg-black/30 hover:opacity-80 active:opacity-60 transition-opacity duration-150"
-            onClick={onNavRight}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-4 text-white"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m8.25 4.5 7.5 7.5-7.5 7.5"
-              />
-            </svg>
-          </button>
-        </div>
+          </svg>
+        </button>
         <motion.div
-          className="flex flex-col justify-between gap-4 p-4 md:basis-1/3 shrink-0"
+          className="bg-white border rounded-xl shadow-sm flex flex-col md:flex-row-reverse gap-4 w-full"
           initial={index.prev < index.curr ? "right" : "left"}
           animate="visible"
           exit={index.prev < index.curr ? "left" : "right"}
           key={index.curr}
           variants={animatedDiv}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={1}
+          onDragEnd={onDragEnd}
         >
-          <div className="flex flex-col gap-4">
-            <span className="text-headingRegMob text-primary lg:text-headingReg font-semibold">
-              {team.name}
-            </span>
-            <p>{team.description}</p>
+          <Image
+            src={team.src}
+            alt="Image"
+            width={1051}
+            height={591}
+            className="w-full object-cover rounded-t-xl md:rounded-tl-none md:rounded-r-xl pointer-events-none"
+          />
+          <div className="flex flex-col justify-between gap-4 p-4 md:basis-1/3 shrink-0">
+            <div className="flex flex-col gap-4">
+              <span className="text-headingRegMob text-primary lg:text-headingReg font-semibold">
+                {team.name}
+              </span>
+              <p>{team.description}</p>
+            </div>
+            {/* <span className="font-bold text-sm">{team.aside}</span> */}
           </div>
-          {/* <span className="font-bold text-sm">{team.aside}</span> */}
         </motion.div>
+        <button
+          className="p-2 lg:p-3 rounded-full bg-black/30 hover:opacity-80 active:opacity-60 transition-opacity duration-150"
+          onClick={onNavRight}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-4 text-white"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m8.25 4.5 7.5 7.5-7.5 7.5"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   );

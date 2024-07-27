@@ -1,10 +1,10 @@
 import React from "react";
-import joinUs from "./join_us.jpeg";
+import joinUs from "./join_us.jpg";
 import Image from "next/image";
 
 function JoinUsHero() {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-between gap-y-6">
+    <div className="flex flex-col lg:flex-row items-center justify-center gap-y-6 lg:gap-x-[8rem]">
       <div className="flex flex-col items-center text-center basis-1/2">
         <h2 className="text-titleMob lg:text-titleReg font-semibold text-primary font-title">
           Join Our Team!
