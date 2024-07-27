@@ -33,7 +33,7 @@ export default function Hero() {
             className="text-center text-subHeadingRegMob
                         lg:text-subHeadingReg lg:text-left"
           >
-            UBC&apos;s Premiere Biomolecular Design Club
+            UBC&apos;s Premiere Biomolecular Design Team
           </h2>
           <Link href="/about" className="btn btn--accent">
             Discover
@@ -53,9 +53,9 @@ function Statistics() {
             gap-y-[1.5rem]
             md:flex-row md:gap-x-[5rem] lg:gap-x-[8rem]"
     >
-      <Number num={12} description="years running" />
+      <Number num={9} description="years running" />
       <Number num={10} description="projects made" />
-      <Number num={6} description="first place wins" />
+      <Number num={6} description="1st place wins" />
     </div>
   );
 }
