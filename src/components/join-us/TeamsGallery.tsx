@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { DragHandlers, motion } from "framer-motion";
 import wetlab from "./wetlab_subteam.jpg";
 import cadnano from "./cadnano_subteam.png";
@@ -7,7 +7,7 @@ import finance from "./finance_subteam.jpeg";
 import video from "./video_subteam.png";
 import website from "./website_subteam.jpg";
 
-const fakeTeams = [
+const teamsList = [
   {
     name: "Wetlab",
     description:
@@ -52,8 +52,13 @@ const fakeTeams = [
   },
 ];
 
+function getModIndex(index: number) {
+  return ((index % teamsList.length) + teamsList.length) % teamsList.length;
+}
+
 function TeamsGallery() {
   const [index, setIndex] = useState({ curr: 0, prev: -1 });
+  const buttons = useRef<(HTMLButtonElement | null)[]>([]);
 
   function onNav(newIndex: number) {
     setIndex((prev) => ({
@@ -63,17 +68,31 @@ function TeamsGallery() {
   }
 
   function onNavLeft() {
-    setIndex((prev) => ({
-      curr: prev.curr - 1,
-      prev: prev.curr,
-    }));
+    setIndex((prev) => {
+      buttons.current[getModIndex(prev.curr - 1)]?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "nearest",
+      });
+      return {
+        curr: prev.curr - 1,
+        prev: prev.curr,
+      };
+    });
   }
 
   function onNavRight() {
-    setIndex((prev) => ({
-      curr: prev.curr + 1,
-      prev: prev.curr,
-    }));
+    setIndex((prev) => {
+      buttons.current[getModIndex(prev.curr + 1)]?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "nearest",
+      });
+      return {
+        curr: prev.curr + 1,
+        prev: prev.curr,
+      };
+    });
   }
 
   const swipeConfidenceThreshold = 10000;
@@ -92,9 +111,8 @@ function TeamsGallery() {
     }
   };
 
-  const modIndex =
-    ((index.curr % fakeTeams.length) + fakeTeams.length) % fakeTeams.length;
-  const team = fakeTeams[modIndex];
+  const modIndex = getModIndex(index.curr);
+  const team = teamsList[modIndex];
 
   const animatedDiv = {
     left: {
@@ -117,7 +135,7 @@ function TeamsGallery() {
         See our amazing subteams
       </h1>
       <div className="flex gap-2 bg-white border rounded-3xl p-1 overflow-x-scroll w-full lg:w-auto">
-        {fakeTeams.map((team, i) => (
+        {teamsList.map((team, i) => (
           <button
             className={`px-3 py-2 rounded-full shrink-0 ${
               modIndex === i
@@ -126,6 +144,7 @@ function TeamsGallery() {
             } transition-colors duration-150`}
             key={team.name}
             onClick={() => onNav(i)}
+            ref={(el) => (buttons.current[i] = el)}
           >
             {team.name}
           </button>
