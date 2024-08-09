@@ -71,7 +71,7 @@ function PastSponsors() {
             x: ["0%", isDesktop ? "-200%" : "-200%"], // if logos need to be different size, must be proportional to this I think
             transition: {
               ease: "linear",
-              duration: isDesktop ? 20 : 17,
+              duration: isDesktop ? 22 : 17,
               repeat: Infinity,
             },
           }}
