@@ -26,10 +26,10 @@ function Hero() {
   return (
     <div className="flex flex-col md:flex-row p-4 lg:p-28 justify-center items-center gap-12 lg:gap-20">
       <div className="flex flex-col gap-8 items-center basis-1/2">
-        <h1 className="text-primary font-bold text-4xl md:text-6xl">
+        <h1 className="text-primary font-bold font-title text-titleMob lg:text-titleReg text-center">
           Contact Us
         </h1>
-        <h2 className="text-primary text-xl md:text-2xl text-center">
+        <h2 className="text-primary text-subHeadingRegMob lg:text-subHeadingReg text-center">
           Want to get connected with us? Send us a message on our social media,
           or fill out the form below!
         </h2>
@@ -81,7 +81,7 @@ function Hero() {
           href="https://instagram.com/ubcbiomod"
         />
       </div>
-      {
+      {/* {
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={bg.src}
@@ -96,7 +96,7 @@ function Hero() {
           alt="Background"
           className="absolute md:hidden -z-10 left-0 top-0 -mt-16"
         />
-      }
+      } */}
     </div>
   );
 }
