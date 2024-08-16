@@ -18,6 +18,10 @@ const links = [
     name: "Sponsors",
     href: "/sponsors",
   },
+  {
+    name: "Contact Us",
+    href: "/contact-us",
+  },
 ];
 
 function Navbar() {
