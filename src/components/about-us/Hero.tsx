@@ -9,8 +9,8 @@ function Hero() {
           About Us
         </h1>
         <h2 className="text-primary text-xl md:text-2xl text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          BioMod Design pioneers innovative biomaterials, merging technology
+          with biology to create eco-friendly products for a sustainable future.
         </h2>
       </div>
       <div className="flex items-center">
