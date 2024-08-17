@@ -10,11 +10,11 @@ export default function Hero() {
   return (
     <div className="flex flex-col gap-4 lg:gap-10 px-4 lg:px-20">
       <Image
-        className="absolute right-0 top-14 w-full"
+        className="hidden lg:block absolute right-0 top-14 w-full"
         src={cellDesktopImage}
         alt="Hand-drawn Image of Cell"
       />
-      <div className="flex flex-col w-full items-center justify-center lg:items-start lg:pt-40 lg:pb-80">
+      <div className="flex flex-col w-full items-center justify-center lg:items-start lg:pt-40 lg:pb-20 xl:pb-80">
         <Image
           className="lg:hidden"
           src={cellImage}
