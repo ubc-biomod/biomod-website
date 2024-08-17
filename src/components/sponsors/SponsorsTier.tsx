@@ -141,18 +141,10 @@ function SponsorsTier() {
     },
   };
 
-  return (
-    <div className="flex flex-col sm:flex-row items-center rounded-xl bg-white border shadow-sm w-full lg:w-11/12 py-4 lg:p-8 gap-4">
-      {/* DNA Pic */}
-      <div className="hidden lg:flex items-center">
-        <DNAButton
-          currentTier={tierIndex.curr}
-          onPlatHandler={() => handleContentChange(Tier.PLAT)}
-          onBronzeHandler={() => handleContentChange(Tier.BRONZE)}
-        />
-      </div>
+  function Nav({ className = "" }: { className?: string }) {
+    return (
       <nav
-        className="flex lg:hidden space-x-1"
+        className={`flex space-x-1 ${className}`}
         aria-label="Tabs"
         role="tablist"
       >
@@ -177,126 +169,142 @@ function SponsorsTier() {
           Bronze
         </button>
       </nav>
+    );
+  }
 
-      {/* Right Content */}
-      <motion.div
-        className="grow p-4 flex flex-col gap-4"
-        initial={tierIndex.prev < tierIndex.curr ? "down" : "up"}
-        animate="visible"
-        exit={tierIndex.prev < tierIndex.curr ? "up" : "down"}
-        key={tierIndex.curr}
-        variants={animatedDiv}
-      >
-        <div className="flex flex-row items-center justify-between sm:h-[500px] lg:h-[350px]">
-          <button
-            type="button"
-            className="sm:mx-10 mr-3 p-2 disabled:pointer-events-none rounded-lg text-slate-700 hover:bg-black/10"
-            onClick={onNavLeft}
-          >
-            <span className="text-2xl" aria-hidden="true">
-              <svg
-                className="flex-shrink-0 size-5"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="m15 18-6-6 6-6"></path>
-              </svg>
-            </span>
-            <span className="sr-only">Previous</span>
-          </button>
-          <motion.div
-            className="h-full grow flex flex-col justify-center gap-4"
-            initial={
-              sponsorIndex.prev < sponsorIndex.curr
-                ? "right"
-                : sponsorIndex.prev > sponsorIndex.curr
-                ? "left"
-                : "visible"
-            }
-            animate="visible"
-            exit={
-              sponsorIndex.prev < sponsorIndex.curr
-                ? "left"
-                : sponsorIndex.prev > sponsorIndex.curr
-                ? "right"
-                : "visible"
-            }
-            key={sponsorIndex.curr}
-            variants={animatedDiv}
-          >
-            <header className="flex items-center">
-              <Image
-                src={image.src}
-                alt={header}
-                className="w-12 h-12 lg:w-16 lg:h-16 mr-4 shadow-md"
-                width={48}
-                height={48}
-              />
-              <h2 className="text-xl lg:text-2xl font-bold black">{header}</h2>
-            </header>
-            <p className="overflow-y-scroll">{text}</p>
-            <a
-              className="link text-primary hover:opacity-80"
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Explore More
-            </a>
-          </motion.div>
-          <button
-            type="button"
-            className="sm:mx-10 p-2 disabled:pointer-events-none rounded-lg text-slate-700 hover:bg-black/10"
-            onClick={onNavRight}
-          >
-            <span className="text-2xl" aria-hidden="true">
-              <svg
-                className="flex-shrink-0 size-5"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="m9 18 6-6-6-6"></path>
-              </svg>
-            </span>
-            <span className="sr-only">Next</span>
-          </button>
+  return (
+    <div className="flex flex-col items-center lg:items-start rounded-xl bg-white border shadow-sm w-full lg:w-11/12 py-4 lg:p-8 gap-4 lg:gap-0">
+      <Nav />
+      <div className="flex flex-col sm:flex-row gap-4">
+        {/* DNA Pic */}
+        <div className="hidden lg:flex items-center pl-4">
+          <DNAButton
+            currentTier={tierIndex.curr}
+            onPlatHandler={() => handleContentChange(Tier.PLAT)}
+            onBronzeHandler={() => handleContentChange(Tier.BRONZE)}
+          />
         </div>
-
-        {/* Navigation Bar */}
-        <div className="my-5 flex justify-center">
-          {currentContentData.map((content, i) => (
+        {/* Right Content */}
+        <motion.div
+          className="grow p-2 flex flex-col gap-4"
+          initial={tierIndex.prev < tierIndex.curr ? "down" : "up"}
+          animate="visible"
+          exit={tierIndex.prev < tierIndex.curr ? "up" : "down"}
+          key={tierIndex.curr}
+          variants={animatedDiv}
+        >
+          <div className="flex flex-row items-center justify-between sm:h-[500px] lg:h-[350px]">
             <button
-              key={i}
-              className="w-8 h-8 rounded-full mx-2 transition-all duration-150"
-              onClick={() => onNav(i)}
-              style={{
-                transform: `scale(${modIndex === i ? 1.5 : 1})`,
-              }}
+              type="button"
+              className="sm:mx-10 mr-3 p-2 disabled:pointer-events-none rounded-lg text-slate-700 hover:bg-black/10"
+              onClick={onNavLeft}
             >
-              <Image
-                src={content.image.src}
-                alt={content.header}
-                className="w-8 h-8 shadow-sm"
-                layout="fill"
-              />
+              <span className="text-2xl" aria-hidden="true">
+                <svg
+                  className="flex-shrink-0 size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m15 18-6-6 6-6"></path>
+                </svg>
+              </span>
+              <span className="sr-only">Previous</span>
             </button>
-          ))}
-        </div>
-      </motion.div>
+            <motion.div
+              className="h-full grow flex flex-col justify-center gap-4"
+              initial={
+                sponsorIndex.prev < sponsorIndex.curr
+                  ? "right"
+                  : sponsorIndex.prev > sponsorIndex.curr
+                  ? "left"
+                  : "visible"
+              }
+              animate="visible"
+              exit={
+                sponsorIndex.prev < sponsorIndex.curr
+                  ? "left"
+                  : sponsorIndex.prev > sponsorIndex.curr
+                  ? "right"
+                  : "visible"
+              }
+              key={sponsorIndex.curr}
+              variants={animatedDiv}
+            >
+              <header className="flex items-center">
+                <Image
+                  src={image.src}
+                  alt={header}
+                  className="w-12 h-12 lg:w-16 lg:h-16 mr-4 shadow-md"
+                  width={48}
+                  height={48}
+                />
+                <h2 className="text-xl lg:text-2xl font-bold black">
+                  {header}
+                </h2>
+              </header>
+              <p className="overflow-y-scroll">{text}</p>
+              <a
+                className="link text-primary hover:opacity-80"
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore More
+              </a>
+            </motion.div>
+            <button
+              type="button"
+              className="sm:mx-10 p-2 disabled:pointer-events-none rounded-lg text-slate-700 hover:bg-black/10"
+              onClick={onNavRight}
+            >
+              <span className="text-2xl" aria-hidden="true">
+                <svg
+                  className="flex-shrink-0 size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m9 18 6-6-6-6"></path>
+                </svg>
+              </span>
+              <span className="sr-only">Next</span>
+            </button>
+          </div>
+          {/* Navigation Bar */}
+          <div className="my-5 flex justify-center">
+            {currentContentData.map((content, i) => (
+              <button
+                key={i}
+                className="w-8 h-8 rounded-full mx-2 transition-all duration-150"
+                onClick={() => onNav(i)}
+                style={{
+                  transform: `scale(${modIndex === i ? 1.5 : 1})`,
+                }}
+              >
+                <Image
+                  src={content.image.src}
+                  alt={content.header}
+                  className="w-8 h-8 shadow-sm"
+                  layout="fill"
+                />
+              </button>
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 }
