@@ -1,4 +1,5 @@
-import CellImage from "@/assets/cell.png";
+import cellImage from "@/assets/cell.png";
+import cellDesktopImage from "@/assets/cell_desktop.png";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRef, useState } from "react";
@@ -8,18 +9,23 @@ import dots from "@/assets/dots.png";
 export default function Hero() {
   return (
     <div className="flex flex-col gap-4 lg:gap-10 px-4 lg:px-20">
-      <div className="flex flex-col lg:flex-row-reverse items-center justify-center">
+      <Image
+        className="hidden lg:block absolute right-0 top-14 w-full"
+        src={cellDesktopImage}
+        alt="Hand-drawn Image of Cell"
+      />
+      <div className="flex flex-col w-full items-center justify-center lg:items-start lg:pt-40 lg:pb-20 xl:pb-80">
         <Image
-          className="lg:w-1/2"
-          src={CellImage}
+          className="lg:hidden"
+          src={cellImage}
           alt="Hand-drawn Image of Cell"
         />
         <div
-          className="relative flex flex-col items-center lg:basis-1/2 gap-8
+          className="flex flex-col items-center lg:basis-1/2 gap-8
                     lg:items-start lg:gap-8"
         >
           <Image
-            className="absolute -z-10 xl:-top-4"
+            className="absolute -z-10 lg:hidden"
             src={dots}
             alt="Background Dots"
           />

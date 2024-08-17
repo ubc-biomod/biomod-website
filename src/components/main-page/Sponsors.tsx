@@ -47,7 +47,7 @@ const Sponsors = () => {
         {steps.map((opacity, i) => {
           return (
             <div
-              className="flex gap-12 items-center justify-between"
+              className="flex flex-wrap gap-12 items-center justify-center"
               key={opacity + i + ""}
               style={{ opacity: opacity }}
             >
