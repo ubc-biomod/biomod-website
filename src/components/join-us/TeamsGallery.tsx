@@ -144,7 +144,9 @@ function TeamsGallery() {
             } transition-colors duration-150`}
             key={team.name}
             onClick={() => onNav(i)}
-            ref={(el) => (buttons.current[i] = el)}
+            ref={(el) => {
+              buttons.current[i] = el;
+            }}
           >
             {team.name}
           </button>
