@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { DragHandlers, motion } from "framer-motion";
 import wetlab from "./wetlab_subteam.jpg";
-import cadnano from "./cadnano_subteam.png";
+import comp_modeling from "./comp_modeling_subteam.png";
 import finance from "./finance_subteam.jpeg";
 import video from "./video_subteam.png";
 import website from "./website_subteam.jpg";
@@ -11,28 +11,28 @@ const teamsList = [
   {
     name: "Wetlab",
     description:
-      "Lorem ipsum dolor amet blah blah blah blah sadfjsldfjls adkdflkj safjsadf",
+      "The wetlab team is responsible for all of our experiments. They are involved throughout the entire process, from conducting literature reviews and writing protocols to performing experiments, analyzing data, and producing final reports. They also collaborate closely with the computational and modeling team to develop new projects through literature searches and client reviews. In the past, we have conducted experiments involving cell culture, bacterial work, drug delivery, DNA origami, among others. If you are interested in participating in the entire scientific process, consider joining our wetlab team!",
     aside: "Last updated 5 mins ago",
     src: wetlab,
   },
   {
-    name: "CaDNAno",
+    name: "Computational and Modeling",
     description:
-      "Lorem ipsum dolor amet blah blah blah blah sadfjsldfjls adkdflkj safjsadf",
+      "Previously known as the Cadnano team, we have expanded this team’s responsibilities to include running simulations and modeling different scenarios to supplement our wetlab experiments. The results from our dry lab are crucial as they support our wetlab experiments and help determine whether we should proceed with certain experiments. The team uses a variety of software and programming languages, such as Biopython, COMSOL, Marvin, and Swiss, to achieve their results. If you are interested in computational biology, AI, modeling, and learning different software, the computational and modeling team is the right fit for you!",
     aside: "Last updated 5 mins ago",
-    src: cadnano,
+    src: comp_modeling,
   },
   {
     name: "Finance",
     description:
-      "Molecular biology isn't cheap - that's where the finance team comes in! We manage the club's funds and ensure we have the money we need by reaching out to and maintaining contact with sponsors.",
+      "Our finance subteam helps secure funding to purchase reagents for the wetlab, send team members to competitions, and cover expenses for social events. They represent our team in securing partnerships with sponsors and maintaining good relationships with them. Additionally, they identify various opportunities to secure funding through grants, competitions, and fundraising. If you are interested in finance or business development, joining our finance subteam would be a great fit for you!",
     aside: "Last updated 5 mins ago",
     src: finance,
   },
   {
     name: "Video",
     description:
-      "Let your creative side shine with the video team! We create cool videos using tools like Blender to showcase the project that UBC BIOMOD has been working on for the year.",
+      "Our video subteam focuses on the skills needed for effective science communication. Each year, we are required to submit a 3-minute video about that year's project. The video subteam uses skills in 2D animation and 3D modeling to convey the complexity of our project using a variety of techniques. They manage the entire video production process, from creating the storyboard and writing scripts to drawing/modeling, voiceover work, and editing. If you have an interest in visual art, science, or science communication, you should consider applying to our video subteam!",
     aside: "Last updated 5 mins ago",
     src: video,
   },
