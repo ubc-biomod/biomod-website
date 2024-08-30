@@ -1,5 +1,5 @@
 import cellImage from "@/assets/cell.png";
-import cellDesktopImage from "@/assets/cell_desktop.png";
+import cellDesktopImageSvg from "@/assets/cell_desktop.svg";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRef, useState } from "react";
@@ -11,8 +11,9 @@ export default function Hero() {
     <div className="flex flex-col gap-4 lg:gap-10 px-4 lg:px-20">
       <Image
         className="hidden lg:block absolute right-0 top-14 w-full"
-        src={cellDesktopImage}
+        src={cellDesktopImageSvg}
         alt="Hand-drawn Image of Cell"
+        quality={100}
       />
       <div className="flex flex-col w-full items-center justify-center lg:items-start lg:pt-40 lg:pb-20 xl:pb-80">
         <Image
@@ -31,7 +32,7 @@ export default function Hero() {
           />
           <h1
             className="text-primary text-7xl text-center font-bold font-title
-                        lg:text-8xl xl:text-9xl lg:text-left"
+                        lg:text-8xl xl:text-9xl lg:text-left z-10"
           >
             UBC BIOMOD
           </h1>
