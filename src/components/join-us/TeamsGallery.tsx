@@ -39,7 +39,7 @@ const teamsList = [
   {
     name: "Social Media",
     description:
-      "If you're passionate about outreach, the social media team might be for you! We work on initiatives to help grow the club and reach a wider audience. We also plan fun internal events!",
+      "The Social Media subteam is dedicated to enhancing the visibility and engagement of UBC BIOMOD through dynamic online content. We create and manage posts across various platforms, such as Instagram/Facebook/Linkdin to highlight our projects, events, and member achievements while fostering a positive community. In addition to posts, they develop reel concepts and schedule monthly video filmings. By developing a consistent brand identity, engaging with followers, and collaborating with partners, we help attract new members and sponsors. ",
     aside: "Last updated 5 mins ago",
     src: website,
   },
