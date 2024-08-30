@@ -77,12 +77,12 @@ function MemberCard(member: MemberInfo) {
           quality={100}
         />
       </div>
-      <div className="flex flex-col gap-y-6 max-h-[50%] z-10">
+      <div className="flex flex-col max-h-[50%] z-10">
+        <h4 className="text-white font-bold">{member.name}</h4>
         <div className="shrink overflow-y-scroll">
-          <h4 className="text-white font-bold">{member.name}</h4>
           <p className="text-white">{member.description}</p>
         </div>
-        <div className="shrink-0 flex flex-row gap-x-7 justify-end overflow-x-scroll">
+        <div className="pt-6 shrink-0 flex flex-row gap-x-4 justify-end overflow-x-scroll">
           {member.teams.map((t, i) => (
             <span
               key={member.name + t + i}
