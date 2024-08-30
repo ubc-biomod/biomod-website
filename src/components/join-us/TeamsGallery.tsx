@@ -6,6 +6,7 @@ import comp_modeling from "./comp_modeling_subteam.png";
 import finance from "./finance_subteam.jpeg";
 import video from "./video_subteam.png";
 import website from "./website_subteam.jpg";
+import social_media from "./social_media_subteam.jpg";
 
 const teamsList = [
   {
@@ -41,7 +42,7 @@ const teamsList = [
     description:
       "The Social Media subteam is dedicated to enhancing the visibility and engagement of UBC BIOMOD through dynamic online content. We create and manage posts across various platforms, such as Instagram/Facebook/Linkdin to highlight our projects, events, and member achievements while fostering a positive community. In addition to posts, they develop reel concepts and schedule monthly video filmings. By developing a consistent brand identity, engaging with followers, and collaborating with partners, we help attract new members and sponsors. ",
     aside: "Last updated 5 mins ago",
-    src: website,
+    src: social_media,
   },
   {
     name: "Website",
