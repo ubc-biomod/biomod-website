@@ -194,7 +194,7 @@ function TeamsGallery() {
           />
           <div className="flex flex-col justify-between gap-4 p-4 md:basis-1/3 shrink-0">
             <div className="flex flex-col gap-4">
-              <span className="text-headingRegMob text-primary lg:text-headingReg font-semibold">
+              <span className="text-subHeadingRegMob text-primary lg:text-subHeadingReg font-semibold">
                 {team.name}
               </span>
               <p>{team.description}</p>
