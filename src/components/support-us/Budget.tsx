@@ -12,27 +12,26 @@ type entryProp = {
 export default function Budget() {
   const stats = [
     {
-      header: "50% Travel",
+      header: "70% Operations",
+      description: "Lab consumables, lab equipment, reagents, etc.",
+      icon: FaGear,
+    },
+    {
+      header: "26% Travel",
       description:
         "Flights, accommodations, and other expenses at competitions.",
       icon: FaPlaneDeparture,
     },
     {
-      header: "45% Operations",
-      description:
-        "Equipment, reagents, incubators, culture media, hosting services fees, etc.",
-      icon: FaGear,
-    },
-    {
-      header: "4% Snacks",
+      header: "1% Snacks",
       description:
         "Primarily will be used for team bonding and internal competitions.",
       icon: IoFastFood,
     },
     {
-      header: "1% Others",
+      header: "3% Others",
       description:
-        "Other fees include emergency fund, more snacks and team bonding activities, etc.",
+        "Other fees include competition registrations, video prouctions, and website hosting services",
       icon: TbGridDots,
     },
   ];
