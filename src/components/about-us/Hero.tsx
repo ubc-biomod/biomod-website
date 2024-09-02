@@ -1,21 +1,32 @@
 import bg from "./about-us-bg.png";
 import bgMobile from "./about-us-bg-mobile.png";
+import aboutUsHero1 from "./about_us_hero_1.jpg";
+import aboutUsHero2 from "./about_us_hero_2.jpg";
+import Image from "next/image";
 
 function Hero() {
   return (
     <div className="flex flex-col md:flex-row p-4 md:p-16 items-center gap-12">
-      <div className="flex flex-col gap-8 items-center">
+      <div className="flex flex-col gap-8 items-center lg:basis-2/3">
         <h1 className="text-primary font-bold text-4xl md:text-6xl">
           About Us
         </h1>
         <h2 className="text-primary text-xl md:text-2xl text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          UBC BIOMOD strives to create innovative solutions to tackle various
+          medical issues by merging technology and biology.
         </h2>
       </div>
       <div className="flex items-center">
-        <div className="w-36 h-48 md:w-52 md:h-64 bg-[#EDE6E6] rounded-xl -mr-20 z-10 shadow-md"></div>
-        <div className="w-48 h-60 md:w-72 md:h-96 bg-[#D9D9D9] rounded-xl shadow-md"></div>
+        <Image
+          className="w-36 h-48 md:w-52 md:h-72 bg-[#EDE6E6] rounded-xl -mr-20 z-10 shadow-md"
+          src={aboutUsHero2}
+          alt=""
+        />
+        <Image
+          className="w-48 h-60 md:w-72 md:h-96 bg-[#D9D9D9] rounded-xl shadow-md"
+          src={aboutUsHero1}
+          alt=""
+        />
       </div>
       {
         // eslint-disable-next-line @next/next/no-img-element

@@ -5,9 +5,12 @@ import { useState } from "react";
 import dots from "@/assets/dots.png";
 
 export default function ReadyToApply() {
-  const [isApplicationOpen, setIsApplicationOpen] = useState(false);
+  const [isApplicationOpen, setIsApplicationOpen] = useState(true);
   return (
-    <div className="flex flex-col lg:flex-row gap-x-[7rem] items-center gap-y-4">
+    <div
+      className="flex flex-col lg:flex-row gap-x-[7rem] items-center gap-y-4"
+      id="apply-now"
+    >
       <Image
         src={dots}
         alt="Background"
@@ -38,12 +41,25 @@ export default function ReadyToApply() {
             className="text-headingRegMob text-primary font-semibold
                     lg:text-headingReg"
           >
-            Apply now!!!
+            Apply now!
           </h1>
-          <p>Applications are currently open until June 19th, 2024.</p>
-          <Link href="/about" className="btn btn--primary">
-            Apply
-          </Link>
+          <p>Applications are currently open until September 8th, 2024.</p>
+          <div className="flex gap-4">
+            <Link
+              href="https://ubc.ca1.qualtrics.com/jfe/form/SV_ac1Mta7AsMIC8E6"
+              target="_blank"
+              className="btn btn--primary"
+            >
+              Apply
+            </Link>
+            <Link
+              href="https://docs.google.com/document/d/1nX-95_pIUdS7edQGwJ7--fzF6pXmpVuvTWSW2ii9Vfs/edit"
+              target="_blank"
+              className="btn btn--accent"
+            >
+              Hiring Package
+            </Link>
+          </div>
         </div>
       )}
     </div>

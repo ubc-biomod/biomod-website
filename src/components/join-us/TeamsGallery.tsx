@@ -1,47 +1,48 @@
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { DragHandlers, motion } from "framer-motion";
 import wetlab from "./wetlab_subteam.jpg";
-import cadnano from "./cadnano_subteam.png";
+import comp_modeling from "./comp_modeling_subteam.png";
 import finance from "./finance_subteam.jpeg";
 import video from "./video_subteam.png";
 import website from "./website_subteam.jpg";
+import social_media from "./social_media_subteam.jpg";
 
 const teamsList = [
   {
     name: "Wetlab",
     description:
-      "Lorem ipsum dolor amet blah blah blah blah sadfjsldfjls adkdflkj safjsadf",
+      "The wetlab team is responsible for all of our experiments. They are involved throughout the entire process, from conducting literature reviews and writing protocols to performing experiments, analyzing data, and producing final reports. They also collaborate closely with the computational and modeling team to develop new projects through literature searches and client reviews. In the past, we have conducted experiments involving cell culture, bacterial work, drug delivery, DNA origami, among others. If you are interested in participating in the entire scientific process, consider joining our wetlab team!",
     aside: "Last updated 5 mins ago",
     src: wetlab,
   },
   {
-    name: "CaDNAno",
+    name: "Computational and Modeling",
     description:
-      "Lorem ipsum dolor amet blah blah blah blah sadfjsldfjls adkdflkj safjsadf",
+      "Previously known as the Cadnano team, we have expanded this team’s responsibilities to include running simulations and modeling different scenarios to supplement our wetlab experiments. The results from our dry lab are crucial as they support our wetlab experiments and help determine whether we should proceed with certain experiments. The team uses a variety of software and programming languages, such as Biopython, COMSOL, Marvin, and Swiss, to achieve their results. If you are interested in computational biology, AI, modeling, and learning different software, the computational and modeling team is the right fit for you!",
     aside: "Last updated 5 mins ago",
-    src: cadnano,
+    src: comp_modeling,
   },
   {
     name: "Finance",
     description:
-      "Molecular biology isn't cheap - that's where the finance team comes in! We manage the club's funds and ensure we have the money we need by reaching out to and maintaining contact with sponsors.",
+      "Our finance subteam helps secure funding to purchase reagents for the wetlab, send team members to competitions, and cover expenses for social events. They represent our team in securing partnerships with sponsors and maintaining good relationships with them. Additionally, they identify various opportunities to secure funding through grants, competitions, and fundraising. If you are interested in finance or business development, joining our finance subteam would be a great fit for you!",
     aside: "Last updated 5 mins ago",
     src: finance,
   },
   {
     name: "Video",
     description:
-      "Let your creative side shine with the video team! We create cool videos using tools like Blender to showcase the project that UBC BIOMOD has been working on for the year.",
+      "Our video subteam focuses on the skills needed for effective science communication. Each year, we are required to submit a 3-minute video about that year's project. The video subteam uses skills in 2D animation and 3D modeling to convey the complexity of our project using a variety of techniques. They manage the entire video production process, from creating the storyboard and writing scripts to drawing/modeling, voiceover work, and editing. If you have an interest in visual art, science, or science communication, you should consider applying to our video subteam!",
     aside: "Last updated 5 mins ago",
     src: video,
   },
   {
     name: "Social Media",
     description:
-      "If you're passionate about outreach, the social media team might be for you! We work on initiatives to help grow the club and reach a wider audience. We also plan fun internal events!",
+      "The Social Media subteam is dedicated to enhancing the visibility and engagement of UBC BIOMOD through dynamic online content. We create and manage posts across various platforms, such as Instagram/Facebook/Linkdin to highlight our projects, events, and member achievements while fostering a positive community. In addition to posts, they develop reel concepts and schedule monthly video filmings. By developing a consistent brand identity, engaging with followers, and collaborating with partners, we help attract new members and sponsors. ",
     aside: "Last updated 5 mins ago",
-    src: website,
+    src: social_media,
   },
   {
     name: "Website",
@@ -144,7 +145,9 @@ function TeamsGallery() {
             } transition-colors duration-150`}
             key={team.name}
             onClick={() => onNav(i)}
-            ref={(el) => (buttons.current[i] = el)}
+            ref={(el) => {
+              buttons.current[i] = el;
+            }}
           >
             {team.name}
           </button>
@@ -171,7 +174,7 @@ function TeamsGallery() {
           </svg>
         </button>
         <motion.div
-          className="bg-white border rounded-xl shadow-sm flex flex-col md:flex-row-reverse gap-4 w-full"
+          className="bg-white border rounded-xl shadow-sm flex flex-col md:flex-row-reverse gap-4 w-full md:h-[30rem]"
           initial={index.prev < index.curr ? "right" : "left"}
           animate="visible"
           exit={index.prev < index.curr ? "left" : "right"}
@@ -190,11 +193,11 @@ function TeamsGallery() {
             className="w-full object-cover rounded-t-xl md:rounded-tl-none md:rounded-r-xl pointer-events-none"
           />
           <div className="flex flex-col justify-between gap-4 p-4 md:basis-1/3 shrink-0">
-            <div className="flex flex-col gap-4">
-              <span className="text-headingRegMob text-primary lg:text-headingReg font-semibold">
+            <div className="flex flex-col gap-4 h-full">
+              <span className="text-subHeadingRegMob text-primary lg:text-subHeadingReg font-semibold">
                 {team.name}
               </span>
-              <p>{team.description}</p>
+              <p className="overflow-scroll">{team.description}</p>
             </div>
             {/* <span className="font-bold text-sm">{team.aside}</span> */}
           </div>
