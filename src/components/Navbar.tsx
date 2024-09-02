@@ -4,7 +4,29 @@ import Image from "next/image";
 import fullLogo from "@/assets/full_logo.png";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { links } from "./navPages";
+
+const links = [
+  {
+    name: "Join Us",
+    href: "/join-us",
+  },
+  {
+    name: "Support Us",
+    href: "/support-us",
+  },
+  {
+    name: "Sponsors",
+    href: "/sponsors",
+  },
+  {
+    name: "Contact Us",
+    href: "/contact-us",
+  },
+  {
+    name: "About Us",
+    href: "/about-us",
+  },
+];
 
 function Navbar() {
   const [currentPath, setCurrentPath] = useState("/");

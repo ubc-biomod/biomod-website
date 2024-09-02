@@ -7,7 +7,7 @@ export default function CallToAction() {
         Interested in Joining Us?
       </h1>
       <h2 className="text-primary text-xl md:text-2xl text-center">
-        Become part of our talented team
+        Become part of our talented team!
       </h2>
       <Link href="/join-us" className="btn btn--primary">
         Learn More
