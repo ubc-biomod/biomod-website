@@ -13,3 +13,7 @@
 .btn--accent {
   @apply bg-accent text-white;
 }
+
+.input {
+  @apply p-2 border-b-secondary border-b focus:outline-none focus:border-b-primary focus:border-b-2 transition-colors duration-150;
+}
