@@ -12,6 +12,10 @@ export const links = [
     href: "/sponsors",
   },
   {
+    name: "Contact Us",
+    href: "/contact-us",
+  },
+  {
     name: "About Us",
     href: "/about-us",
   },
