@@ -71,7 +71,7 @@ function PastSponsors() {
             x: ["0%", isDesktop ? "-200%" : "-200%"], // if logos need to be different size, must be proportional to this I think
             transition: {
               ease: "linear",
-              duration: 30,
+              duration: isDesktop ? 22 : 17,
               repeat: Infinity,
             },
           }}
@@ -82,9 +82,7 @@ function PastSponsors() {
               key={index}
               className="flex-shrink-0"
               style={{
-                width: `${
-                  isDesktop ? 100 / slides.length : (100 / slides.length) * 2
-                }%`,
+                width: `${(100 / slides.length) * 2}%`,
               }}
             >
               <div
