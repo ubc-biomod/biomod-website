@@ -11,24 +11,34 @@ type qaPairProps = {
 export default function FAQ() {
   const pairs: qaPairProps[] = [
     {
-      question: "What does “free updates” include?",
+      question: "What is BIOMOD?",
       answer:
-        '"Free updates" typically include enhancements, bug fixes, security patches, performance improvements, and feature enhancements that users can obtain without additional cost after the initial purchase.',
+        "BIOMOD is an international design competition for undergraduate students in biomolecular nanotechnology. It was founded by the Wyss Institute for biologically inspired engineering at Harvard University. Now it is hosted by a variety of different institutes, we have previously been to Japan to compete.",
     },
     {
-      question: "What does “free updates” include?",
+      question: "How much time to I have to commit?",
       answer:
-        '"Free updates" typically include enhancements, bug fixes, security patches, performance improvements, and feature enhancements that users can obtain without additional cost after the initial purchase.',
+        "Some roles require heavier time commitments than others (i.e, exec team, wet lab in the summer), while others will only ramp up in September (i.e, finalizing website). Overall, the time commitment, and how much you want to contribute is up to you. Typical member will be 2-10h.",
     },
     {
-      question: "What does “free updates” include?",
+      question: "When does UBC BIOMOD recruit?",
       answer:
-        '"Free updates" typically include enhancements, bug fixes, security patches, performance improvements, and feature enhancements that users can obtain without additional cost after the initial purchase.',
+        "We usually send out our application form last August and early September (around the time of imagine day) for the main hiring. However, we may do some impromptu hiring throughout the year for certain positions.",
     },
     {
-      question: "What does “free updates” include?",
+      question: "Do I have to be an engineering student to join?",
       answer:
-        '"Free updates" typically include enhancements, bug fixes, security patches, performance improvements, and feature enhancements that users can obtain without additional cost after the initial purchase.',
+        "No, we are an interdisciplinary team with members from Engineering, Science, Land Food Systems, Sauder and Arts. You can be in any major and join us.",
+    },
+    {
+      question: "Can I apply if I am a 1st year?",
+      answer:
+        "Yes, we believe that as long as you are willing to learn and motivated, you will succeed in UBC BIOMOD. We do not look at your technical skills when you apply.",
+    },
+    {
+      question: "Do I get paid if I join UBC BIOMOD?",
+      answer:
+        "Unfortunately no. But you will get to meet some great people and develop your skills when you join.",
     },
   ];
   return (
