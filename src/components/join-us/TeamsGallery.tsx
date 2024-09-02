@@ -174,7 +174,7 @@ function TeamsGallery() {
           </svg>
         </button>
         <motion.div
-          className="bg-white border rounded-xl shadow-sm flex flex-col md:flex-row-reverse gap-4 w-full"
+          className="bg-white border rounded-xl shadow-sm flex flex-col md:flex-row-reverse gap-4 w-full md:h-[30rem]"
           initial={index.prev < index.curr ? "right" : "left"}
           animate="visible"
           exit={index.prev < index.curr ? "left" : "right"}
@@ -193,11 +193,11 @@ function TeamsGallery() {
             className="w-full object-cover rounded-t-xl md:rounded-tl-none md:rounded-r-xl pointer-events-none"
           />
           <div className="flex flex-col justify-between gap-4 p-4 md:basis-1/3 shrink-0">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 h-full">
               <span className="text-subHeadingRegMob text-primary lg:text-subHeadingReg font-semibold">
                 {team.name}
               </span>
-              <p>{team.description}</p>
+              <p className="overflow-scroll">{team.description}</p>
             </div>
             {/* <span className="font-bold text-sm">{team.aside}</span> */}
           </div>
