@@ -1,67 +1,11 @@
 import { animate, motion, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
-import useMeasure from "react-use-measure";
-
-const members: MemberInfo[] = [
-  {
-    name: "John Cena 1",
-    description: "The invisible man",
-    photo: "",
-    teams: ["wetlab", "web"],
-  },
-  {
-    name: "John Cena 2",
-    description: "The invisible man",
-    photo: "",
-    teams: ["wetlab", "web"],
-  },
-  {
-    name: "John Cena 3",
-    description: "The invisible man",
-    photo: "",
-    teams: ["wetlab", "web"],
-  },
-  {
-    name: "John Cena 4",
-    description: "The invisible man",
-    photo: "",
-    teams: ["wetlab", "web"],
-  },
-  {
-    name: "John Cena 5",
-    description: "The invisible man",
-    photo: "",
-    teams: ["wetlab", "web"],
-  },
-  {
-    name: "John Cena 6",
-    description: "The invisible man",
-    photo: "",
-    teams: ["wetlab", "web"],
-  },
-  {
-    name: "John Cena 7",
-    description: "The invisible man",
-    photo: "",
-    teams: ["wetlab", "web"],
-  },
-  {
-    name: "John Cena 8",
-    description: "The invisible man",
-    photo: "",
-    teams: ["wetlab", "web"],
-  },
-  {
-    name: "John Cena 9",
-    description: "The invisible man",
-    photo: "",
-    teams: ["wetlab", "web"],
-  },
-];
+import { MemberInfo, members } from "./members";
+import Image from "next/image";
 
 export default function Team() {
-  const FAST = 20;
-  const SLOW = 45;
+  const FAST = 50;
+  const SLOW = 75;
   const xDiff = useMotionValue(0);
   const [speed, setSpeed] = useState(FAST);
   // if the animation is in progress
@@ -117,25 +61,28 @@ export default function Team() {
   );
 }
 
-type MemberInfo = {
-  name: string;
-  description: string;
-  photo: string;
-  teams: string[];
-};
-
 function MemberCard(member: MemberInfo) {
   return (
     <div
-      className="flex flex-col bg-gray-600 w-80 h-96 justify-end rounded-3xl
-            px-4 py-5 hover:opacity-60 cursor-pointer shrink-0"
+      className="relative flex flex-col bg-gray-600 w-80 h-96 justify-end rounded-3xl
+            px-4 py-5 hover:opacity-60 cursor-pointer shrink-0 transition-opacity duration-150"
     >
-      <div className="flex flex-col gap-y-6">
-        <div>
-          <h4 className="text-white font-bold">{member.name}</h4>
+      <div className="absolute inset-0">
+        <Image
+          className="rounded-3xl brightness-50"
+          src={member.photo}
+          alt={member.name}
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
+      </div>
+      <div className="flex flex-col max-h-[50%] z-10">
+        <h4 className="text-white font-bold">{member.name}</h4>
+        <div className="shrink overflow-y-scroll">
           <p className="text-white">{member.description}</p>
         </div>
-        <div className="flex flex-row gap-x-7 justify-end">
+        <div className="pt-6 shrink-0 flex flex-row gap-x-4 justify-end overflow-x-scroll">
           {member.teams.map((t, i) => (
             <span
               key={member.name + t + i}
