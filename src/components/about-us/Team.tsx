@@ -37,11 +37,11 @@ export default function Team() {
   return (
     <div className="flex flex-col gap-y-6 w-full overflow-hidden">
       <h1 className="text-primary font-bold text-center text-4xl md:text-6xl">
-        Some Cool Tagline about BIOMOD
+        Meet some of the faces behind UBC BIOMOD
       </h1>
-      <h2 className="text-primary text-xl md:text-2xl text-center">
+      {/* <h2 className="text-primary text-xl md:text-2xl text-center">
         Meet some of the faces behind BIOMOD
-      </h2>
+      </h2> */}
 
       <motion.div
         className="flex flex-row gap-x-6"

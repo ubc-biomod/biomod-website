@@ -46,9 +46,9 @@ export default function Stories() {
       <h1 className="text-primary font-bold text-center text-4xl md:text-6xl">
         Hear Some of Our Stories
       </h1>
-      <h2 className="text-primary text-xl md:text-2xl text-center">
+      {/* <h2 className="text-primary text-xl md:text-2xl text-center">
         These are a few of many success stories of the member of UBC Biomod
-      </h2>
+      </h2> */}
       {stories.map((s, i) => (
         <Story key={s.name + i} story={s} leftAligned={i % 2 == 0} />
       ))}

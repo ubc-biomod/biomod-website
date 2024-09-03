@@ -47,7 +47,7 @@ const ProjectsDisplay = () => {
           </div>
         </ProjectCard>
         <ProjectCard
-          href="https://www.ubcbiomod.com/2022/"
+          href="https://2022.ubcbiomod.com"
           className="col-span-2 lg:row-start-2"
           yearElement="2022"
         >
@@ -60,7 +60,7 @@ const ProjectsDisplay = () => {
           </div>
         </ProjectCard>
         <ProjectCard
-          href="https://ubcbiomod.com/2019/"
+          href="https://2019.ubcbiomod.com"
           className=""
           yearElement="2019"
         >
@@ -71,7 +71,7 @@ const ProjectsDisplay = () => {
           />
         </ProjectCard>
         <ProjectCard
-          href="https://ubcbiomod.com/2018/"
+          href="https://2018.ubcbiomod.com"
           className="row-span-2"
           yearElement="2018"
         >
@@ -90,7 +90,7 @@ const ProjectsDisplay = () => {
           </div>
         </ProjectCard>
         <ProjectCard
-          href="https://ubcbiomod.com/2017"
+          href="https://2017.ubcbiomod.com"
           className="col-span-2"
           yearElement="2017"
         >
