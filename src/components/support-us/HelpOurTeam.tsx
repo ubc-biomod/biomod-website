@@ -24,13 +24,13 @@ function HelpOurTeam() {
           title="Donate as an industry"
           subtitle="Support exciting research!"
           body="Do you represent a company looking to support the student research community? UBC BIOMOD relies on funding from companies like yours to create our projects!"
-          href="#"
+          href="/sponsors"
         />
         <Card
           title="Donate as an individual"
           subtitle="Every dollar makes a difference!"
           body="If you're an individual excited by our work and want to make a contribution, we would always appreciate the support, no matter the amount!"
-          href="#"
+          href="/contact-us"
         />
       </div>
     </div>

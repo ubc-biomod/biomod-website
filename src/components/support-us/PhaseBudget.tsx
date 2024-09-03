@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import ideaImg from "@/assets/supportus/ideablue.jpg";
 import ideationImg from "./ideation.jpg";
 import prototypeImg from "./prototype.png";
 import validImg from "./validation.png";
 import experimentImg from "./experiment.jpg";
+import presentationImg from "./presentation.jpg";
 import Image, { StaticImageData } from "next/image";
 import dots from "@/assets/dots.png";
 type Phase = {
@@ -16,22 +16,27 @@ const phaseData: Phase[] = [
   {
     image: ideationImg,
     header: "Phase 1: Ideation",
-    text: "Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard  dummy text ever since the 1500s, when an unknown printer took a galley  of type and scrambled it to make a type specimen book. ",
+    text: "Our wetlab subteam alongside the computational and modelling subteam, conduct literature reviews and work together to generate a project idea. Our team then reaches out to UBC professors researching topics similar to our project idea to assist us in scoping out the project. During this stage of the project, we spend a small portion of our budget (~$300) to register for the BIOMOD Jamboree competition.",
   },
   {
     image: prototypeImg,
     header: "Phase 2: Prototype",
-    text: "Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard  dummy text ever since the 1500s, when an unknown printer took a galley  of type and scrambled it to make a type specimen book.",
+    text: "Our computational and modelling subteam will begin to prototype digital designs of our biomolecule to perform stability tests on the design. Simultaneously, the wetlab subteam will perform research to fabricate protocol documents for the team to refer to during the experiment phase of the project. The main costs (~$250) associated with this stage of the project are related to licenses and subscriptions for softwares and online tools to assist our team in testing the model.",
   },
   {
     image: experimentImg,
     header: "Phase 3: Experiment",
-    text: "Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard  dummy text ever since the 1500s, when an unknown printer took a galley  of type and scrambled it to make a type specimen book.",
+    text: "During the experiment phase, our wetlab team performs the protocols written during the prototype phase. The primary objective of the experiment phase is to create our project design through a series of labs. In order to execute the protocols, our wetlab subteam requires various lab related materials such as consumables and reagents. Majority of our budget (~$8,000-10,000) is typically spent on lab-related items to provide the necessary materials for the wetlab subteam.",
   },
   {
     image: validImg,
     header: "Phase 4: Validation",
-    text: "Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard  dummy text ever since the 1500s, when an unknown printer took a galley  of type and scrambled it to make a type specimen book.",
+    text: "The validation stage is closely related to the experiment phase as we need to validate the expected outcomes of our design. To do this, we test specific aspects of the design to prove their intended functionality. The materials required for the validation test are typically bought during the experiment phase alongside the lab paraphernalia we purchase. Therefore, our team does not spend more of our budget during this stage.",
+  },
+  {
+    image: presentationImg,
+    header: "Phase 5: Presentation",
+    text: "For the final stage, our team prepares to present our findings at the annual BIOMOD Jamboree. Every year, our team sends 8 of our highest contributing members to present the project alongside its results on an international stage at the Jamboree. Another big chunk (~$8,000) of our budget is spent covering the travel costs for our team members and this marks the final expenditures our team is subjected to in a project timeline.",
   },
 ];
 

@@ -22,9 +22,20 @@ function BecomeASponsor() {
             in previous BIOMOD competitions wouldn&apos;t be possible without
             sponsors like you.
           </p>
-          <Link href="#" className="btn btn--primary">
-            Become a sponsor today!
-          </Link>
+          <div className="flex flex-row gap-x-6">
+            <Link
+              href="https://drive.google.com/file/d/15A3nlixAvMBReDsuk2gmMqtoEK0zBOxe/view"
+              className="btn btn--primary"
+            >
+              Sponsor Package
+            </Link>
+            <Link
+              href="https://donate.give.ubc.ca/page/80953/donate/1?transaction.dirgift=Biomod+Team%20G1541"
+              className="btn btn--primary"
+            >
+              Become a sponsor today!
+            </Link>
+          </div>
         </div>
       </div>
     </div>
