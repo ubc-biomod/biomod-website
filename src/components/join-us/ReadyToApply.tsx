@@ -5,7 +5,7 @@ import { useState } from "react";
 import dots from "@/assets/dots.png";
 
 export default function ReadyToApply() {
-  const [isApplicationOpen, setIsApplicationOpen] = useState(true);
+  const [isApplicationOpen, setIsApplicationOpen] = useState(false);
   return (
     <div
       className="flex flex-col lg:flex-row gap-x-[7rem] items-center gap-y-4"

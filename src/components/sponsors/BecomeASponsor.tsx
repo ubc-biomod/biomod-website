@@ -27,7 +27,7 @@ function BecomeASponsor() {
               href="https://drive.google.com/file/d/15A3nlixAvMBReDsuk2gmMqtoEK0zBOxe/view"
               className="btn btn--primary"
             >
-              Sponsor Package
+              Sponsorship Package
             </Link>
             <Link
               href="https://donate.give.ubc.ca/page/80953/donate/1?transaction.dirgift=Biomod+Team%20G1541"

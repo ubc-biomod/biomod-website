@@ -4,29 +4,19 @@ import _MelanieCha from "./profile-pictures/Melanie_Chan.jpg";
 import _Karina from "./profile-pictures/Karina_Akhmedove.jpg";
 import _Paniz from "./profile-pictures/Paniz_Ghavimi.jpg";
 import _Ethan from "./profile-pictures/Ethan_Rajkumar.jpg";
-import _Vivian from "./profile-pictures/Vivian_Zheng.jpg";
 import _Maggie from "./profile-pictures/Maggie_Wang.jpg";
-import _Kendrick from "./profile-pictures/Kendrick_Cooke.jpeg";
 import _Laura from "./profile-pictures/female_empty_img.png";
-import _MelanieChe from "./profile-pictures/Melanie_Cheng.jpg";
 import _Rosalie from "./profile-pictures/Rosalie_Zhou.jpg";
 import _Talia from "./profile-pictures/Talia_Feng.jpg";
 import _Tianne from "./profile-pictures/Tianne_Kussat.png";
 import _TiffanyW from "./profile-pictures/female_empty_img.png";
-import _TiffanyY from "./profile-pictures/Tiffany_Yu.jpg";
-import _Vania from "./profile-pictures/female_empty_img.png";
 import _Victoria from "./profile-pictures/female_empty_img.png";
-import _Vittoria from "./profile-pictures/female_empty_img.png";
-import _Whitney from "./profile-pictures/Whitney_Demetriou.jpg";
-import _Arnaz from "./profile-pictures/Arnaz_Dhalla.jpg";
 import _Catherine from "./profile-pictures/Catherine_Zhu.png";
 import _Christina from "./profile-pictures/female_empty_img.png";
 import _Emma from "./profile-pictures/Emma_Lo.png";
 import _Enda from "./profile-pictures/Enda_Çakmak.jpeg";
-import _Erica from "./profile-pictures/Erica_Chu.jpeg";
 import _Grace from "./profile-pictures/Grace_Wang.jpeg";
 import _Rowel from "./profile-pictures/Rowel_Sabahat.png";
-import _Daniel from "./profile-pictures/Daniel_Pan.jpg";
 import _Minh from "./profile-pictures/Minh_Au.jpg";
 import { StaticImageData } from "next/image";
 
@@ -46,25 +36,11 @@ export const members: MemberInfo[] = [
     teams: ["web", "lead"],
   },
   {
-    name: "Daniel Pan",
-    description:
-      "Hi! I'm Daniel, a second-year Computer Science student and a co-lead on the website team. When I'm not coding in the basement, I like playing the piano, sewing, and climbing. If you find any bugs in the website, they're actually features :)",
-    photo: _Daniel,
-    teams: ["web", "lead"],
-  },
-  {
     name: "Grace Wang",
     description:
       "Hi! My name is Grace! I am the team lead for the dynamic video crew team. I’m currently a fourth year student studying Biology in the Faculty of Science. I love hiking and enjoying nature. I find beauty not just in the complexities in science but also in the great outdoors. Going on hikes and stargazing is a passion of mine since I cherish moments that nature offers. During my spare time, I tend to paint portraits or sceneries and make music. It’s a blend of my love for the arts and science.",
     photo: _Grace,
     teams: ["video", "lead"],
-  },
-  {
-    name: "Erica Chu",
-    description:
-      "Hi I’m Erica :) I do the social media and events stuff! I also really like Taylor Swift. Hope to see you around!",
-    photo: _Erica,
-    teams: ["social media", "lead"],
   },
   {
     name: "Enda Cakmak",
@@ -95,46 +71,11 @@ export const members: MemberInfo[] = [
     teams: ["wetlab"],
   },
   {
-    name: "Arnaz Dallah",
-    description:
-      "The Triceratops, a well-known herbivorous dinosaur of the Late Cretaceous, had a unique dental arrangement that set it apart. While it possessed a beak at the front of its mouth for cropping vegetation, the rest of its jaw was filled with numerous teeth arranged in groups called dental batteries. These batteries consisted of up to 800 tightly packed teeth, forming efficient grinding surfaces. This dental adaptation allowed Triceratops to process tough plant material, showcasing the specialized features that evolved in dinosaurs to exploit specific dietary resources during their existence on Earth.",
-    photo: _Arnaz,
-    teams: ["comp + modeling", "lead"],
-  },
-  {
-    name: "Whitney Demetriou",
-    description:
-      "My name is Whitney Demetriou and I am a 4th year student in the faculty of Pharmaceutical Sciences. I am part of the BIOMOD wetlab team, and am interested in drug formulation/development.",
-    photo: _Whitney,
-    teams: ["wetlab", "lead"],
-  },
-  {
-    name: "Vittoria Baht",
-    description:
-      "In the Early Cretaceous, the Microraptor, a small, feathered dinosaur, possessed a remarkable ability—it could glide or possibly even fly. This feathered dinosaur had long feathers on its arms and legs, forming wing-like structures. Although not a direct ancestor of birds, Microraptor exemplifies the evolutionary experimentation with flight-related features in non-avian dinosaurs. Its feathered limbs and potential gliding capabilities highlight the diverse paths taken by dinosaurs as they adapted to various ecological niches, contributing to the evolutionary tapestry that eventually led to the emergence of modern birds.",
-    photo: _Vittoria,
-    teams: ["wetlab"],
-  },
-  {
     name: "Victoria Chong",
     description:
       "The Parasaurolophus, a herbivorous dinosaur of the Late Cretaceous, featured a distinctive cranial crest—a long, tubular structure extending backward from its skull. Recent studies suggest that this hollow crest acted as a resonating chamber, enabling Parasaurolophus to produce low-frequency sounds. This adaptation likely played a role in communication, helping these dinosaurs convey information or warn of potential threats. The intricate structures found in dinosaur anatomy continue to unravel, providing valuable insights into the behaviors and adaptations that allowed them to thrive in prehistoric environments.",
     photo: _Victoria,
     teams: ["wetlab", "finance"],
-  },
-  {
-    name: "Vania Rezaei",
-    description:
-      "The Ankylosaurus, a heavily armored dinosaur from the Late Cretaceous, sported a remarkable defense mechanism—a tail club composed of fused vertebrae and thick bony knobs. This tail club, resembling a medieval mace, served as a formidable weapon against predators. Ankylosaurus likely swung its tail to deter attackers or assert dominance. This unique adaptation showcases the ingenious ways dinosaurs evolved to thrive in their ecosystems, emphasizing the fascinating diversity of defensive strategies employed by these ancient creatures.",
-    photo: _Vania,
-    teams: ["wetlab"],
-  },
-  {
-    name: "Tiffany Yu",
-    description:
-      "My name is Tiffany Yu and I am a fourth year Chemical and Biological Engineering student. I am the team lead of Cadnano sub-team. I joined BIOMOD because I have great interest in nanotechnology. In my free time, I play the piano and I am currently learning opera singing.",
-    photo: _TiffanyY,
-    teams: ["comp + modeling", "supervisor"],
   },
   {
     name: "Tiffany Wai",
@@ -165,25 +106,11 @@ export const members: MemberInfo[] = [
     teams: ["social media", "lead"],
   },
   {
-    name: "Melanie Cheng",
-    description:
-      "I’m Melanie and I am currently in my third year studying Biomedical Engineering. This will be my second year as a part of UBC Biomod’s wetlab team and I'm excited to continue with this journey!",
-    photo: _MelanieChe,
-    teams: ["wetlab"],
-  },
-  {
     name: "Laura Siemens",
     description:
       "Did you know that the Stegosaurus, a herbivorous dinosaur from the Late Jurassic period, had a brain the size of a walnut, despite its massive size? Despite its relatively small brain, the Stegosaurus had large plates along its back and four sharp spikes on its tail, likely used for defense against predators. These distinct features make the Stegosaurus a fascinating example of the diverse adaptations that existed among dinosaurs during their reign on Earth.",
     photo: _Laura,
     teams: ["wetlab", "supervisor", "finance"],
-  },
-  {
-    name: "Kendrick Cooke",
-    description:
-      "Hi! My name is Kendrick Cooke and I’m a 4th year Bachelor of Pharmaceutical Sciences student. I have been a part of Biomod since my third year and am acting Project Lead this year! I find new drug delivery technologies very interesting and am passionate about women’s health! Outside of school I really enjoy sports, I play football golf and ultimate frisbee and love being outside.",
-    photo: _Kendrick,
-    teams: ["wetlab", "supervisor"],
   },
   {
     name: "Miguel Tsai",
@@ -231,17 +158,6 @@ export const members: MemberInfo[] = [
       friends!",
     photo: _Paniz,
     teams: ["captain"],
-  },
-  {
-    name: "Vivian Zheng",
-    description:
-      "Hi! I'm a 3rd year CAPS major, and part of the wet lab team in\
-      BIOMOD. This will be my third year in BIOMOD, and originally joined back in my\
-      first year because I was really interested by the previous years' work and\
-      wanted to contribute towards develop exciting projects in nanotech! In my\
-      spare, I love to play badminton, go cafe hopping and hiking!",
-    photo: _Vivian,
-    teams: ["wetlab", "supervisor"],
   },
   {
     name: "Maggie Wang",
