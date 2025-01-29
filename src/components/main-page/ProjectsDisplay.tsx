@@ -6,6 +6,7 @@ import project2019 from "@/assets/project_2019.jpg";
 import project2018 from "@/assets/project_2018.png";
 import project2017 from "@/assets/project_2017.png";
 import project2016 from "@/assets/project_2016.png";
+import andbox from "@/assets/andbox-gif1.gif";
 
 const ProjectsDisplay = () => {
   return (
@@ -15,13 +16,22 @@ const ProjectsDisplay = () => {
       </h2>
       <div className="grid grid-cols-2 lg:grid-cols-4 grid-rows-6 lg:grid-rows-3 w-full h-[calc((100dvw-3rem)*6/2)] lg:h-[calc((100dvw-6rem)*3/4)] gap-2 lg:gap-8">
         <ProjectCard
+          href="https://ubcbiomod2024.netlify.app/"
           className="bg-primary col-span-2"
-          yearElement={
-            <span className="text-2xl lg:text-5xl">coming soon!</span>
-          }
+          yearElement={<span className="text-2xl lg:text-5xl">2024</span>}
         >
-          <div className="font-semibold text-white text-3xl md:text-5xl lg:text-6xl">
-            2024
+          <div className="flex w-full h-full items-center bg-primary text-white text-center rounded-xl p-4">
+            <Image
+              src={andbox}
+              alt="2024 Project animation"
+              className="w-2/5 relative"
+            />
+            <div className="flex flex-col gap-2 mx-8">
+              <div className="text-sm md:text-2xl lg:text-3xl">The AND Box</div>
+              <div className="text-[0.5rem] md:text-sm lg:text-base">
+                A Targetted Anti-CD3 Delivery System for Prostate Cancer.
+              </div>
+            </div>
           </div>
         </ProjectCard>
         <ProjectCard
