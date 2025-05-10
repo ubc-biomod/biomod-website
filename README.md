@@ -1,5 +1,5 @@
 # UBC BIOMOD Website
-Repository for the UBC BIOMOD Club's official landing page
+Repository for the UBC BIOMOD Design Team's official landing page
 
 Built with Next.js, Typescript, and Tailwind CSS + Preline
 
