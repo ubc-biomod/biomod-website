@@ -33,20 +33,20 @@ export default function ReadyToApply() {
             UBC BIOMOD is currently hiring! Check out the hiring package: <br />
             <a
               className="text-primary"
-              href="https://docs.google.com/document/d/1hp2kPfjG91ar2aAhLUCvasNIUm8tuFRa0hGqTsnVeWc/edit?tab=t.0"
+              href="https://docs.google.com/document/d/1iP2mgDWsZ4kBggu_ZaUX-cCKaxzgVitLe9r9tg_aqP8/edit?tab=t.0"
               target="_blank"
             >
-              2025 Hiring Package
+              2025/2026 Hiring Package
             </a>
             <br />
             <br />
-            Applications are due February 12th @ 11:59PM, apply here: <br />
+            Applications are due September 8th @ 11:59PM, apply here: <br />
             <a
               className="text-primary"
-              href="https://ubc.ca1.qualtrics.com/jfe/form/SV_1YxteHMiB2NchDg"
+              href="https://ubc.ca1.qualtrics.com/jfe/form/SV_dhhAsVDcpBTuWLs"
               target="_blank"
             >
-              2025 Recruitment form
+              2025/2026 Recruitment form
             </a>
           </p>
         </div>
