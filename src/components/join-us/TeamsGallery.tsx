@@ -135,7 +135,7 @@ function TeamsGallery() {
       <h1 className="text-primary text-headingRegMob font-semibold lg:text-headingReg text-center font-title">
         See our amazing subteams
       </h1>
-      <div className="flex gap-2 bg-white border rounded-3xl p-1 overflow-x-scroll w-full lg:w-auto">
+      <div className="flex gap-2 bg-white border rounded-3xl p-1 w-full lg:w-auto">
         {teamsList.map((team, i) => (
           <button
             className={`px-3 py-2 rounded-full shrink-0 ${
