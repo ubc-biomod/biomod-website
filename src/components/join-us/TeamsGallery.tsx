@@ -193,11 +193,11 @@ function TeamsGallery() {
             className="w-full object-cover rounded-t-xl md:rounded-tl-none md:rounded-r-xl pointer-events-none"
           />
           <div className="flex flex-col justify-between gap-4 p-4 md:basis-1/3 shrink-0">
-            <div className="flex flex-col gap-4 h-full">
+            <div className="flex flex-col gap-4 h-full p-4">
               <span className="text-subHeadingRegMob text-primary lg:text-subHeadingReg font-semibold">
                 {team.name}
               </span>
-              <p className="overflow-scroll">{team.description}</p>
+              <p className="">{team.description}</p>
             </div>
             {/* <span className="font-bold text-sm">{team.aside}</span> */}
           </div>

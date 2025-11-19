@@ -249,7 +249,7 @@ function SponsorsTier() {
                   {header}
                 </h2>
               </header>
-              <p className="overflow-y-scroll">{text}</p>
+              <p className="">{text}</p>
               <a
                 className="link text-primary hover:opacity-80"
                 href={link}

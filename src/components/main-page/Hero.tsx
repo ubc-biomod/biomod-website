@@ -42,7 +42,7 @@ export default function Hero() {
           >
             UBC&apos;s Premiere Biomolecular Design Team
           </h2>
-          <Link href="/about" className="btn btn--accent">
+          <Link href="/about-us" className="btn btn--primary z-20">
             Discover
           </Link>
         </div>
