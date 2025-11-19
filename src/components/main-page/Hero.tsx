@@ -60,8 +60,8 @@ function Statistics() {
             gap-y-[1.5rem]
             md:flex-row md:gap-x-[5rem] lg:gap-x-[8rem]"
     >
-      <Number num={9} description="years running" />
-      <Number num={10} description="projects made" />
+      <Number num={11} description="years running" />
+      <Number num={12} description="projects made" />
       <Number num={6} description="1st place wins" />
     </div>
   );
