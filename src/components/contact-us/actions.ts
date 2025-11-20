@@ -1,5 +1,3 @@
-"use server";
-
 export async function submitContactForm(formData: FormData) {
   formData.append("access_key", process.env.WEB3FORMS_KEY ?? "");
 
