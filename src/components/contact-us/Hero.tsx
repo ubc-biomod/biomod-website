@@ -30,8 +30,8 @@ function Hero() {
           Contact Us
         </h1>
         <h2 className="text-primary text-subHeadingRegMob lg:text-subHeadingReg text-center">
-          Want to get connected with us? Send us a message on our social media,
-          or fill out the form below!
+          Want to get connected with us? Feel free to email or send a message on
+          social media!
         </h2>
       </div>
       <div className="grow flex flex-col bg-primary gap-4 py-10 px-6 rounded-lg">
