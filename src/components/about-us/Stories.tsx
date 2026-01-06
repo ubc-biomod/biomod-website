@@ -18,24 +18,24 @@ type StoryInfo = {
 const stories: StoryInfo[] = [
   {
     name: "Karina Akhmedova",
-    position: "Captain",
+    position: "Former Captain",
     links: {
       linkedin: "https://www.linkedin.com/in/karinaubc",
       instagram: "https://instagram.com/karinamdv_",
     },
     content:
-      "I became a part of UBC BIOMOD in the beginning of my second year in Biomedical Engineering. It’s now my third year on the team! Originally, I joined as a part of wetlab subteam: worked on protocol development and performed some experimental work. Later, I was promoted to a wetlab subteam lead, and then a co-captain along with Paniz. It’s been 4 months of us leading the team and I have to admit it’s more work than it seemed! UBC BIOMOD is a great place to grow as a leader, an engineer, and a person. I’m excited to be a part of this team, it allowed me to gain technical knowledge in various fields and directly apply them on a problem. A highlight memory of mine is us going to a 2023 competition in Tokyo, we were so happy and so nervous at the same time. I had to present computational results back then and it was my first time ever presenting work internationally. BIOMOD is about people, it’s a place to learn and solve together.",
+      "I became a part of UBC BIOMOD in the beginning of my second year in Biomedical Engineering. I was a member for three years! Originally, I joined as a part of wetlab subteam: worked on protocol development and performed some experimental work. Later, I was promoted to a wetlab subteam lead, and then a co-captain along with Paniz. UBC BIOMOD was a great place to grow as a leader, an engineer, and a person. My time with the team allowed me to gain technical knowledge in various fields and directly apply them on a problem. A highlight memory of mine is us going to a 2023 competition in Tokyo, we were so happy and so nervous at the same time. I had to present computational results back then and it was my first time ever presenting work internationally. BIOMOD is about people, it's a place to learn and solve together.",
     picture: _Karina,
   },
   {
     name: "Miguel Tsai",
-    position: "Advisor (Former Captain)",
+    position: "Former Captain",
     links: {
       linkedin: "https://www.linkedin.com/in/miguel-roberto-tsai-bbbb4920a",
       instagram: null,
     },
     content:
-      "Miguel has been in UBC BIOMOD since 1st year, which makes it his 5th year. When he joined, he was a part of many subteams: wetlab, website, Cadnano(now computational and modeling). He became a wetlab lead and eventually one of the co-captains. He has become an essential member of the many projects and subteams he has been on. He jokingly says all the time that he eats, sleeps and dreams of UBC BIOMOD.  He has learned so much from his time at UBC BIOMOD and made so many good friends, he can’t imagine his life without it. “I have been mentored by many people at UBC BIOMOD and I wish I am doing the same to all the members currently. I think the best part of UBC BIOMOD is learning from each other and facing all these challenges together.”",
+      "Miguel was in UBC BIOMOD for 5 years, starting from his 1st year. When he joined, he was a part of many subteams: wetlab, website, Cadnano(now computational and modeling). He became a wetlab lead and eventually one of the co-captains. He was an essential member of the many projects and subteams he was on. He jokingly says all the time that he ate, slept and dreamed of UBC BIOMOD. He learned so much from his time at UBC BIOMOD and made so many good friends. He was mentored by many people at UBC BIOMOD and hopes he did the same for all the members during his time. He thinks the best part of UBC BIOMOD is learning from each other and facing all these challenges together.",
     picture: _Miguel,
   },
 ];

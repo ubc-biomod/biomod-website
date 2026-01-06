@@ -1,24 +1,34 @@
-import _Kshemaka from "./profile-pictures/Kshemaka.jpg";
-import _Miguel from "./profile-pictures/Miguel.jpg";
-import _MelanieCha from "./profile-pictures/Melanie_Chan.jpg";
-import _Karina from "./profile-pictures/Karina_Akhmedove.jpg";
-import _Paniz from "./profile-pictures/Paniz_Ghavimi.jpg";
-import _Ethan from "./profile-pictures/Ethan_Rajkumar.jpg";
-import _Maggie from "./profile-pictures/Maggie_Wang.jpg";
-import _Laura from "./profile-pictures/female_empty_img.png";
-import _Rosalie from "./profile-pictures/Rosalie_Zhou.jpg";
-import _Talia from "./profile-pictures/Talia_Feng.jpg";
-import _Tianne from "./profile-pictures/Tianne_Kussat.png";
-import _TiffanyW from "./profile-pictures/female_empty_img.png";
-import _Victoria from "./profile-pictures/female_empty_img.png";
-import _Catherine from "./profile-pictures/Catherine_Zhu.png";
-import _Christina from "./profile-pictures/female_empty_img.png";
-import _Emma from "./profile-pictures/Emma_Lo.png";
-import _Enda from "./profile-pictures/Enda_Çakmak.jpeg";
-import _Grace from "./profile-pictures/Grace_Wang.jpeg";
-import _Rowel from "./profile-pictures/Rowel_Sabahat.png";
-import _Minh from "./profile-pictures/Minh_Au.jpg";
 import { StaticImageData } from "next/image";
+
+// Import new profile pictures
+import _Kevin from "./profile-pictures/Devin_Deng-Han.jpg";
+import _Dorothy from "./profile-pictures/Dorothy_Ye.jpg";
+import _Hazel from "./profile-pictures/Hazel_Leung.jpg";
+import _Juanse from "./profile-pictures/Juanse_Becerra.jpg";
+import _Yvette from "./profile-pictures/Yvette_Sin.jpg";
+import _Bonnie from "./profile-pictures/Bonnie_Xing.jpg";
+import _Lujine from "./profile-pictures/Lujine_Younis.jpg";
+import _Sienna from "./profile-pictures/Sienna_Juco.png";
+import _Anya from "./profile-pictures/Anya_Wongreantong.jpg";
+import _Cooper from "./profile-pictures/Cooper_Nam.jpg";
+import _Jessica from "./profile-pictures/Jessica_Song.jpg.png";
+import _Selina from "./profile-pictures/Selina_Fu.jpg";
+import _Charity from "./profile-pictures/Charity_Grey.jpg";
+import _Nicole from "./profile-pictures/Nicole_Chan.jpg";
+import _Dariga from "./profile-pictures/Dariga_Tanabayeva.jpg";
+import _Sruthi from "./profile-pictures/Sruthi_Magesh-Shanmugaram.jpg";
+import _Tianne from "./profile-pictures/Tianne_Kussat.jpg";
+import _Emma from "./profile-pictures/Emma_Lo.jpg";
+import _SongHa from "./profile-pictures/Song_Ha-Nguyen.jpg";
+import _Joseph from "./profile-pictures/Joseph_Deng.jpg";
+import _Angel from "./profile-pictures/Angel_Xu.jpg";
+import _Julian from "./profile-pictures/Julian_Mark-Santos.jpg";
+import _Jisong from "./profile-pictures/Jisong_Han.jpg";
+import _Aieshini from "./profile-pictures/Aieshini_Udumullage.jpg";
+import _Jueun from "./profile-pictures/Jueun_Woo.jpg";
+import _Lecia from "./profile-pictures/Lecia_Zhu.jpg";
+import _Hannah from "./profile-pictures/Hannah_Cheng.jpg";
+import _David from "./profile-pictures/David_Yang.jpg";
 
 export type MemberInfo = {
   name: string;
@@ -27,147 +37,222 @@ export type MemberInfo = {
   teams: string[];
 };
 
+// Helper function to normalize subteam names to team array
+function normalizeTeams(subteam: string): string[] {
+  const subteamLower = subteam.toLowerCase().trim();
+  const teams: string[] = [];
+
+  if (subteamLower.includes("wetlab")) teams.push("wetlab");
+  if (
+    subteamLower.includes("computational") ||
+    subteamLower.includes("computation")
+  )
+    teams.push("computational");
+  if (subteamLower.includes("video")) teams.push("video");
+  if (subteamLower.includes("website") || subteamLower.includes("web"))
+    teams.push("web");
+  if (subteamLower.includes("finance")) teams.push("finance");
+  if (subteamLower.includes("marketing")) teams.push("marketing");
+
+  // Check for lead positions in description or subteam
+  if (subteamLower.includes("lead")) teams.push("lead");
+
+  return teams.length > 0 ? teams : ["member"];
+}
+
 export const members: MemberInfo[] = [
   {
-    name: "Minh Au",
+    name: "Kevin Deng-Han",
     description:
-      "Hello!! I'm Minh, and I'm the other co-lead on the website team. You could find me mainly in the basement, though I don't play piano, sew or climb (or code :P). I'm the main reason why the website is late a few times.",
-    photo: _Minh,
-    teams: ["web", "lead"],
+      "I'm a 4th year Honours in Biotechnology Major interested in researching all aspects of cancer development and therapies. I enjoy climbing, lifting, running, and drawing in my free time. My favourite book(s) are the three body problem trilogy. Did you know that orangutans have a 600lb grip strength? I wish I was built like that.",
+    photo: _Kevin,
+    teams: normalizeTeams("Wetlab"),
   },
   {
-    name: "Grace Wang",
+    name: "Dorothy Ye",
     description:
-      "Hi! My name is Grace! I am the team lead for the dynamic video crew team. I’m currently a fourth year student studying Biology in the Faculty of Science. I love hiking and enjoying nature. I find beauty not just in the complexities in science but also in the great outdoors. Going on hikes and stargazing is a passion of mine since I cherish moments that nature offers. During my spare time, I tend to paint portraits or sceneries and make music. It’s a blend of my love for the arts and science.",
-    photo: _Grace,
-    teams: ["video", "lead"],
+      "Hi, my name is Dorothy. I'm a first-year engineering student. I'm part of the computational sub-team and excited to meet more people.",
+    photo: _Dorothy,
+    teams: normalizeTeams("Computational"),
   },
   {
-    name: "Enda Cakmak",
+    name: "Hazel Leung",
     description:
-      "Hi! I'm Enda and I am a 4th year Biomedical Engineering student at UBC! I have been a part of the wet lab team at BIOMOD since my 2nd year because I was interested in learning more about nanotechnology, molecular biology and wet lab experiments. Being part of a research project fully ran by students is a very exciting and unique experience! In my free time, I like boxing, feeding my caffeine addiction, and watching F1!",
-    photo: _Enda,
-    teams: ["wetlab", "lead"],
+      "Hi! My name is Hazel and I am a fourth year Biomedical Engineering Student at UBC.",
+    photo: _Hazel,
+    teams: normalizeTeams("Wetlab"),
   },
   {
-    name: "Emma Lo",
+    name: "Juanse Becerra",
     description:
-      "Emma is a Biochemistry student whose true passion in life is to discover the scientific formula for the perfect nap. She shows up to BIOMOD meetings running on nothing but sushi, matcha, and a pinch of stardust, but is always ready to help out. In her free time she enjoys reading, drawing, or teaching herself a new musical instrument.",
-    photo: _Emma,
-    teams: ["wetlab"],
+      "Hello fellow innovator! A little bit about myself: I'm fascinated by how cells and living systems operate from the microscopic to nanoscopic scale. My curiosity often leads me to explore how the body can misfire and become its own enemy — and whether we can engineer ways to reverse it!? Outside the lab, you'll find me singing, playing tennis, or enjoying good food with friends. If you're ever up for a bite and a great conversation, count me in — science tastes better when shared.",
+    photo: _Juanse,
+    teams: normalizeTeams("Wetlab"),
   },
   {
-    name: "Christina Zhang",
+    name: "Yvette Sin",
     description:
-      'Meet the Dilophosaurus, a carnivorous dinosaur from the Early Jurassic distinguished by its double-crested appearance. Despite its Hollywood portrayal in "Jurassic Park," there\'s no evidence that Dilophosaurus spat venom. Instead, its crests likely served a display or recognition function. With a lightweight build and long legs, it was likely a fast and agile predator. Dilophosaurus offers a glimpse into the varied forms and functions of crests in dinosaurs, showcasing the complexity of adaptations that evolved throughout the vast timeline of dinosaur existence on our planet.',
-    photo: _Christina,
-    teams: ["wetlab"],
+      "Hi! I'm a fourth-year Biochemistry student minoring in Commerce, and I'm the Finance Lead at BIOMOD. I'm passionate about drug design and clinical research, and I hope to pursue a career in this field. In my free time, I love working out and trying new restaurants around Vancouver!",
+    photo: _Yvette,
+    teams: ["finance", "lead"],
   },
   {
-    name: "Catherine Zhu",
+    name: "Bonnie Xing",
     description:
-      "Hi! I’m a 4th year biomedical engineering student in the systems and signals stream! I’m interested in learning about MEMS and nanotechnology. In my spare time, I enjoy playing computer games and reading Webtoons. I also like to figure skate and ski.",
-    photo: _Catherine,
-    teams: ["wetlab"],
+      "Hi, I'm Bonnie, a Biochemistry student at UBC. I love blending creativity and research, whether that's designing visuals, filming stories, or exploring new ideas in/out of the lab. Out of Science, you will find me journaling or drawing at random study spots at IKB! :))",
+    photo: _Bonnie,
+    teams: normalizeTeams("Video Team"),
   },
   {
-    name: "Victoria Chong",
+    name: "Lujine Younis",
     description:
-      "The Parasaurolophus, a herbivorous dinosaur of the Late Cretaceous, featured a distinctive cranial crest—a long, tubular structure extending backward from its skull. Recent studies suggest that this hollow crest acted as a resonating chamber, enabling Parasaurolophus to produce low-frequency sounds. This adaptation likely played a role in communication, helping these dinosaurs convey information or warn of potential threats. The intricate structures found in dinosaur anatomy continue to unravel, providing valuable insights into the behaviors and adaptations that allowed them to thrive in prehistoric environments.",
-    photo: _Victoria,
-    teams: ["wetlab", "finance"],
+      "Hi I'm Lujine! I'm in my 4th year of Biomedical Engineering, with a focus in biomechanics/cellular engineering. I joined BIOMOD in my second year, where I am currently a member of the wetlab subteam.I enjoy being active (swim, run, gym), reading and occasionally playing the piano. I enjoy trying out new places to eat, especially when they have a good selection of sweet treats!",
+    photo: _Lujine,
+    teams: normalizeTeams("Wetlab"),
   },
   {
-    name: "Tiffany Wai",
+    name: "Sienna Juco",
     description:
-      "In the Late Cretaceous period, the Spinosaurus, one of the largest carnivorous dinosaurs, inhabited river systems and displayed a unique adaptation: a crocodile-like snout. This adaptation suggests a semi-aquatic lifestyle, with Spinosaurus possibly hunting fish. With an estimated length of up to 50-59 feet (15-18 meters), it surpasses even the Tyrannosaurus rex in size. The discovery of Spinosaurus fossils in North Africa provides insights into the incredible diversity and adaptations of dinosaurs in different environments during prehistoric times.",
-    photo: _TiffanyW,
-    teams: ["wetlab"],
+      "Hi! My name is Sienna, and I am a 2nd year Neuroscience student. As part of the Wetlab subteam, I enjoy being able to apply innovative solutions to current scientific challenges. Outside of the lab, I love reading, spending time outdoors and learning about new discoveries.",
+    photo: _Sienna,
+    teams: normalizeTeams("Wetlab"),
+  },
+  {
+    name: "Anya Wongreantong",
+    description: "Member of the Wetlab and Computational subteams.",
+    photo: _Anya,
+    teams: normalizeTeams("Wetlab/Computation"),
+  },
+  {
+    name: "Cooper Nam",
+    description:
+      "Hi! My name is Cooper and I'm a second year Biomedical Engineering student. I joined BIOMOD because I wanted to apply my skills and learn in an on hands environment. In my spare time I like to play sports, read, and cook. I love the work that we've been doing so far and I can't wait to contribute to more projects in the future.",
+    photo: _Cooper,
+    teams: normalizeTeams("Computational"),
+  },
+  {
+    name: "Jessica Song",
+    description:
+      "Hi! I'm a 3rd year Neuroscience student. This is my third year being a part of BIOMOD and I'm really excited for the upcoming project and work ahead :) I'm on a quest to collect Eppendorf pipette pens. In the lab, you can find me picking worms under the microscope (I work with c elegans). And in my free time, I really enjoy reading, visiting new cafes, and going on motorcycle trips!",
+    photo: _Jessica,
+    teams: normalizeTeams("Wetlab + Video"),
+  },
+  {
+    name: "Selina Fu",
+    description:
+      "Hi! I am Computational Subteam member in second year in Computer Science and Statistics.",
+    photo: _Selina,
+    teams: normalizeTeams("Computational"),
+  },
+  {
+    name: "Charity Grey",
+    description:
+      "Charity is a 5th year student in CS and Biology. She's really interested in doing cool stuff with data and software, especially in life science fields. When she's not procrastinating, you can find her cooking up a new recipe that she's half-following or doing random rabbit holes- for example learning about the life cycle of ants or what on earth a JWT means.",
+    photo: _Charity,
+    teams: normalizeTeams("Computational"),
+  },
+  {
+    name: "Nicole Chan",
+    description:
+      "Hello everyone my name is Nicole and I love Shrek and dogs and cows and running :DDD",
+    photo: _Nicole,
+    teams: normalizeTeams("Video/Wetlab"),
+  },
+  {
+    name: "Dariga Tanabayeva",
+    description:
+      "Hi! My name is Dariga Tanabayeva, and I'm an undergraduate student studying Cellular, Anatomical, and Physiological Sciences at UBC. I'm passionate about biomedical research and fascinated by how synthetic biology and nanotechnology can be used to address global health challenges. I'm particularly interested in developing innovative therapeutic approaches that bridge biology, engineering, and medicine. Outside the lab, I love traveling and dancing.",
+    photo: _Dariga,
+    teams: normalizeTeams("Wetlab"),
+  },
+  {
+    name: "Sruthi Magesh",
+    description:
+      "Hi! I'm Sruthi, a 4th year biomedical engineering student on the Wetlab subteam. I'm interested in immunotherapeutics and spinal cord repair. I am also an avid coffee drinker, and like to roller blade in my free time.",
+    photo: _Sruthi,
+    teams: normalizeTeams("Wetlab"),
   },
   {
     name: "Tianne Kussat",
     description:
-      "Hi I'm Tianne, I'm a second year Microbiology and Immunology student. I'm on the website team where I make graphics. Outside of studying, I spend my time reading - my favourite book is The Tenth Muse by Catherine Chung.",
+      "Hi I'm Tianne! I'm a 4th year Microbiology and Immunology + Data Science student. I'm on the website team where I help make graphics for our super cool website. I like to spend my free time hiking/backpacking, reading, and baking!",
     photo: _Tianne,
-    teams: ["web", "graphics"],
+    teams: normalizeTeams("Website"),
   },
   {
-    name: "Talia Feng",
+    name: "Emma Lo",
     description:
-      "Hello, I'm Talia. I am a second year student studying computer science and microbiology and immunology. I am passionate about  drug delivery and immunology as well as software development. I joined BIOMOD because I enjoy the teamworking aspect and enjoy experimenting in labs. ",
-    photo: _Talia,
-    teams: ["wetlab"],
-  },
-  {
-    name: "Rosalie Zhou",
-    description:
-      "Hello! My name is Rosalie Zhou and I am a 2nd year Science student studying Pharmacology. I am a part of the Social Media and Events sub-team and I post updates of our progress as well as share interesting findings by our team with UBC students.",
-    photo: _Rosalie,
-    teams: ["social media", "lead"],
-  },
-  {
-    name: "Laura Siemens",
-    description:
-      "Did you know that the Stegosaurus, a herbivorous dinosaur from the Late Jurassic period, had a brain the size of a walnut, despite its massive size? Despite its relatively small brain, the Stegosaurus had large plates along its back and four sharp spikes on its tail, likely used for defense against predators. These distinct features make the Stegosaurus a fascinating example of the diverse adaptations that existed among dinosaurs during their reign on Earth.",
-    photo: _Laura,
-    teams: ["wetlab", "supervisor", "finance"],
-  },
-  {
-    name: "Miguel Tsai",
-    description:
-      "Hi, I am Miguel and I also one of the co-captains for UBC BIOMOD this year.\
-      I am very excited to be leading this team amazing team. It is unknown if I\
-      have other interests outside of BIOMOD, I eat, live and breathe BIOMOD.  If\
-      I could eat my DNA origami , I would. Maybe that is a future BIOMOD\
-      project..... Well, I also love playing nintendo games.",
-    photo: _Miguel,
-    teams: ["advisor", "legend"],
-  },
-  {
-    name: "Melanie Chan",
-    description:
-      "Melanie is a second year science student studying Microbiology\
-      and Immunology. When she isn't invested in reading up on new advancements in\
-      DNA technology and all its applications, she enjoys reading science fiction\
-      and writing poetry.",
-    photo: _MelanieCha,
+      "Hi, I'm Emma! I'm a fourth year Biochemistry student who is currently on co-op, and I'm one of the Wetlab Leads. I've been part of UBC BIOMOD since my first year, making this my fourth year on the team! I've really enjoyed all the interesting things I've had the chance to dive into and learn about, and the cool people I get to meet during my time with BIOMOD. In my free time I enjoy exploring new cafes, going on hikes, and taking a good nap :)",
+    photo: _Emma,
     teams: ["wetlab", "lead"],
   },
   {
-    name: "Karina Akhmedova",
+    name: "Song Ha Nguyen",
     description:
-      "I'm studying biomedical engineering and am very passionate about\
-      stem cell research related to immunology and neurology. Studying these\
-      subjects always makes me feel curious and intrigued, but also empty-headed\
-      sometimes (you can never know enough!). In my free time, I exercise at the\
-      gym, run, and learn to do an arm stand. cool fact: an active lifestyle\
-      increases life expectancy. In biomod, I love the community of young and\
-      passionate scientists we have, trying to solve modern problems in the field of\
-      medicine.",
-    photo: _Karina,
-    teams: ["captain"],
+      '"Life is too short, and DNA is too long" by the Jurassic Park\'s author - Michael Crichton is my favorite quote. I love DNA. Did you know the telomere (non-coding DNA sequence) is hypothesized to be our molecular aging clock? Diet, sleep, and lifestyle can influence our telomere\'s length thus cells life span. As a picky eater, cool biological evidence really scares me (in a good way) into eating healthy, sleeping well, and grinding hours of badminton, my other biggest passion. Extracting the practicality of such beautiful molecules of life into BIOMOD\'s projects would also truly "lengthen" my telomere.',
+    photo: _SongHa,
+    teams: normalizeTeams("Wetlab"),
   },
   {
-    name: "Paniz Ghavimi",
+    name: "Joseph Deng",
     description:
-      "Hiii everyone! My name is Paniz, and I am an incoming\
-      fourth-year student in the Faculty of Science with a major focus on Molecular\
-      and Cellular Biology. I am a member of the Wet Lab Team, where I help with\
-      designing projects and performing experiments. In my free time, I enjoy\
-      kayaking, playing tennis, and discovering new ice cream flavours with\
-      friends!",
-    photo: _Paniz,
-    teams: ["captain"],
+      "Hi I'm Joseph and I'm in my third year in Computer Science and Physics 🤓! I don't know too much about biology stuff so I'm just here to work on the website, outside of biomod and school I also like rock climbing, running, guitar, clairo, and matcha!!!",
+    photo: _Joseph,
+    teams: normalizeTeams("Website"),
   },
   {
-    name: "Maggie Wang",
+    name: "Angel Xu",
     description:
-      "Hi, I’m Maggie! I am a third year biomedical engineering student\
-      and the finance team lead at UBC BIOMOD. I’m interested in 3D printing,\
-      quantum physics, and microbiology. In my free time, I like to read, watch bad\
-      reality TV, and go on hikes. My favourite book that I’ve read this year is\
-      Breasts and Eggs by Mieko Kawakami.",
-    photo: _Maggie,
-    teams: ["wetlab", "finance", "lead"],
+      "Hi, I'm Angel! I am a third year Pharmacology major. In my spare time I love working on BIOMOD (ofc), playing volleyball, reading Dan Brown novels, binging comedy sitcoms and playing with my dog Coco! I am interested in drug delivery mechanisms and clinical applications of DNA origami :)",
+    photo: _Angel,
+    teams: normalizeTeams("Wetlab"),
+  },
+  {
+    name: "Julian Santos",
+    description:
+      "Hiiii I'm Julian but I also go by Juju :D ! I like doing science communication and video stuff. Two words to describe me would be funny and nonchalant. In my free time I like long walks at the beach and chasing people at night. I also play extreme sports like volleyball and badminton and league of legends. #JujuRulesJosephDrools",
+    photo: _Julian,
+    teams: normalizeTeams("Video"),
+  },
+  {
+    name: "Jisong Han",
+    description:
+      "Hello! I'm Jisong. I'm a second year pharmacology student interested in drug delivery systems or nanotechnology in general. In my free time, I can be found watching random shows on Netflix with ice cream.",
+    photo: _Jisong,
+    teams: normalizeTeams("Video"),
+  },
+  {
+    name: "Aieshini Udumullage",
+    description:
+      "Hello! My name is Aieshini and I am in the 3D Blender group of the Video Subteam. I am in my 3rd year studying Neuroscience and am most interested in genetic engineering research particularly related to neurodevelopmental disorders and therapeutics. One reason I joined BIOMOD is to expand my knowledge about bioengineering as it has always been in the back of my mind! In my free time I love to go backpacking, climbing and hiking, when I am not spending time outdoors, you'll probably find me playing with my pet rabbits or finding new tofu recipes!",
+    photo: _Aieshini,
+    teams: normalizeTeams("Video"),
+  },
+  {
+    name: "Jueun Woo",
+    description: "I'm studying Materials Engineering. I also go by John Woo.",
+    photo: _Jueun,
+    teams: normalizeTeams("Wetlab"),
+  },
+  {
+    name: "Lecia Zhu",
+    description:
+      "Hello! I'm Lecia, studying Biochemistry and Forensic Science. When I am not stressed about school (which is almost 24/7 nowadays), I really enjoy doing puzzles, DIY model kits and crafts. Currently, I'm felting capybaras. I also like reading and playing games in my spare time.",
+    photo: _Lecia,
+    teams: normalizeTeams("Website"),
+  },
+  {
+    name: "Hannah Cheng",
+    description:
+      "Hi I'm Hannah, I'm in my first year of pharmsci, and I'm on the marketing team! I like my cat and aquariums.",
+    photo: _Hannah,
+    teams: normalizeTeams("Marketing"),
+  },
+  {
+    name: "David Yang",
+    description:
+      "Hi! I'm David, and I'm studying Computer Science and Math. I'm part of the website team at BIOMOD, where I help build and maintain our website.",
+    photo: _David,
+    teams: normalizeTeams("Website"),
   },
 ];
