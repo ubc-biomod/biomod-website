@@ -188,13 +188,16 @@ function MemberModal({
             {/* Content */}
             <div className="flex flex-col md:flex-row">
               {/* Image */}
-              <div className="relative w-full md:w-1/3 h-64 md:h-[600px]">
+              <div className="relative w-full md:w-1/3 h-64 md:h-[600px] overflow-hidden bg-gray-200">
                 <Image
                   src={member.photo}
                   alt={member.name}
                   fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none object-cover"
                   quality={100}
+                  priority
+                  style={{ objectFit: "cover" }}
                 />
               </div>
 
