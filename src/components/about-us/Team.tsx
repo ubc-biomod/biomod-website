@@ -111,10 +111,16 @@ function MemberCard(member: MemberInfo & { onClick: () => void }) {
       </div>
       <div className="flex flex-col max-h-[50%] z-10">
         <h4 className="text-white font-bold">{member.name}</h4>
-        <div className="shrink overflow-y-scroll">
+        <div
+          className="shrink overflow-y-scroll scrollbar-hide"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
           <p className="text-white">{member.description}</p>
         </div>
-        <div className="pt-6 shrink-0 flex flex-row gap-x-4 justify-end overflow-x-scroll">
+        <div
+          className="pt-6 shrink-0 flex flex-row gap-x-4 justify-end overflow-x-scroll scrollbar-hide"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
           {member.teams.map((t, i) => (
             <span
               key={member.name + t + i}
@@ -156,12 +162,16 @@ function MemberModal({
         exit={{ opacity: 0 }}
       >
         <motion.div
-          className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+          className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl scrollbar-hide"
           onClick={(e) => e.stopPropagation()}
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
+          style={{
+            scrollbarWidth: "none" /* Firefox */,
+            msOverflowStyle: "none" /* IE and Edge */,
+          }}
         >
           <div className="relative">
             {/* Close button */}
