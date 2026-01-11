@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  //   output: "export",
+  // comment out export for testing build, make sure to uncomment it to create the out folder for deployment!
+  output: "export",
   images: {
     unoptimized: true,
   },
