@@ -29,6 +29,7 @@ import _Jueun from "./profile-pictures/Jueun_Woo.jpg";
 import _Lecia from "./profile-pictures/Lecia_Zhu.jpg";
 import _Hannah from "./profile-pictures/Hannah_Cheng.jpg";
 import _David from "./profile-pictures/David_Yang.jpg";
+import _Ainsley from "./profile-pictures/Ainsley_Quirino.jpg";
 
 export type MemberInfo = {
   name: string;
@@ -196,7 +197,7 @@ export const members: MemberInfo[] = [
   {
     name: "Joseph Deng",
     description:
-      "Hi I'm Joseph and I'm in my third year in Computer Science and Physics 🤓! I don't know too much about biology stuff so I'm just here to work on the website, outside of biomod and school I also like rock climbing, running, guitar, clairo, and matcha!!!",
+      "Hi I'm Joseph, I'm way cooler than Juju and I'm also in my third year in Computer Science and Physics 🤓! I don't know too much about biology stuff so I'm just here to work on the website, outside of biomod and school I also like rock climbing, running, guitar, clairo, and matcha!!! ",
     photo: _Joseph,
     teams: normalizeTeams("Website"),
   },
@@ -254,5 +255,12 @@ export const members: MemberInfo[] = [
       "Hi! I'm David, and I'm studying Computer Science and Math. I'm part of the website team at BIOMOD, where I help build and maintain our website.",
     photo: _David,
     teams: normalizeTeams("Website"),
+  },
+  {
+    name: "Ainsley Quirino",
+    description:
+      "Hi, I'm Ainsley! I'm a fourth year materials engineering student passionate about biomaterials and sustainability. When I’m not studying, you’ll probably find me trying a new place to eat or enjoying the sunset at the beach.",
+    photo: _Ainsley,
+    teams: normalizeTeams("Wetlab"),
   },
 ];
