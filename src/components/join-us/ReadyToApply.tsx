@@ -30,7 +30,11 @@ export default function ReadyToApply() {
             Ready to apply?
           </h1>
           <p>
-            UBC BIOMOD is currently hiring! Check out the hiring package: <br />
+            {/* UBC BIOMOD is currently hiring! Check out the hiring package:  */}
+            We are currently not hiring, but our next recruitment cycle will
+            open soon! In the meantime, you can still check out our previous
+            hiring package below:
+            <br />
             <a
               className="text-primary"
               href="https://docs.google.com/document/d/1iP2mgDWsZ4kBggu_ZaUX-cCKaxzgVitLe9r9tg_aqP8/edit?tab=t.0"
@@ -40,14 +44,14 @@ export default function ReadyToApply() {
             </a>
             <br />
             <br />
-            Applications are due September 8th @ 11:59PM, apply here: <br />
+            {/* Applications are due September 8th @ 11:59PM, apply here: <br />
             <a
               className="text-primary"
               href="https://ubc.ca1.qualtrics.com/jfe/form/SV_dhhAsVDcpBTuWLs"
               target="_blank"
             >
               2025/2026 Recruitment form
-            </a>
+            </a> */}
           </p>
         </div>
       ) : (

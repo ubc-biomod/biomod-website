@@ -223,16 +223,16 @@ function SponsorsTier() {
                 sponsorIndex.prev < sponsorIndex.curr
                   ? "right"
                   : sponsorIndex.prev > sponsorIndex.curr
-                  ? "left"
-                  : "visible"
+                    ? "left"
+                    : "visible"
               }
               animate="visible"
               exit={
                 sponsorIndex.prev < sponsorIndex.curr
                   ? "left"
                   : sponsorIndex.prev > sponsorIndex.curr
-                  ? "right"
-                  : "visible"
+                    ? "right"
+                    : "visible"
               }
               key={sponsorIndex.curr}
               variants={animatedDiv}
@@ -249,7 +249,7 @@ function SponsorsTier() {
                   {header}
                 </h2>
               </header>
-              <p className="overflow-y-scroll">{text}</p>
+              <p className="">{text}</p>
               <a
                 className="link text-primary hover:opacity-80"
                 href={link}

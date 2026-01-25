@@ -135,7 +135,7 @@ function TeamsGallery() {
       <h1 className="text-primary text-headingRegMob font-semibold lg:text-headingReg text-center font-title">
         See our amazing subteams
       </h1>
-      <div className="flex gap-2 bg-white border rounded-3xl p-1 overflow-x-scroll w-full lg:w-auto">
+      <div className="flex gap-2 bg-white border rounded-3xl p-1 w-full lg:w-auto">
         {teamsList.map((team, i) => (
           <button
             className={`px-3 py-2 rounded-full shrink-0 ${
@@ -193,11 +193,11 @@ function TeamsGallery() {
             className="w-full object-cover rounded-t-xl md:rounded-tl-none md:rounded-r-xl pointer-events-none"
           />
           <div className="flex flex-col justify-between gap-4 p-4 md:basis-1/3 shrink-0">
-            <div className="flex flex-col gap-4 h-full">
+            <div className="flex flex-col gap-4 h-full p-4">
               <span className="text-subHeadingRegMob text-primary lg:text-subHeadingReg font-semibold">
                 {team.name}
               </span>
-              <p className="overflow-scroll">{team.description}</p>
+              <p className="">{team.description}</p>
             </div>
             {/* <span className="font-bold text-sm">{team.aside}</span> */}
           </div>

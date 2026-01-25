@@ -17,3 +17,8 @@
 .input {
   @apply p-2 border-b-secondary border-b focus:outline-none focus:border-b-primary focus:border-b-2 transition-colors duration-150;
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
