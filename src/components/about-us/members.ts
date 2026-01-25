@@ -30,6 +30,7 @@ import _Lecia from "./profile-pictures/Lecia_Zhu.jpg";
 import _Hannah from "./profile-pictures/Hannah_Cheng.jpg";
 import _David from "./profile-pictures/David_Yang.jpg";
 import _Ainsley from "./profile-pictures/Ainsley_Quirino.jpg";
+import _Abiola from "./profile-pictures/Abiola_Ajibola.png";
 
 export type MemberInfo = {
   name: string;
@@ -261,6 +262,13 @@ export const members: MemberInfo[] = [
     description:
       "Hi, I'm Ainsley! I'm a fourth year materials engineering student passionate about biomaterials and sustainability. When I’m not studying, you’ll probably find me trying a new place to eat or enjoying the sunset at the beach.",
     photo: _Ainsley,
+    teams: normalizeTeams("Wetlab"),
+  },
+  {
+    name: "Abiola Ajibola",
+    description:
+      "Hi! I’m Abiola, a second-year student in Chemical and Biological engineering and a returning member of the BIOMOD wetlab subteam. I’m looking forward to deepening my hands-on lab skills and taking on more responsibility this year. Outside the lab, I love to travel. I’ve visited six countries so far, and experiencing new cultures, food, and people never gets old. When I’m not napping between classes, you can usually find me doing Afro dance, my favourite way to recharge and stay connected to my Nigerian roots! I’m really excited for another year with BIOMOD and to grow alongside such a creative and lively group.",
+    photo: _Abiola,
     teams: normalizeTeams("Wetlab"),
   },
 ];

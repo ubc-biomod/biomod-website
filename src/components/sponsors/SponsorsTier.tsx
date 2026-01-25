@@ -223,16 +223,16 @@ function SponsorsTier() {
                 sponsorIndex.prev < sponsorIndex.curr
                   ? "right"
                   : sponsorIndex.prev > sponsorIndex.curr
-                  ? "left"
-                  : "visible"
+                    ? "left"
+                    : "visible"
               }
               animate="visible"
               exit={
                 sponsorIndex.prev < sponsorIndex.curr
                   ? "left"
                   : sponsorIndex.prev > sponsorIndex.curr
-                  ? "right"
-                  : "visible"
+                    ? "right"
+                    : "visible"
               }
               key={sponsorIndex.curr}
               variants={animatedDiv}

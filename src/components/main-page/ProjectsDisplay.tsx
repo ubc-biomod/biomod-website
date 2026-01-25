@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ProjectCard from "./ProjectCard";
+import project2025 from "@/assets/project_2025.png";
 import project2024 from "@/assets/project_2024.gif";
 import project2022 from "@/assets/project_2022.gif";
 import project2019 from "@/assets/project_2019.jpg";
@@ -14,6 +15,29 @@ const ProjectsDisplay = () => {
       <h2 className="text-titleMob lg:text-titleReg font-bold font-title text-primary text-center">
         Check out our past projects
       </h2>
+
+      <div className="w-full">
+        <ProjectCard
+          href="https://2025.ubcbiomod.com/"
+          className="bg-primary col-span-3 w-full"
+          yearElement={<span className="text-3xl lg:text-6xl">2025</span>}
+        >
+          <div className="flex w-full h-full items-center bg-primary text-white text-center rounded-xl p-4">
+            <Image
+              src={project2025}
+              alt="2025 Project image"
+              className="w-2/5 h-1/2 relative"
+            />
+            <div className="flex flex-col gap-2 mx-8">
+              <div className="text-sm md:text-3xl lg:text-4xl">P-Gel 2025</div>
+              <div className="text-[0.5rem] md:text-sm lg:text-base">
+                Our Protein-producing Gel for the 2025 competition.
+              </div>
+            </div>
+          </div>
+        </ProjectCard>
+
+      </div>
       <div className="grid grid-cols-2 lg:grid-cols-4 grid-rows-6 lg:grid-rows-3 w-full h-[calc((100dvw-3rem)*6/2)] lg:h-[calc((100dvw-6rem)*3/4)] gap-2 lg:gap-8">
         <ProjectCard
           href="https://ubcbiomod2024.netlify.app/"
@@ -43,10 +67,10 @@ const ProjectsDisplay = () => {
             <Image
               src={project2024}
               alt="2024 Project animation"
-              className="w-1/2"
+              className="w-1/3"
             />
             <div className="flex flex-col gap-2">
-              <div className="text-sm md:text-2xl lg:text-3xl">
+              <div className="text-sm md:text-xl lg:text-2xl">
                 A BIOMODular Enzyme Delivery Vehicle to Target Biofilms
               </div>
               <div className="text-[0.5rem] md:text-sm lg:text-base">

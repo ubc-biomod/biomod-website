@@ -65,10 +65,10 @@ export default function Team() {
         className="flex flex-row gap-x-6"
         style={{ x: xDiff }}
         onHoverStart={() => {
-          setSpeed(SLOW), setIsInProgress(true);
+          (setSpeed(SLOW), setIsInProgress(true));
         }}
         onHoverEnd={() => {
-          setSpeed(FAST), setIsInProgress(true);
+          (setSpeed(FAST), setIsInProgress(true));
         }}
       >
         {[...members, ...members].map((m, i) => (
