@@ -14,7 +14,11 @@ function JoinUsHero() {
           <h3 className="text-subHeadingRegMob lg:text-subHeadingReg">
             Get involved with UBC BIOMOD
           </h3>
-          <Link href="#apply-now" className="btn btn--primary">
+          <Link
+            href="https://linktr.ee/ubcbiomod"
+            target="_blank"
+            className="btn btn--primary"
+          >
             Apply Now
           </Link>
         </div>

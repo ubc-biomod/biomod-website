@@ -31,16 +31,17 @@ export default function ReadyToApply() {
           </h1>
           <p>
             {/* UBC BIOMOD is currently hiring! Check out the hiring package:  */}
-            We are currently not hiring, but our next recruitment cycle will
-            open soon! In the meantime, you can still check out our previous
-            hiring package below:
+            We are currently hiring!!! See our hiring package here and apply to
+            join our awe-inspiring prodigious team!
+            <br />
+            Applications due September 21st, 11:59pm.
             <br />
             <a
               className="text-primary"
-              href="https://docs.google.com/document/d/1iP2mgDWsZ4kBggu_ZaUX-cCKaxzgVitLe9r9tg_aqP8/edit?tab=t.0"
+              href="https://docs.google.com/document/d/1rfUi9SrG0KYOu2ElkSTnx5-fK_Zpv2s6OSDZHXQ0UGo/edit?usp=sharing"
               target="_blank"
             >
-              2025/2026 Hiring Package
+              2026/2027 Hiring Package 🤚🖐️
             </a>
             <br />
             <br />
