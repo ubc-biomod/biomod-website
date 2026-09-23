@@ -15,8 +15,8 @@ function JoinUsHero() {
             Get involved with UBC BIOMOD
           </h3>
           <Link
-            href="https://linktr.ee/ubcbiomod"
-            target="_blank"
+            href="#apply-now"
+            // target="_blank"
             className="btn btn--primary"
           >
             Apply Now

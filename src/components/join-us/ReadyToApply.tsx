@@ -30,11 +30,15 @@ export default function ReadyToApply() {
             Ready to apply?
           </h1>
           <p>
-            {/* UBC BIOMOD is currently hiring! Check out the hiring package:  */}
-            We are currently hiring!!! See our hiring package here and apply to
+            {/* We are currently hiring!!! See our hiring package here and apply to
             join our awe-inspiring prodigious team!
             <br />
-            Applications due September 21st, 11:59pm.
+            Applications due September 21st, 11:59pm. */}
+            We are currently not hiring, but our next recruitment cycle will
+            open soon! 
+            <br />
+            In the meantime, you can still check out our previous
+            hiring package below:
             <br />
             <a
               className="text-primary"
